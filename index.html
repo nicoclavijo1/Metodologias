@@ -530,6 +530,53 @@ button.row{border-color:var(--blue-line)}
 .ob i.s{width:62%}
 .ob i.m{width:84%}
 
+/* ---------- diagrama bimanual ---------- */
+.bim{display:flex;flex-direction:column;gap:8px}
+.bim-h{display:grid;grid-template-columns:20px 1fr 1fr;gap:7px}
+.bim-h span{font-size:9px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--blue-soft);text-align:center;line-height:1.3}
+.bim-r{display:grid;grid-template-columns:20px 1fr 1fr;gap:7px}
+.bim-n{display:grid;place-items:center;font-size:10.5px;font-weight:800;color:var(--fg-faint)}
+.bim-c{padding:10px;border-radius:11px;background:var(--surface-2);border:1px solid var(--line);display:flex;flex-direction:column;gap:7px;min-width:0}
+.sy{display:inline-flex;align-items:center;gap:5px;align-self:flex-start;
+    font-size:8.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 8px;border-radius:999px;line-height:1.3;white-space:nowrap}
+.sy em{font-style:normal;font-size:11px;line-height:1}
+.bim-c .tx{font-size:11.5px;color:var(--fg-dim);line-height:1.5}
+.sy-op{background:var(--blue-bg);color:var(--blue-soft);border:1px solid var(--blue-line)}
+.sy-mo{background:rgba(124,138,160,.12);color:var(--fg-dim);border:1px solid var(--line-2)}
+.sy-so{background:var(--amber-bg);color:var(--amber-t);border:1px solid var(--amber-line)}
+.sy-es{background:var(--red-bg);color:var(--red-t);border:1px solid var(--red-line)}
+.cnt{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cnt-c{padding:13px;border-radius:13px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:9px;min-width:0}
+.cnt-c b{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-soft)}
+.cnt-l{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11.5px;color:var(--fg-dim)}
+.cnt-l u{text-decoration:none;font-weight:800;color:var(--fg);font-variant-numeric:tabular-nums}
+.cnt-l.hot u{color:var(--amber-t)}
+
+/* ---------- diagrama bimanual ---------- */
+.bim{border-radius:14px;border:1px solid var(--line);overflow:hidden}
+.bimh{display:grid;grid-template-columns:22px 1fr 1fr;gap:1px;background:var(--line)}
+.bimh div{background:var(--blue-bg);padding:9px 8px;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--blue-pale);text-align:center;line-height:1.3}
+.bimr{display:grid;grid-template-columns:22px 1fr 1fr;gap:1px;background:var(--line);margin-top:1px}
+.bimn{background:var(--surface-2);display:grid;place-items:center;font-size:10px;font-weight:800;color:var(--fg-faint)}
+.bimc{background:var(--surface-2);padding:10px 9px;display:flex;gap:8px;align-items:flex-start;min-width:0}
+.bimc i{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:11px;font-weight:800;font-style:normal;background:var(--sb);color:var(--sc);line-height:1}
+.bimc span{flex:1;min-width:0;font-size:11.5px;color:var(--fg-dim);line-height:1.4}
+.s-op{--sb:rgba(34,197,94,.18);--sc:var(--green-t)}
+.s-mv{--sb:var(--blue-bg);--sc:var(--blue-soft)}
+.s-so{--sb:var(--amber-bg);--sc:var(--amber-t)}
+.s-es{--sb:var(--red-bg);--sc:var(--red-t)}
+.tally{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tal{padding:13px;border-radius:13px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.tal b{display:block;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:10px}
+.tal ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.tal li{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--fg-dim)}
+.tal li i{flex:none;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:10px;font-weight:800;font-style:normal;background:var(--sb);color:var(--sc);line-height:1}
+.tal li em{margin-left:auto;font-style:normal;font-weight:800;color:var(--fg);font-variant-numeric:tabular-nums;font-size:13px}
+.panel{border-radius:16px;border:1px solid var(--figline);background:var(--figbg);padding:12px}
+.panel svg{display:block;width:100%;height:auto}
+.panel .pl{font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 9px 2px}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media (max-width:359px){.methods{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,1fr)}.qs{grid-template-columns:1fr}.pp{grid-template-columns:1fr}}
 
@@ -2053,37 +2100,99 @@ img{max-width:100%}
   </div>
 
   <div class="block">
-    <h2>Así se ve la estación</h2>
-    <div class="hscroll">
-      <svg viewBox="0 0 560 250" width="540" role="img" aria-label="Borde de línea de una estación" font-family="Inter,sans-serif">
-        <rect x="60" y="56" width="440" height="56" rx="6" fill="rgba(59,130,246,.08)" stroke="#3C4B60" stroke-width="1.4"/>
-        <text x="280" y="44" font-size="10" font-weight="800" fill="#8795A8" text-anchor="middle" letter-spacing="1.3">BORDE DE LÍNEA · LO SURTE LOGÍSTICA</text>
+    <h2>Antes de corregir</h2>
+    <div class="panel">
+      <div class="pl" style="color:var(--red-t)">Antes</div>
+      <svg viewBox="0 0 420 222" role="img" aria-label="Estación antes de corregir: cajas mezcladas en una fila" font-family="Inter,sans-serif">
+        <text x="28" y="15" font-size="11" font-weight="700" fill="#F87171">Para componente A</text>
+        <text x="392" y="15" font-size="11" font-weight="700" fill="#7CB2FF" text-anchor="end">Para componente B</text>
 
-        <rect x="96" y="68" width="60" height="32" rx="4" fill="rgba(239,68,68,.14)" stroke="#F87171" stroke-width="1.3"/>
-        <text x="126" y="89" font-size="12" font-weight="800" fill="#FCA5A5" text-anchor="middle">1</text>
-        <rect x="190" y="68" width="60" height="32" rx="4" fill="rgba(59,130,246,.18)" stroke="#60A5FA" stroke-width="1.3"/>
-        <text x="220" y="89" font-size="12" font-weight="800" fill="#AFD0FF" text-anchor="middle">2</text>
-        <rect x="284" y="68" width="60" height="32" rx="4" fill="rgba(239,68,68,.14)" stroke="#F87171" stroke-width="1.3"/>
-        <text x="314" y="89" font-size="12" font-weight="800" fill="#FCA5A5" text-anchor="middle">3</text>
-        <rect x="378" y="68" width="60" height="32" rx="4" fill="rgba(59,130,246,.18)" stroke="#60A5FA" stroke-width="1.3"/>
-        <text x="408" y="89" font-size="12" font-weight="800" fill="#AFD0FF" text-anchor="middle">4</text>
+        <path d="M65 30 H269" stroke="#F87171" stroke-width="1.6" fill="none"/>
+        <g stroke="#F87171" stroke-width="1.6" fill="none">
+          <path d="M65 30 V80"/><path d="M61 76 l4 6 4 -6"/>
+          <path d="M201 30 V80"/><path d="M197 76 l4 6 4 -6"/>
+          <path d="M269 30 V80"/><path d="M265 76 l4 6 4 -6"/>
+        </g>
+        <path d="M133 48 H337" stroke="#7CB2FF" stroke-width="1.6" fill="none"/>
+        <g stroke="#7CB2FF" stroke-width="1.6" fill="none">
+          <path d="M133 48 V80"/><path d="M129 76 l4 6 4 -6"/>
+          <path d="M337 48 V80"/><path d="M333 76 l4 6 4 -6"/>
+        </g>
 
-        <g fill="none" stroke="#9AA5B6" stroke-width="1.4">
-          <circle cx="280" cy="152" r="11"/><path d="M280 163 v22 M262 171 h36 M280 185 l-9 16 M280 185 l9 16"/>
-        </g>
-        <text x="280" y="222" font-size="10.5" font-weight="700" fill="#B6C2D2" text-anchor="middle">Operario de producción</text>
+        <rect x="26" y="66" width="368" height="124" rx="4" fill="none" stroke="#687486" stroke-width="1.4"/>
 
-        <g stroke="#F87171" stroke-width="1.4" fill="none" stroke-dasharray="4 3">
-          <path d="M126 104 Q180 130 270 146"/><path d="M314 104 Q300 124 288 142"/>
+        <rect x="44" y="84" width="42" height="46" rx="2" fill="rgba(239,68,68,.12)" stroke="#F87171" stroke-width="1.4"/>
+        <text x="65" y="114" font-size="15" font-weight="800" fill="#FCA5A5" text-anchor="middle">1</text>
+        <rect x="112" y="84" width="42" height="46" rx="2" fill="rgba(59,130,246,.14)" stroke="#7CB2FF" stroke-width="1.4"/>
+        <text x="133" y="114" font-size="15" font-weight="800" fill="#AFD0FF" text-anchor="middle">1</text>
+        <rect x="180" y="84" width="42" height="46" rx="2" fill="rgba(239,68,68,.12)" stroke="#F87171" stroke-width="1.4"/>
+        <text x="201" y="114" font-size="15" font-weight="800" fill="#FCA5A5" text-anchor="middle">3</text>
+        <rect x="248" y="84" width="42" height="46" rx="2" fill="rgba(239,68,68,.12)" stroke="#F87171" stroke-width="1.4"/>
+        <text x="269" y="114" font-size="15" font-weight="800" fill="#FCA5A5" text-anchor="middle">2</text>
+        <rect x="316" y="84" width="42" height="46" rx="2" fill="rgba(59,130,246,.14)" stroke="#7CB2FF" stroke-width="1.4"/>
+        <text x="337" y="114" font-size="15" font-weight="800" fill="#AFD0FF" text-anchor="middle">2</text>
+
+        <g fill="none" stroke="#9AA5B6" stroke-width="1.5">
+          <circle cx="210" cy="150" r="9"/>
+          <path d="M210 159 v16 M186 165 h48 M210 175 l-9 13 M210 175 l9 13"/>
         </g>
-        <g stroke="#60A5FA" stroke-width="1.4" fill="none" stroke-dasharray="4 3">
-          <path d="M220 104 Q240 126 274 142"/><path d="M408 104 Q350 132 292 146"/>
-        </g>
-        <text x="110" y="128" font-size="9.5" font-weight="800" fill="#FCA5A5">Componente A</text>
-        <text x="398" y="128" font-size="9.5" font-weight="800" fill="#AFD0FF" text-anchor="end">Componente B</text>
+        <text x="210" y="212" font-size="10" fill="#8795A8" text-anchor="middle">En cada ciclo recorre la mesa entera, de punta a punta</text>
       </svg>
     </div>
-    <p class="cap">Lo que más se usa va más cerca de la mano. Si el operario tiene que girar el cuerpo o dar un paso para alcanzar una caja, esa caja está mal puesta.</p>
+    <p class="cap">Las cajas de los dos componentes están mezcladas y repartidas por toda la mesa. El número de cada caja es el orden en que se usa.</p>
+  </div>
+
+  <div class="block">
+    <h2>Después de corregir</h2>
+    <div class="panel">
+      <div class="pl" style="color:var(--green-t)">Después</div>
+      <svg viewBox="0 0 420 222" role="img" aria-label="Estación después de corregir: cajas agrupadas por componente" font-family="Inter,sans-serif">
+        <rect x="26" y="26" width="368" height="164" rx="4" fill="none" stroke="#687486" stroke-width="1.4"/>
+
+        <path d="M54 76 Q96 48 130 62" fill="none" stroke="#F87171" stroke-width="1.8"/>
+        <path d="M124 54 l7 8 -9 3" fill="none" stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M142 56 Q176 40 206 54" fill="none" stroke="#F87171" stroke-width="1.8"/>
+        <path d="M200 46 l7 8 -9 3" fill="none" stroke="#F87171" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <g transform="rotate(-20 68 100)">
+          <rect x="46" y="76" width="44" height="48" rx="2" fill="rgba(239,68,68,.12)" stroke="#F87171" stroke-width="1.4"/>
+          <text x="68" y="107" font-size="15" font-weight="800" fill="#FCA5A5" text-anchor="middle">1</text>
+        </g>
+        <g transform="rotate(-10 132 90)">
+          <rect x="110" y="66" width="44" height="48" rx="2" fill="rgba(239,68,68,.12)" stroke="#F87171" stroke-width="1.4"/>
+          <text x="132" y="97" font-size="15" font-weight="800" fill="#FCA5A5" text-anchor="middle">2</text>
+        </g>
+        <g transform="rotate(-2 196 86)">
+          <rect x="174" y="62" width="44" height="48" rx="2" fill="rgba(239,68,68,.12)" stroke="#F87171" stroke-width="1.4"/>
+          <text x="196" y="93" font-size="15" font-weight="800" fill="#FCA5A5" text-anchor="middle">3</text>
+        </g>
+
+        <path d="M352 76 Q324 44 292 62" fill="none" stroke="#7CB2FF" stroke-width="1.8"/>
+        <path d="M298 54 l-7 8 9 3" fill="none" stroke="#7CB2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <g transform="rotate(8 300 90)">
+          <rect x="278" y="66" width="44" height="48" rx="2" fill="rgba(59,130,246,.14)" stroke="#7CB2FF" stroke-width="1.4"/>
+          <text x="300" y="97" font-size="15" font-weight="800" fill="#AFD0FF" text-anchor="middle">2</text>
+        </g>
+        <g transform="rotate(18 356 102)">
+          <rect x="334" y="78" width="44" height="48" rx="2" fill="rgba(59,130,246,.14)" stroke="#7CB2FF" stroke-width="1.4"/>
+          <text x="356" y="109" font-size="15" font-weight="800" fill="#AFD0FF" text-anchor="middle">1</text>
+        </g>
+
+        <circle cx="118" cy="140" r="18" fill="none" stroke="#9AA5B6" stroke-width="1.3"/>
+        <text x="118" y="143.5" font-size="8.5" fill="#9AA5B6" text-anchor="middle">cubeta</text>
+
+        <rect x="172" y="122" width="82" height="40" rx="3" fill="rgba(124,178,255,.10)" stroke="#687486" stroke-width="1.3"/>
+        <text x="213" y="146" font-size="9" fill="#8795A8" text-anchor="middle">mesa</text>
+
+        <g fill="none" stroke="#9AA5B6" stroke-width="1.5">
+          <circle cx="213" cy="174" r="9"/>
+          <path d="M189 180 Q213 194 237 180"/>
+        </g>
+        <text x="213" y="212" font-size="10" fill="#8795A8" text-anchor="middle">Todo al alcance, sin dar un paso</text>
+      </svg>
+    </div>
+    <p class="cap">Las mismas cinco cajas. Lo único que cambió es que ahora están agrupadas por componente, inclinadas hacia el operario y puestas en el orden en que se usan.</p>
   </div>
 
   <div class="block">
@@ -2098,31 +2207,155 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Herramienta complementaria · diagrama bimanual</h2>
-    <p class="sub">Registra qué hace cada mano, segundo a segundo. Sirve para ver cuánto tiempo una mano está parada sosteniendo mientras la otra trabaja.</p>
-    <div class="syms">
-      <div class="sym"><svg viewBox="0 0 36 26"><circle cx="18" cy="13" r="7" fill="none" stroke="#7CB2FF" stroke-width="1.8"/></svg><span>Operación</span></div>
-      <div class="sym"><svg viewBox="0 0 36 26"><path d="M6 13 h18" stroke="#7CB2FF" stroke-width="1.8"/><path d="M28 13 l-6 -4 M28 13 l-6 4" fill="none" stroke="#7CB2FF" stroke-width="1.8"/></svg><span>Movimiento</span></div>
-      <div class="sym"><svg viewBox="0 0 36 26"><path d="M12 5 h5 a8 8 0 0 1 0 16 h-5 z" fill="none" stroke="#7CB2FF" stroke-width="1.8"/></svg><span>Sostenimiento</span></div>
-      <div class="sym"><svg viewBox="0 0 36 26"><polygon points="8,5 28,5 18,21" fill="none" stroke="#7CB2FF" stroke-width="1.8"/></svg><span>Espera</span></div>
+    <p class="sub">Registra qué hace cada mano en cada instante del ciclo. Sirve para ver una cosa que a simple vista no se nota: cuánto tiempo una mano está quieta o solo sosteniendo, mientras la otra hace todo el trabajo.</p>
+  </div>
+
+  <div class="block">
+    <h2>Los cuatro símbolos</h2>
+    <div class="facts">
+      <div class="fact"><span class="bimc" style="padding:0"><i class="s-op">○</i></span><span><b>Operación.</b> La mano transforma algo: arma, mete, sella, aprieta. Es el único símbolo que agrega valor.</span></div>
+      <div class="fact"><span class="bimc" style="padding:0"><i class="s-mv">→</i></span><span><b>Movimiento.</b> La mano traslada algo o se traslada a buscarlo. Necesario, pero no agrega valor.</span></div>
+      <div class="fact"><span class="bimc" style="padding:0"><i class="s-so">D</i></span><span><b>Sostenimiento.</b> La mano aguanta una pieza y no hace nada más. Es una mano convertida en prensa.</span></div>
+      <div class="fact"><span class="bimc" style="padding:0"><i class="s-es">▽</i></span><span><b>Espera.</b> La mano no hace nada. Desperdicio puro.</span></div>
     </div>
-    <div class="tpl" style="margin-top:12px">
-      <div class="tpl-t">Diagrama bimanual</div>
-      <div class="tpl-f"><b>Método</b><u></u><b>Actual / propuesto</b><u></u></div>
-      <div class="tpl-f"><b>Operación</b><u></u><b>Disposición</b><u></u></div>
-      <div class="tpl-f"><b>Lugar</b><u></u><b>Espacio de trabajo</b><u></u></div>
-      <div class="tpl-f"><b>Operario</b><u></u><b>Elaborado por</b><u></u></div>
-      <div class="tscroll" style="background:transparent;border-color:var(--line-2)">
-        <table class="mtab">
-          <thead><tr><th>Descripción mano izquierda</th><th>Símbolo</th><th>Símbolo</th><th>Descripción mano derecha</th></tr></thead>
-          <tbody>
-            <tr><td></td><td style="color:var(--blue-soft)">○ → D ▽</td><td style="color:var(--blue-soft)">○ → D ▽</td><td></td></tr>
-            <tr><td></td><td style="color:var(--blue-soft)">○ → D ▽</td><td style="color:var(--blue-soft)">○ → D ▽</td><td></td></tr>
-            <tr><td class="n">Total</td><td>2 · 2 · 2 · 3</td><td>1 · 4 · 2 · 0</td><td></td></tr>
-          </tbody>
-        </table>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Elegir un ciclo corto y repetitivo</div>
+        <div class="pd">Una tarea de 10 a 60 segundos que se repite muchas veces al día. Para tareas largas o que cambian cada vez, esta herramienta no sirve.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Grabarlo en video, de frente</div>
+        <div class="pd">Con las dos manos a la vista. En vivo es imposible anotar las dos al tiempo, y si lo intentas terminas inventando la mitad.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Partir el ciclo en pasos</div>
+        <div class="pd">En el orden en que ocurren. Una fila por paso. Un paso termina cuando alguna de las dos manos cambia de actividad.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Describir qué hace cada mano en ese paso</div>
+        <div class="pd">Una frase corta por mano. Si una mano no hace nada, eso también se escribe: ese es justo el dato que buscas.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Clasificar con los cuatro símbolos</div>
+        <div class="pd">Un símbolo por mano y por paso. Si dudas entre operación y movimiento, pregunta si la pieza cambió: si no cambió, es movimiento.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">6</span><div class="ptxt">
+        <div class="pt">Contar cuántas veces aparece cada símbolo, por mano</div>
+        <div class="pd">Ese conteo es el resultado de la herramienta. No es un adorno al final de la hoja: es lo que vas a mirar.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">7</span><div class="ptxt">
+        <div class="pt">Leer y proponer</div>
+        <div class="pd">Mucho sostenimiento o mucha espera en una mano es la oportunidad. La meta es que las dos manos hagan operación al mismo tiempo.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · empacar el pan</h2>
+    <p class="sub">Un ciclo de seis pasos, tal como se ve en el video.</p>
+
+    <div class="bim">
+      <div class="bimh"><div>#</div><div>Mano izquierda</div><div>Mano derecha</div></div>
+      <div class="bimr">
+        <div class="bimn">1</div>
+        <div class="bimc"><i class="s-op">○</i><span>Toma una bolsa del dispensador</span></div>
+        <div class="bimc"><i class="s-es">▽</i><span>No hace nada</span></div>
+      </div>
+      <div class="bimr">
+        <div class="bimn">2</div>
+        <div class="bimc"><i class="s-op">○</i><span>Abre la bolsa</span></div>
+        <div class="bimc"><i class="s-mv">→</i><span>Alcanza el pan de la bandeja</span></div>
+      </div>
+      <div class="bimr">
+        <div class="bimn">3</div>
+        <div class="bimc"><i class="s-so">D</i><span>Sostiene la bolsa abierta</span></div>
+        <div class="bimc"><i class="s-op">○</i><span>Mete el pan en la bolsa</span></div>
+      </div>
+      <div class="bimr">
+        <div class="bimn">4</div>
+        <div class="bimc"><i class="s-so">D</i><span>Sigue sosteniendo la bolsa</span></div>
+        <div class="bimc"><i class="s-mv">→</i><span>Alcanza el sello</span></div>
+      </div>
+      <div class="bimr">
+        <div class="bimn">5</div>
+        <div class="bimc"><i class="s-so">D</i><span>Sigue sosteniendo la bolsa</span></div>
+        <div class="bimc"><i class="s-op">○</i><span>Sella la bolsa</span></div>
+      </div>
+      <div class="bimr">
+        <div class="bimn">6</div>
+        <div class="bimc"><i class="s-mv">→</i><span>Lleva la bolsa a la canasta</span></div>
+        <div class="bimc"><i class="s-es">▽</i><span>No hace nada</span></div>
       </div>
     </div>
-    <p class="cap">Se cuenta cuántas veces aparece cada símbolo por mano. Mucho "sostenimiento" en una mano casi siempre significa que falta un soporte o una prensa.</p>
+
+    <div class="tally" style="margin-top:14px">
+      <div class="tal">
+        <b>Mano izquierda</b>
+        <ul>
+          <li><i class="s-op">○</i>Operación<em>2</em></li>
+          <li><i class="s-mv">→</i>Movimiento<em>1</em></li>
+          <li><i class="s-so">D</i>Sostenimiento<em>3</em></li>
+          <li><i class="s-es">▽</i>Espera<em>0</em></li>
+        </ul>
+      </div>
+      <div class="tal">
+        <b>Mano derecha</b>
+        <ul>
+          <li><i class="s-op">○</i>Operación<em>2</em></li>
+          <li><i class="s-mv">→</i>Movimiento<em>2</em></li>
+          <li><i class="s-so">D</i>Sostenimiento<em>0</em></li>
+          <li><i class="s-es">▽</i>Espera<em>2</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Lo que dice el conteo</b>
+    La mano izquierda pasa <span class="k">3 de los 6 pasos sosteniendo</span> una bolsa, y la derecha pasa <span class="k">2 de los 6 sin hacer nada</span>. Juntando las dos manos, de 12 casillas solo 4 son operación. El problema no es que el operario sea lento: es que una mano está haciendo de prensa.
+  </div>
+
+  <div class="block">
+    <h2>La mejora que sale de ahí</h2>
+    <div class="facts">
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h14v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg><span>Poner un <b>aro que mantenga la bolsa abierta</b> sobre la mesa. Cuesta poco y reemplaza a la mano que sostenía.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 8l5-5 5 5"/></svg><span>Con la izquierda libre, puede <b>alcanzar el siguiente pan</b> mientras la derecha sella.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span>El sello pasa a un <b>soporte fijo</b> al alcance, para que la derecha no tenga que ir a buscarlo.</span></div>
+    </div>
+    <div class="tally" style="margin-top:14px">
+      <div class="tal" style="border-color:var(--green-line)">
+        <b style="color:var(--green-t)">Izquierda · después</b>
+        <ul>
+          <li><i class="s-op">○</i>Operación<em>3</em></li>
+          <li><i class="s-mv">→</i>Movimiento<em>1</em></li>
+          <li><i class="s-so">D</i>Sostenimiento<em>0</em></li>
+          <li><i class="s-es">▽</i>Espera<em>0</em></li>
+        </ul>
+      </div>
+      <div class="tal" style="border-color:var(--green-line)">
+        <b style="color:var(--green-t)">Derecha · después</b>
+        <ul>
+          <li><i class="s-op">○</i>Operación<em>3</em></li>
+          <li><i class="s-mv">→</i>Movimiento<em>1</em></li>
+          <li><i class="s-so">D</i>Sostenimiento<em>0</em></li>
+          <li><i class="s-es">▽</i>Espera<em>0</em></li>
+        </ul>
+      </div>
+    </div>
+    <p class="cap">El ciclo pasó de 6 pasos a 4, y de 4 operaciones a 6. Ninguna mano sostiene ni espera.</p>
+  </div>
+
+  <div class="block">
+    <h2>Las tres reglas para leerlo</h2>
+    <div class="facts">
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.2v.1"/></svg><span><b>Sostener no es trabajar.</b> Si una mano sostiene, falta un dispositivo: un soporte, una prensa, una plantilla.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><b>Esperar es desperdicio puro.</b> Si una mano espera, el trabajo está mal repartido entre las dos.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M8 8L4 12l4 4M16 8l4 4-4 4"/></svg><span><b>Las dos manos deberían arrancar y terminar a la vez</b>, moviéndose en espejo. Cuando eso pasa, el ciclo es el más corto posible.</span></div>
+    </div>
   </div>
 
   <div class="out">
@@ -3774,7 +4007,6 @@ img{max-width:100%}
   show(location.hash.replace("#","") || "inicio", false);
 })();
 </script>
-
 <div class="instbar" id="instbar" hidden>
   <div class="ii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg></div>
   <div class="it"><b>Instalar Metodologías</b><span>Para abrirla desde tu pantalla de apps</span></div>
