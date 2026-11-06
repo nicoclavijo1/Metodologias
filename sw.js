@@ -1,5 +1,5 @@
 /* Metodologias - service worker */
-const CACHE = 'metodologias-v7';
+const CACHE = 'metodologias-v8';
 const SHELL = [
   './',
   './index.html',
