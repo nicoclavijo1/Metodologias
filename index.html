@@ -208,6 +208,34 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .lead p{margin:0;font-size:14px;line-height:1.7;color:var(--fg-dim)}
 
 
+
+/* ---------- miniaturas de herramienta ---------- */
+.thumb{flex:none;width:64px;height:46px;border-radius:10px;background:var(--figbg);border:1px solid var(--figline);display:grid;place-items:center;overflow:hidden}
+.thumb svg{width:58px;height:40px;display:block}
+.trow{
+  display:flex;align-items:center;gap:13px;padding:13px;border-radius:15px;
+  border:1px solid var(--blue-line);
+  background:linear-gradient(140deg,var(--blue-bg-2) 0%,var(--surface) 58%);
+  color:inherit;text-align:left;font:inherit;width:100%;cursor:pointer;
+  transition:box-shadow .15s ease,transform .15s ease;
+}
+.trow:active{transform:scale(.99)}
+.trow:hover{box-shadow:0 0 0 1px var(--blue)}
+.trow-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.trow-t{font-size:14px;font-weight:700;line-height:1.35;letter-spacing:-.005em}
+.trow-d{font-size:12px;color:var(--fg-dim);line-height:1.45}
+.bigfig{border-radius:16px;border:1px solid var(--figline);background:var(--figbg);padding:18px;display:grid;place-items:center}
+.bigfig svg{width:100%;max-width:300px;height:auto}
+.dtphases{display:flex;flex-direction:column;gap:10px}
+.dtp{display:flex;align-items:center;gap:14px;padding:15px;border-radius:16px;border:1px solid var(--blue-line);background:linear-gradient(140deg,var(--blue-bg-2) 0%,var(--surface) 58%);color:inherit;text-align:left;font:inherit;width:100%;cursor:pointer;transition:box-shadow .15s ease,transform .15s ease}
+.dtp:active{transform:scale(.99)}
+.dtp:hover{box-shadow:0 0 0 1px var(--blue)}
+.dtp-n{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--blue);color:#fff;font-size:14.5px;font-weight:800}
+.dtp-n.x{background:var(--surface-2);color:var(--blue-soft);border:1px solid var(--blue-line)}
+.dtp-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.dtp-t{font-size:14.5px;font-weight:700;line-height:1.35}
+.dtp-d{font-size:12px;color:var(--fg-dim);line-height:1.45}
+
 /* ---------- menú de inicio ---------- */
 .mhero{
   display:flex;align-items:flex-start;gap:16px;width:100%;
@@ -709,6 +737,18 @@ img{max-width:100%}
     </button>
   </div>
 
+  <div class="block" style="margin-top:-6px">
+    <button class="mhero" data-go="dt" style="--blue-line:rgba(245,158,11,.4)">
+      <span class="mhero-ic" style="background:var(--m-amber);color:var(--m-amber-ink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4.6-5.5L11.2 12l-4.6 5.5z"/><path d="M12.8 12l4.6-5.5L22 12l-4.6 5.5z"/></svg></span>
+      <span class="mhero-tx">
+        <span class="mhero-n">Design Thinking</span>
+        <span class="mhero-p">Diseñar algo que todavía no existe, partiendo de la persona</span>
+        <span class="mhero-m" style="color:var(--amber-t)">5 etapas + transversales · 28 herramientas</span>
+      </span>
+      <span class="mhero-go" style="color:var(--amber-t)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </button>
+  </div>
+
   <div class="block">
     <h2>En construcción</h2>
     <div class="mlist">
@@ -722,11 +762,6 @@ img{max-width:100%}
         <span class="mrow-tx"><span class="mrow-n">Kaizen</span><span class="mrow-p">Erradicar una pérdida concreta · 12 pasos</span></span>
         <span class="mrow-s">Pendiente</span>
       </div>
-      <div class="mrow" style="--mc:var(--amber-t);--mbg:var(--amber-bg)">
-        <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4.6-5.5L11.2 12l-4.6 5.5z"/><path d="M12.8 12l4.6-5.5L22 12l-4.6 5.5z"/></svg></span>
-        <span class="mrow-tx"><span class="mrow-n">Design Thinking</span><span class="mrow-p">Diseñar algo que no existe · doble diamante</span></span>
-        <span class="mrow-s">Pendiente</span>
-      </div>
       <div class="mrow" style="--mc:var(--red-t);--mbg:var(--red-bg)">
         <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.3 6.3a4 4 0 0 1 5.4 5.4L9 22.5 4.5 18z"/><path d="M11.8 8.8l3.4 3.4"/><circle cx="18.2" cy="5.8" r="2.3"/></svg></span>
         <span class="mrow-tx"><span class="mrow-n">TPM</span><span class="mrow-p">Que la máquina deje de parar</span></span>
@@ -736,8 +771,8 @@ img{max-width:100%}
   </div>
 
   <div class="prog">
-    <div class="prog-b"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-    <div class="prog-t">1 de 5 métodos listos</div>
+    <div class="prog-b"><i class="on"></i><i></i><i></i><i class="on"></i><i></i></div>
+    <div class="prog-t">2 de 5 métodos listos</div>
   </div>
 </section>
 
@@ -4012,6 +4047,2023 @@ img{max-width:100%}
   </div>
 </section>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="t-e1" viewBox="0 0 120 80"><circle cx="60" cy="40" r="31" fill="none" stroke="#3C4B60" stroke-width="2"/><circle cx="60" cy="40" r="18" fill="none" stroke="#3C4B60" stroke-width="2"/><circle cx="60" cy="40" r="7" fill="#3B82F6"/><circle cx="60" cy="22" r="4.5" fill="#7CB2FF"/><circle cx="77" cy="49" r="4.5" fill="#7CB2FF"/><circle cx="43" cy="49" r="4.5" fill="#7CB2FF"/><circle cx="60" cy="9" r="4" fill="#3C4B60"/><circle cx="92" cy="58" r="4" fill="#3C4B60"/><circle cx="28" cy="58" r="4" fill="#3C4B60"/></symbol>
+<symbol id="t-e2" viewBox="0 0 120 80"><path d="M8 66 Q34 66 44 42 Q54 18 60 18 Q66 18 76 42 Q86 66 112 66" fill="none" stroke="#3C4B60" stroke-width="2.4"/><circle cx="60" cy="22" r="4" fill="#3C4B60"/><circle cx="13" cy="64" r="6.5" fill="#3B82F6"/><circle cx="107" cy="64" r="6.5" fill="#3B82F6"/></symbol>
+<symbol id="t-e3" viewBox="0 0 120 80"><rect x="8" y="12" width="48" height="38" rx="7" fill="none" stroke="#3B82F6" stroke-width="2.4"/><path d="M20 50v11l11-11" fill="none" stroke="#3B82F6" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 24h30M17 32h21M17 40h26" stroke="#7CB2FF" stroke-width="3" stroke-linecap="round"/><rect x="66" y="10" width="46" height="60" rx="4" fill="none" stroke="#3C4B60" stroke-width="2.4"/><path d="M74 22h30M74 32h30M74 42h30M74 52h18" stroke="#3C4B60" stroke-width="2.6" stroke-linecap="round"/></symbol>
+<symbol id="t-e4" viewBox="0 0 120 80"><rect x="6" y="10" width="33" height="60" rx="4" fill="none" stroke="#3C4B60" stroke-width="2.2"/><rect x="43" y="10" width="33" height="60" rx="4" fill="none" stroke="#3C4B60" stroke-width="2.2"/><rect x="80" y="10" width="34" height="60" rx="4" fill="rgba(59,130,246,.18)" stroke="#3B82F6" stroke-width="2.2"/><path d="M12 24h21M12 34h14" stroke="#3C4B60" stroke-width="2.6" stroke-linecap="round"/><path d="M49 24h21M49 34h14" stroke="#3C4B60" stroke-width="2.6" stroke-linecap="round"/><path d="M86 24h22M86 34h16M86 44h22" stroke="#7CB2FF" stroke-width="2.6" stroke-linecap="round"/></symbol>
+<symbol id="t-e5" viewBox="0 0 120 80"><path d="M8 18h104" stroke="#3C4B60" stroke-width="2"/><g fill="#3C4B60"><circle cx="14" cy="18" r="4"/><circle cx="38" cy="18" r="4"/><circle cx="62" cy="18" r="4"/><circle cx="86" cy="18" r="4"/><circle cx="110" cy="18" r="4"/></g><polyline points="14,42 38,36 62,66 86,48 110,38" fill="none" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="66" r="5.5" fill="#F87171"/></symbol>
+<symbol id="t-d1" viewBox="0 0 120 80"><g fill="#3C4B60"><rect x="6" y="8" width="13" height="13" rx="2"/><rect x="26" y="52" width="13" height="13" rx="2"/><rect x="10" y="34" width="13" height="13" rx="2"/></g><rect x="46" y="8" width="30" height="28" rx="4" fill="rgba(59,130,246,.16)" stroke="#3B82F6" stroke-width="2"/><rect x="84" y="8" width="30" height="28" rx="4" fill="rgba(59,130,246,.16)" stroke="#3B82F6" stroke-width="2"/><rect x="46" y="44" width="30" height="28" rx="4" fill="rgba(59,130,246,.16)" stroke="#3B82F6" stroke-width="2"/><rect x="84" y="44" width="30" height="28" rx="4" fill="rgba(59,130,246,.16)" stroke="#3B82F6" stroke-width="2"/></symbol>
+<symbol id="t-d2" viewBox="0 0 120 80"><rect x="6" y="8" width="108" height="64" rx="5" fill="none" stroke="#3C4B60" stroke-width="2"/><path d="M60 8v64M6 40h108" stroke="#3C4B60" stroke-width="2"/><circle cx="60" cy="40" r="13" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="2.4"/><path d="M18 20h22M18 28h14" stroke="#7CB2FF" stroke-width="2.6" stroke-linecap="round"/><path d="M80 20h22M80 28h14" stroke="#7CB2FF" stroke-width="2.6" stroke-linecap="round"/><path d="M18 54h22M18 62h14" stroke="#7CB2FF" stroke-width="2.6" stroke-linecap="round"/><path d="M80 54h22M80 62h14" stroke="#7CB2FF" stroke-width="2.6" stroke-linecap="round"/></symbol>
+<symbol id="t-d3" viewBox="0 0 120 80"><rect x="18" y="6" width="84" height="68" rx="6" fill="none" stroke="#3C4B60" stroke-width="2.2"/><circle cx="42" cy="28" r="12" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="2.4"/><path d="M62 22h30M62 32h22" stroke="#7CB2FF" stroke-width="3" stroke-linecap="round"/><path d="M28 50h64M28 60h44" stroke="#3C4B60" stroke-width="2.8" stroke-linecap="round"/></symbol>
+<symbol id="t-d4" viewBox="0 0 120 80"><rect x="8" y="22" width="104" height="36" rx="6" fill="rgba(59,130,246,.16)" stroke="#3B82F6" stroke-width="2.4"/><path d="M20 30l-4 6 4 6" fill="none" stroke="#7CB2FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 30l4 6-4 6" fill="none" stroke="#7CB2FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 36h56" stroke="#7CB2FF" stroke-width="3.4" stroke-linecap="round"/><path d="M32 46h36" stroke="#7CB2FF" stroke-width="3.4" stroke-linecap="round" opacity=".55"/></symbol>
+<symbol id="t-d5" viewBox="0 0 120 80"><rect x="14" y="12" width="92" height="40" rx="7" fill="none" stroke="#3B82F6" stroke-width="2.4"/><text x="60" y="41" font-size="24" font-weight="800" fill="#7CB2FF" text-anchor="middle" font-family="Inter,sans-serif">?</text><path d="M60 52v8M60 60h-24v8M60 60h24v8" fill="none" stroke="#3C4B60" stroke-width="2.2"/><circle cx="36" cy="72" r="4" fill="#3C4B60"/><circle cx="60" cy="72" r="4" fill="#3C4B60"/><circle cx="84" cy="72" r="4" fill="#3C4B60"/></symbol>
+<symbol id="t-i1" viewBox="0 0 120 80"><g stroke="#3B82F6" stroke-width="2" fill="rgba(59,130,246,.16)"><rect x="8" y="10" width="28" height="24" rx="3"/><rect x="46" y="16" width="28" height="24" rx="3"/><rect x="84" y="8" width="28" height="24" rx="3"/><rect x="14" y="44" width="28" height="24" rx="3"/><rect x="52" y="50" width="28" height="24" rx="3"/><rect x="88" y="42" width="24" height="24" rx="3"/></g></symbol>
+<symbol id="t-i2" viewBox="0 0 120 80"><g font-family="Inter,sans-serif" font-size="15" font-weight="800" text-anchor="middle"><rect x="4" y="26" width="15" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="11.5" y="45" fill="#7CB2FF">S</text><rect x="21" y="26" width="15" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="28.5" y="45" fill="#7CB2FF">C</text><rect x="38" y="26" width="15" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="45.5" y="45" fill="#7CB2FF">A</text><rect x="55" y="26" width="15" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="62.5" y="45" fill="#7CB2FF">M</text><rect x="72" y="26" width="15" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="79.5" y="45" fill="#7CB2FF">P</text><rect x="89" y="26" width="13" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="95.5" y="45" fill="#7CB2FF">E</text><rect x="104" y="26" width="13" height="28" rx="3" fill="rgba(59,130,246,.2)" stroke="#3B82F6" stroke-width="1.6"/><text x="110.5" y="45" fill="#7CB2FF">R</text></g></symbol>
+<symbol id="t-i3" viewBox="0 0 120 80"><path d="M14 66h92" stroke="#3C4B60" stroke-width="2.4"/><rect x="26" y="40" width="68" height="12" rx="3" fill="rgba(239,68,68,.2)" stroke="#F87171" stroke-width="2"/><path d="M20 34l80 24" stroke="#F87171" stroke-width="3" stroke-linecap="round"/><path d="M60 30V12M52 20l8-9 8 9" fill="none" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="t-i4" viewBox="0 0 120 80"><rect x="6" y="8" width="108" height="64" rx="5" fill="none" stroke="#3C4B60" stroke-width="2"/><path d="M6 26h108M48 8v64M70 8v64M92 8v64" stroke="#3C4B60" stroke-width="1.8"/><g font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#7CB2FF" text-anchor="middle"><text x="59" y="21">N</text><text x="81" y="21">U</text><text x="103" y="21">F</text></g><g fill="#3B82F6"><circle cx="59" cy="38" r="5"/><circle cx="81" cy="38" r="5"/><circle cx="103" cy="38" r="5"/><circle cx="59" cy="56" r="5" opacity=".4"/><circle cx="81" cy="56" r="5"/><circle cx="103" cy="56" r="5" opacity=".4"/></g><path d="M14 36h24M14 54h24" stroke="#3C4B60" stroke-width="2.6" stroke-linecap="round"/></symbol>
+<symbol id="t-i5" viewBox="0 0 120 80"><g stroke="#3B82F6" stroke-width="2.2" fill="rgba(59,130,246,.12)"><rect x="6" y="12" width="48" height="26" rx="3"/><rect x="66" y="12" width="48" height="26" rx="3"/><rect x="6" y="46" width="48" height="26" rx="3"/><rect x="66" y="46" width="48" height="26" rx="3"/></g><g stroke="#7CB2FF" stroke-width="2.4" stroke-linecap="round"><path d="M14 30l8-8 6 6 8-10"/><path d="M74 30h28"/><path d="M14 64h28"/><path d="M74 64l10-10 10 10"/></g></symbol>
+<symbol id="t-p1" viewBox="0 0 120 80"><path d="M20 30h80l-8 42H28z" fill="rgba(245,158,11,.14)" stroke="#FBBF24" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 30l12-14h56l12 14" fill="none" stroke="#FBBF24" stroke-width="2.4" stroke-linejoin="round"/><path d="M60 16v14" stroke="#FBBF24" stroke-width="2"/><rect x="44" y="6" width="32" height="12" rx="2" transform="rotate(-12 60 12)" fill="rgba(124,178,255,.3)" stroke="#7CB2FF" stroke-width="2"/></symbol>
+<symbol id="t-p2" viewBox="0 0 120 80"><g stroke="#3B82F6" stroke-width="2.2" fill="rgba(59,130,246,.12)"><rect x="8" y="10" width="30" height="58" rx="5"/><rect x="45" y="10" width="30" height="58" rx="5"/><rect x="82" y="10" width="30" height="58" rx="5"/></g><g stroke="#7CB2FF" stroke-width="2.4" stroke-linecap="round"><path d="M15 22h16M15 30h10"/><path d="M52 22h16M52 30h10"/><path d="M89 22h16M89 30h10"/></g><g fill="#7CB2FF" opacity=".6"><rect x="15" y="44" width="16" height="7" rx="2"/><rect x="52" y="44" width="16" height="7" rx="2"/><rect x="89" y="44" width="16" height="7" rx="2"/></g></symbol>
+<symbol id="t-p3" viewBox="0 0 120 80"><rect x="6" y="46" width="108" height="8" rx="2" fill="rgba(124,178,255,.25)" stroke="#7CB2FF" stroke-width="2"/><g fill="none" stroke="#3B82F6" stroke-width="2.6" stroke-linecap="round"><circle cx="34" cy="20" r="8"/><path d="M34 28v12M22 34h24M34 40l-7 14M34 40l7 14"/></g><g fill="none" stroke="#FBBF24" stroke-width="2.6" stroke-linecap="round"><circle cx="86" cy="20" r="8"/><path d="M86 28v12M74 34h24M86 40l-7 14M86 40l7 14"/></g></symbol>
+<symbol id="t-p4" viewBox="0 0 120 80"><rect x="8" y="10" width="62" height="60" rx="5" fill="rgba(59,130,246,.12)" stroke="#3B82F6" stroke-width="2.4"/><path d="M18 26h42M18 38h30M18 50h36" stroke="#7CB2FF" stroke-width="2.8" stroke-linecap="round"/><path d="M78 6v68" stroke="#3C4B60" stroke-width="2.4" stroke-dasharray="5 4"/><g fill="none" stroke="#FBBF24" stroke-width="2.4" stroke-linecap="round"><circle cx="100" cy="26" r="8"/><path d="M100 34v16M90 40h20M100 50l-6 16M100 50l6 16"/></g></symbol>
+<symbol id="t-t1" viewBox="0 0 120 80"><rect x="8" y="10" width="64" height="48" rx="5" fill="rgba(59,130,246,.12)" stroke="#3B82F6" stroke-width="2.4"/><path d="M18 24h40M18 34h26" stroke="#7CB2FF" stroke-width="2.8" stroke-linecap="round"/><path d="M40 58v10H24M40 68h16" stroke="#3C4B60" stroke-width="2.4" stroke-linecap="round"/><path d="M82 34s7-12 18-12 18 12 18 12-7 12-18 12-18-12-18-12z" fill="none" stroke="#FBBF24" stroke-width="2.4"/><circle cx="100" cy="34" r="5" fill="#FBBF24"/></symbol>
+<symbol id="t-t2" viewBox="0 0 120 80"><rect x="6" y="8" width="108" height="64" rx="5" fill="none" stroke="#3C4B60" stroke-width="2"/><path d="M60 8v64M6 40h108" stroke="#3C4B60" stroke-width="2"/><g font-family="Inter,sans-serif" font-size="20" font-weight="800" text-anchor="middle"><text x="33" y="32" fill="#4ADE80">+</text><text x="87" y="32" fill="#FBBF24">&#916;</text><text x="33" y="62" fill="#7CB2FF">?</text><text x="87" y="62" fill="#3B82F6">!</text></g></symbol>
+<symbol id="t-t3" viewBox="0 0 120 80"><path d="M20 60V34M40 60V22M60 60V44M80 60V14" stroke="#3C4B60" stroke-width="5" stroke-linecap="round"/><path d="M100 60V26" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/><path d="M8 68h104" stroke="#3C4B60" stroke-width="2"/><circle cx="100" cy="14" r="8" fill="rgba(245,158,11,.25)" stroke="#FBBF24" stroke-width="2"/><text x="100" y="19" font-size="11" font-weight="800" fill="#FBBF24" text-anchor="middle" font-family="Inter,sans-serif">$</text></symbol>
+<symbol id="t-t4" viewBox="0 0 120 80"><rect x="6" y="16" width="62" height="38" rx="7" fill="rgba(59,130,246,.14)" stroke="#3B82F6" stroke-width="2.4"/><path d="M18 54v10l10-10" fill="none" stroke="#3B82F6" stroke-width="2.4" stroke-linejoin="round"/><path d="M16 28h40M16 38h26" stroke="#7CB2FF" stroke-width="2.8" stroke-linecap="round"/><circle cx="94" cy="36" r="18" fill="none" stroke="#FBBF24" stroke-width="2.6"/><path d="M94 24v12l8 5" fill="none" stroke="#FBBF24" stroke-width="2.6" stroke-linecap="round"/></symbol>
+<symbol id="t-x1" viewBox="0 0 120 80"><rect x="6" y="8" width="108" height="64" rx="5" fill="none" stroke="#3C4B60" stroke-width="2"/><path d="M6 26h108M42 8v64M66 8v64M90 8v64" stroke="#3C4B60" stroke-width="1.8"/><g font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle"><text x="54" y="42" fill="#3B82F6">R</text><text x="78" y="42" fill="#7CB2FF">A</text><text x="102" y="42" fill="#3C4B60">C</text><text x="54" y="62" fill="#3C4B60">C</text><text x="78" y="62" fill="#3B82F6">R</text><text x="102" y="62" fill="#7CB2FF">I</text></g><path d="M14 38h20M14 58h20" stroke="#3C4B60" stroke-width="2.6" stroke-linecap="round"/></symbol>
+<symbol id="t-x2" viewBox="0 0 120 80"><g stroke="#3C4B60" stroke-width="2" fill="none"><rect x="4" y="8" width="25" height="64" rx="4"/><rect x="33" y="8" width="25" height="64" rx="4"/><rect x="62" y="8" width="25" height="64" rx="4"/><rect x="91" y="8" width="25" height="64" rx="4"/></g><g fill="rgba(59,130,246,.3)" stroke="#3B82F6" stroke-width="1.6"><rect x="9" y="16" width="15" height="10" rx="2"/><rect x="9" y="30" width="15" height="10" rx="2"/><rect x="9" y="44" width="15" height="10" rx="2"/><rect x="38" y="16" width="15" height="10" rx="2"/><rect x="38" y="30" width="15" height="10" rx="2"/><rect x="67" y="16" width="15" height="10" rx="2"/><rect x="96" y="16" width="15" height="10" rx="2"/></g></symbol>
+<symbol id="t-x3" viewBox="0 0 120 80"><rect x="12" y="16" width="40" height="52" rx="4" transform="rotate(-8 32 42)" fill="rgba(239,68,68,.25)" stroke="#F87171" stroke-width="2.4"/><rect x="66" y="12" width="40" height="52" rx="4" transform="rotate(7 86 38)" fill="rgba(34,197,94,.22)" stroke="#4ADE80" stroke-width="2.4"/></symbol>
+<symbol id="t-x4" viewBox="0 0 120 80"><rect x="6" y="8" width="108" height="64" rx="5" fill="none" stroke="#3C4B60" stroke-width="2"/><path d="M60 8v64M6 40h108" stroke="#3C4B60" stroke-width="2"/><circle cx="88" cy="24" r="8" fill="#3B82F6"/><circle cx="32" cy="24" r="6" fill="rgba(124,178,255,.5)"/><circle cx="88" cy="56" r="5" fill="rgba(124,178,255,.35)"/><circle cx="32" cy="56" r="5" fill="rgba(60,75,96,.9)"/></symbol>
+<symbol id="t-x5" viewBox="0 0 120 80"><g stroke-width="2" fill="none"><path d="M12 44a10 10 0 0 1 20 0z" fill="rgba(255,255,255,.18)" stroke="#F9FAFB"/><path d="M38 44a10 10 0 0 1 20 0z" fill="rgba(239,68,68,.3)" stroke="#F87171"/><path d="M64 44a10 10 0 0 1 20 0z" fill="rgba(60,75,96,.6)" stroke="#3C4B60"/><path d="M90 44a10 10 0 0 1 20 0z" fill="rgba(245,158,11,.3)" stroke="#FBBF24"/><path d="M25 68a10 10 0 0 1 20 0z" fill="rgba(34,197,94,.3)" stroke="#4ADE80"/><path d="M77 68a10 10 0 0 1 20 0z" fill="rgba(59,130,246,.35)" stroke="#3B82F6"/></g></symbol>
+</defs></svg>
+
+<!-- ============ DESIGN THINKING ============ -->
+<section class="screen" id="s-dt" hidden>
+  <div class="hero">
+    <span class="eyebrow">Método 4</span>
+    <h1>Design <span class="hl">Thinking</span></h1>
+    <p class="sub">Para cuando lo que hay que resolver todavía no tiene forma.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Lean y Kaizen arreglan un proceso que ya existe y que se puede medir. Design Thinking sirve para lo contrario: <span class="k">cuando ni siquiera está claro cuál es el problema</span>, y menos cuál es la solución.</p>
+    <p>Parte de una regla incómoda: <span class="k">no empieza por la idea, empieza por la persona</span>. Y asume que la primera versión va a estar mal, por eso se prototipa barato y se prueba rápido.</p>
+  </div>
+
+  <div class="block">
+    <h2>El doble diamante</h2>
+    <div class="bigfig">
+      <svg viewBox="0 0 320 130" role="img" aria-label="Doble diamante del Design Thinking" font-family="Inter,sans-serif">
+        <path d="M14 70 L78 26 L142 70 L78 114 Z" fill="rgba(59,130,246,.12)" stroke="#3B82F6" stroke-width="2"/>
+        <path d="M150 70 L214 26 L306 70 L214 114 Z" fill="rgba(245,158,11,.12)" stroke="#F59E0B" stroke-width="2"/>
+        <text x="46" y="18" font-size="9" font-weight="800" fill="#7CB2FF" text-anchor="middle">ABRIR</text>
+        <text x="112" y="18" font-size="9" font-weight="800" fill="#7CB2FF" text-anchor="middle">CERRAR</text>
+        <text x="186" y="18" font-size="9" font-weight="800" fill="#FCD34D" text-anchor="middle">ABRIR</text>
+        <text x="266" y="18" font-size="9" font-weight="800" fill="#FCD34D" text-anchor="middle">CERRAR</text>
+        <text x="46" y="128" font-size="9.5" font-weight="700" fill="#B6C2D2" text-anchor="middle">Empatizar</text>
+        <text x="112" y="128" font-size="9.5" font-weight="700" fill="#B6C2D2" text-anchor="middle">Definir</text>
+        <text x="176" y="128" font-size="9.5" font-weight="700" fill="#B6C2D2" text-anchor="middle">Idear</text>
+        <text x="236" y="128" font-size="9.5" font-weight="700" fill="#B6C2D2" text-anchor="middle">Prototipar</text>
+        <text x="294" y="128" font-size="9.5" font-weight="700" fill="#B6C2D2" text-anchor="middle">Testear</text>
+        <circle cx="142" cy="70" r="5" fill="#3B82F6"/>
+        <text x="142" y="56" font-size="8.5" fill="#8795A8" text-anchor="middle">el reto</text>
+      </svg>
+    </div>
+    <p class="cap">Dos veces se abre y dos veces se cierra. El primer diamante busca el problema correcto; el segundo, la solución correcta. El punto del medio es el reto bien formulado, y es donde más proyectos se tuercen.</p>
+  </div>
+
+  <div class="block">
+    <h2>Las etapas</h2>
+    <div class="dtphases">
+      <button class="dtp" data-go="dtf1">
+        <span class="dtp-n">1</span>
+        <span class="dtp-tx"><span class="dtp-t">Empatizar</span><span class="dtp-d">Entender al usuario de verdad, no lo que uno cree · 5 herramientas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="dtp" data-go="dtf2">
+        <span class="dtp-n">2</span>
+        <span class="dtp-tx"><span class="dtp-t">Definir</span><span class="dtp-d">Convertir todo lo recogido en un problema bien planteado · 5 herramientas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="dtp" data-go="dtf3">
+        <span class="dtp-n">3</span>
+        <span class="dtp-tx"><span class="dtp-t">Idear</span><span class="dtp-d">Generar muchas opciones y después elegir una · 5 herramientas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="dtp" data-go="dtf4">
+        <span class="dtp-n">4</span>
+        <span class="dtp-tx"><span class="dtp-t">Prototipar</span><span class="dtp-d">Hacerlo tangible lo más barato y rápido posible · 4 herramientas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="dtp" data-go="dtf5">
+        <span class="dtp-n">5</span>
+        <span class="dtp-tx"><span class="dtp-t">Testear</span><span class="dtp-d">Poner el prototipo delante del usuario y aprender · 4 herramientas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="dtp" data-go="dtf6">
+        <span class="dtp-n x">T</span>
+        <span class="dtp-tx"><span class="dtp-t">Transversales</span><span class="dtp-d">Sirven en cualquier etapa, de principio a fin · 5 herramientas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>El caso que usa toda esta sección</b>
+    La misma panadería de Lean, con otro problema: <span class="k">entre 6:30 y 8 de la mañana la fila sale a la calle, y hay gente que se asoma, ve la fila y se va</span>. Cada herramienta muestra su pedazo de ese caso, así que se puede leer de corrido.
+  </div>
+</section>
+
+<!-- ============ EMPATIZAR ============ -->
+<section class="screen" id="s-dtf1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Design Thinking · Etapa 1</span>
+    <h1><span class="hl">Empatizar</span></h1>
+    <p class="sub">Entender al usuario de verdad, no lo que uno cree.</p>
+  </div>
+
+  <p class="sub">Aquí se abre: se recoge todo lo que se pueda sobre la persona, sin filtrar y sin proponer soluciones todavía.</p>
+
+  <div class="block">
+    <h2>Herramientas</h2>
+    <div class="rows">
+      <button class="trow" data-go="dte1">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e1"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Mapa de actores</span><span class="trow-d">¿Quién está metido en esto y quién decide?</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dte2">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e2"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Usuarios extremos</span><span class="trow-d">¿A quién vale la pena observar?</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dte3">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e3"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Entrevista cualitativa</span><span class="trow-d">Preguntar sin meterle la respuesta en la boca</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dte4">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e4"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">¿Qué, cómo, por qué?</span><span class="trow-d">Pasar de lo que ves a lo que significa</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dte5">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e5"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Customer Journey</span><span class="trow-d">Cómo vive el recorrido completo</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEFINIR ============ -->
+<section class="screen" id="s-dtf2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Design Thinking · Etapa 2</span>
+    <h1><span class="hl">Definir</span></h1>
+    <p class="sub">Convertir todo lo recogido en un problema bien planteado.</p>
+  </div>
+
+  <p class="sub">Aquí se cierra: todo lo recogido se ordena hasta que quede un solo reto bien formulado.</p>
+
+  <div class="block">
+    <h2>Herramientas</h2>
+    <div class="rows">
+      <button class="trow" data-go="dtd1">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d1"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Clustering</span><span class="trow-d">Agrupar lo que se repite</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtd2">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d2"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Mapa de empatía</span><span class="trow-d">Qué dice, hace, piensa y siente</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtd3">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d3"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Personas</span><span class="trow-d">Darle cara y nombre al usuario</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtd4">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d4"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Insights</span><span class="trow-d">La frase que resume el descubrimiento</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtd5">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d5"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">¿Cómo podríamos…?</span><span class="trow-d">Convertir el hallazgo en reto de diseño</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IDEAR ============ -->
+<section class="screen" id="s-dtf3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Design Thinking · Etapa 3</span>
+    <h1><span class="hl">Idear</span></h1>
+    <p class="sub">Generar muchas opciones y después elegir una.</p>
+  </div>
+
+  <p class="sub">Se vuelve a abrir. Primero cantidad, y solo al final se escoge.</p>
+
+  <div class="block">
+    <h2>Herramientas</h2>
+    <div class="rows">
+      <button class="trow" data-go="dti1">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i1"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Lluvia de ideas</span><span class="trow-d">Divergir con reglas, no a lo loco</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dti2">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i2"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">SCAMPER</span><span class="trow-d">Siete preguntas para cuando ya no se les ocurre nada</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dti3">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i3"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Misión imposible</span><span class="trow-d">Romper el supuesto que nadie se atreve a tocar</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dti4">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i4"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Selección N.U.F.</span><span class="trow-d">Puntuar por nuevo, útil y factible</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dti5">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i5"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Storyboard</span><span class="trow-d">Contar la idea elegida como una secuencia</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROTOTIPAR ============ -->
+<section class="screen" id="s-dtf4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Design Thinking · Etapa 4</span>
+    <h1><span class="hl">Prototipar</span></h1>
+    <p class="sub">Hacerlo tangible lo más barato y rápido posible.</p>
+  </div>
+
+  <p class="sub">Se vuelve a cerrar. La regla es gastar lo mínimo: el prototipo sirve para aprender, no para lucirse.</p>
+
+  <div class="block">
+    <h2>Herramientas</h2>
+    <div class="rows">
+      <button class="trow" data-go="dtp1">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p1"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Prototipo en bruto</span><span class="trow-d">Con lo que haya encima de la mesa</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtp2">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p2"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Prototipado en papel</span><span class="trow-d">Para pantallas y apps</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtp3">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p3"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Juego de roles</span><span class="trow-d">Para servicios y atención, donde no hay objeto</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtp4">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p4"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Mago de Oz</span><span class="trow-d">Simular la máquina con una persona detrás</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTEAR ============ -->
+<section class="screen" id="s-dtf5" hidden>
+  <div class="hero">
+    <span class="eyebrow">Design Thinking · Etapa 5</span>
+    <h1><span class="hl">Testear</span></h1>
+    <p class="sub">Poner el prototipo delante del usuario y aprender.</p>
+  </div>
+
+  <p class="sub">El prototipo delante de la persona, callado y mirando. Lo que se aprende casi siempre manda de vuelta a una etapa anterior.</p>
+
+  <div class="block">
+    <h2>Herramientas</h2>
+    <div class="rows">
+      <button class="trow" data-go="dtt1">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t1"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Pruebas de usabilidad</span><span class="trow-d">¿Lo sabe usar sin que le expliquen?</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtt2">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t2"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Matriz de feedback</span><span class="trow-d">Capturar lo aprendido en cuatro casillas</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtt3">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t3"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Evaluación del valor</span><span class="trow-d">¿Lo usaría? ¿Lo pagaría?</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtt4">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t4"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Elevator pitch</span><span class="trow-d">Contarlo en treinta segundos</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANSVERSALES ============ -->
+<section class="screen" id="s-dtf6" hidden>
+  <div class="hero">
+    <span class="eyebrow">Design Thinking · Transversales</span>
+    <h1><span class="hl">Transversales</span></h1>
+    <p class="sub">Sirven en cualquier etapa, de principio a fin.</p>
+  </div>
+
+  <p class="sub">No pertenecen a una etapa: se usan en todas, y algunas desde antes de arrancar.</p>
+
+  <div class="block">
+    <h2>Herramientas</h2>
+    <div class="rows">
+      <button class="trow" data-go="dtx1">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x1"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Matriz RACI</span><span class="trow-d">Quién hace, quién aprueba, quién opina</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtx2">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x2"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Tablero Kanban</span><span class="trow-d">En qué va cada cosa</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtx3">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x3"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Tarjetas rojas y verdes</span><span class="trow-d">Feedback en caliente, durante la sesión</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtx4">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x4"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Matriz de impacto y esfuerzo</span><span class="trow-d">Priorizar cuando sobran ideas y falta tiempo</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="trow" data-go="dtx5">
+        <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x5"/></svg></span>
+        <span class="trow-tx"><span class="trow-t">Seis sombreros</span><span class="trow-d">Que la reunión no sea una pelea de opiniones</span></span>
+        <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ==== Mapa de actores ==== -->
+<section class="screen" id="s-dte1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 1 · Empatizar</span>
+    <h1>Mapa de <span class="hl">actores</span></h1>
+    <p class="sub">Quién está metido en el problema y quién puede hundirlo.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un dibujo de círculos: en el centro la persona a la que le estás diseñando, y alrededor todos los que influyen en su experiencia. Entre más cerca del centro, más influencia tiene. Sirve para dos cosas: darte cuenta de a quién te falta escuchar, y descubrir que alguien a quien ni habías pensado puede frenar el proyecto entero.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-e1"/></svg></div>
+    <p class="cap">El centro es el usuario. Los círculos de adentro son los que tocan su experiencia todos los días; los de afuera, los que la condicionan sin aparecer.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Pon al usuario en el centro</div>
+        <div class="pd">Una sola persona, concreta. Si pones «los clientes» en el centro, el mapa no sirve porque no hay nadie a quién ir a buscar.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Escribe a todo el que lo toca</div>
+        <div class="pd">Sin filtrar y sin ordenar todavía. Personas, áreas, proveedores, autoridades. Lo que pasa en esta parte es que siempre aparecen dos o tres que nadie había mencionado.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Acércalos o aléjalos según la influencia</div>
+        <div class="pd">La distancia al centro es cuánto afecta la experiencia del usuario. No es jerarquía de la empresa: el vigilante puede estar más cerca que el gerente.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Marca a quién vas a escuchar</div>
+        <div class="pd">De ahí sale la lista de entrevistas. Si un actor cercano no está en esa lista, o lo agregas o anotas por qué no.</div>
+        <div class="ex"><span class="f">La pregunta que destraba</span>«Si esta persona se opusiera, ¿el proyecto seguiría?» Si la respuesta es no, va cerca del centro aunque no se le haya ocurrido a nadie.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">El centro</span>El cliente de la mañana: el que entra entre 6:30 y 8 con afán.</div>
+      <div class="ex"><span class="f">Círculo cercano</span>La cajera, el panadero del turno y el que surte la vitrina. Son los que le dan forma a la espera.</div>
+      <div class="ex"><span class="f">Círculo medio</span>El dueño, que decide si se compra algo; y el domiciliario, que entra y sale cruzando la fila.</div>
+      <div class="ex"><span class="f">Círculo lejano</span>El arrendador del local y la administración del edificio, que deciden si se puede poner algo en el andén. Nadie los había mencionado, y resultaron ser los que podían bloquear media solución.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">El mapa de quién influye y la lista de a quién hay que escuchar.</div></div>
+  </div>
+</section>
+
+<!-- ==== Usuarios extremos ==== -->
+<section class="screen" id="s-dte2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 2 · Empatizar</span>
+    <h1>Usuarios <span class="hl">extremos</span></h1>
+    <p class="sub">El promedio no enseña nada. Los extremos sí.</p>
+  </div>
+
+  <div class="card lead">
+    <p>En vez de ir a buscar al usuario típico, vas a buscar a los dos extremos de la curva: el que más usa y el que menos, el que tiene más afán y el que tiene todo el tiempo del mundo. Los extremos exageran el problema y por eso lo vuelven visible. Lo que arregla el caso extremo casi siempre le sirve también al promedio.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-e2"/></svg></div>
+    <p class="cap">La campana es la población. El promedio está en el centro y no te dice nada que no sepas; lo que buscas está en las dos puntas.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Elige el eje que importa</div>
+        <div class="pd">Un solo eje, y que tenga que ver con el problema. Puede ser el afán, la frecuencia, la experiencia o la limitación física.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Nombra los dos extremos</div>
+        <div class="pd">Concretos, no categorías. «El que entra a trabajar a las 7» y «la señora que viene a conversar», no «clientes apurados» y «clientes tranquilos».</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Busca dos o tres de cada punta</div>
+        <div class="pd">No hace falta una muestra grande. Con dos de cada lado ya aparecen las tensiones.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Contrasta contra el promedio</div>
+        <div class="pd">Al final sí se mira al usuario típico, pero para confirmar, no para descubrir.</div>
+        <div class="ex"><span class="f">Por qué funciona</span>El extremo vive el problema amplificado, así que no tiene que acordarse: lo tiene en la punta de la lengua.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Eje elegido</span>Cuánto tiempo puede esperar.</div>
+      <div class="ex"><span class="f">Extremo 1</span>Andrés, entra a trabajar a las 7. Tiene menos de cinco minutos y compra siempre lo mismo.</div>
+      <div class="ex"><span class="f">Extremo 2</span>Doña Marta, viene a las 9, compra para toda la semana y se queda conversando.</div>
+      <div class="ex"><span class="f">Lo que apareció</span>Andrés no quiere que la fila sea más rápida: quiere <b>saber cuánto va a tardar</b> antes de entrar. Doña Marta no quiere que lo apuren. Son dos problemas distintos, y el promedio los tapaba.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Dos o tres personas concretas por cada extremo, con nombre y motivo.</div></div>
+  </div>
+</section>
+
+<!-- ==== Entrevista cualitativa ==== -->
+<section class="screen" id="s-dte3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 3 · Empatizar</span>
+    <h1>Entrevista <span class="hl">cualitativa</span></h1>
+    <p class="sub">Preguntar sin meterle la respuesta en la boca.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Una conversación guiada de 30 a 45 minutos con una sola persona. No es una encuesta: no busca porcentajes, busca entender el porqué. Se prepara un guion, pero el guion es un mapa, no un libreto: si la persona se va por un lado interesante, se la sigue.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-e3"/></svg></div>
+    <p class="cap">A la izquierda la conversación; a la derecha el guion, que son bloques de preguntas, no un cuestionario cerrado.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Escribe el guion por bloques</div>
+        <div class="pd">Cuatro o cinco bloques de dos o tres preguntas. Empieza por lo fácil (qué hace normalmente) y deja lo incómodo para el final, cuando ya hay confianza.</div>
+        <div class="ex"><span class="f">Las que nunca fallan</span>«Cuénteme de la última vez que…» · «¿Y qué hizo entonces?» · «¿Por qué?» · «¿Qué es lo más molesto de eso?»</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Pregunta por la última vez, no por lo que suele pasar</div>
+        <div class="pd">El recuerdo concreto no se inventa; la generalización sí. «¿Qué hizo ayer?» trae datos; «¿qué suele hacer?» trae la versión limpia.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Hazte el que no entiende</div>
+        <div class="pd">Aunque entiendas. La explicación de más es donde aparece el detalle que nadie habría contado.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Cállate</div>
+        <div class="pd">Después de preguntar, silencio. Lo bueno casi siempre viene después de la primera pausa incómoda.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Anota la frase literal</div>
+        <div class="pd">Con sus palabras, entre comillas. Tu resumen sirve para ti; la frase textual sirve para convencer al equipo.</div>
+        <div class="ex"><span class="f">Lo que no se hace</span>No se proponen soluciones ni se pregunta «¿le gustaría que…?». La gente dice que sí a todo lo que se le propone.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Pregunta del guion</span>«Cuénteme qué hizo esta mañana desde que salió de casa hasta que llegó al trabajo.»</div>
+      <div class="ex"><span class="f">Lo que contestó Andrés</span>«Pasé por la panadería, me asomé, vi que había como ocho personas y seguí derecho. Compré en la tienda de la esquina, que es peor pan, pero no me podía arriesgar.»</div>
+      <div class="ex"><span class="f">Lo que apareció sin preguntarlo</span>No se fue por la fila en sí. Se fue porque <b>no podía calcular</b> cuánto iba a tardar, y el riesgo de llegar tarde pesaba más que el pan.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">El guion y las frases literales de cada persona entrevistada.</div></div>
+  </div>
+</section>
+
+<!-- ==== ¿Qué, cómo, por qué? ==== -->
+<section class="screen" id="s-dte4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 4 · Empatizar</span>
+    <h1>¿Qué, cómo, por <span class="hl">qué?</span></h1>
+    <p class="sub">Pasar de lo que ves a lo que significa, sin saltarte el paso del medio.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Una rejilla de tres columnas para registrar una observación. En la primera va solo lo que viste, sin interpretar. En la segunda, cómo lo hizo. En la tercera, tu inferencia de por qué. La gracia está en que obliga a separar el hecho de la interpretación, que es justo donde los equipos se equivocan: ven algo, lo interpretan al instante y después defienden la interpretación como si fuera el hecho.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-e4"/></svg></div>
+    <p class="cap">Las dos primeras columnas son hechos y cualquiera que haya estado ahí los confirmaría. La tercera es tuya, y es una hipótesis.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Observa sin hablar</div>
+        <div class="pd">Diez o quince minutos mirando, sin preguntar nada. Preguntar en ese momento cambia lo que la persona hace.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Llena la columna «qué»</div>
+        <div class="pd">Solo lo que una cámara habría grabado. «Se asomó, miró hacia el mostrador y se fue» es un qué. «Se desesperó» no lo es.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Llena la columna «cómo»</div>
+        <div class="pd">Cómo lo hizo: rápido o lento, con qué cara, con qué en las manos, en qué orden. Esta columna es la que da las pistas.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Llena la columna «por qué»</div>
+        <div class="pd">Ahora sí, tu interpretación. Escríbela como hipótesis, porque eso es. Y marca cuáles vas a verificar en una entrevista.</div>
+        <div class="ex"><span class="f">La prueba de que está bien llenada</span>Si tapas la tercera columna, las otras dos siguen siendo verdad para cualquiera. Si no, se te coló una interpretación.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Qué</span>Entró, se quedó en la puerta tres segundos, miró hacia el mostrador y salió sin hablar con nadie.</div>
+      <div class="ex"><span class="f">Cómo</span>Sin quitarse los audífonos. Miró el reloj del celular antes de salir. Caminó rápido al salir, más rápido que al entrar.</div>
+      <div class="ex"><span class="f">Por qué (hipótesis)</span>No estaba evaluando el pan ni el precio: estaba calculando el tiempo. El reloj dice que la decisión fue contra el reloj, no contra la panadería.</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>El error que evita</b>
+    El equipo llega diciendo «la gente se va porque hay mucha fila». Eso ya es una conclusión. La rejilla obliga a escribir primero <span class="k">se asomó y se fue</span>, y recién después a discutir por qué.
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Una rejilla por observación, con la columna de hipótesis marcada para verificar.</div></div>
+  </div>
+</section>
+
+<!-- ==== Customer Journey ==== -->
+<section class="screen" id="s-dte5" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 5 · Empatizar</span>
+    <h1>Customer <span class="hl">Journey</span></h1>
+    <p class="sub">Cómo vive el recorrido completo, no solo el momento de comprar.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un mapa del recorrido del usuario a lo largo del tiempo, con lo que hace, con qué se topa y cómo se siente en cada etapa. Casi siempre revela que el problema no está donde todos creían: está dos pasos antes o dos pasos después, en un momento que nadie estaba mirando porque no parecía parte del servicio.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-e5"/></svg></div>
+    <p class="cap">Arriba las etapas en orden. Abajo la curva de emoción: donde cae es donde está el problema.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Define dónde empieza y dónde termina</div>
+        <div class="pd">Y estíralo más de lo que te parece natural. Si lo empiezas cuando entra a la tienda, te vas a perder justo lo que pasa antes.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Lista las etapas en orden</div>
+        <div class="pd">Entre cinco y ocho. Cada etapa es un momento, no una tarea.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Llena por filas, no por etapas</div>
+        <div class="pd">Primero las acciones de todas las etapas, después los puntos de contacto de todas, después las emociones. Llenarlo etapa por etapa hace que las primeras queden detalladas y las últimas vacías.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Dibuja la curva de emoción</div>
+        <div class="pd">Un solo trazo que sube y baja. El punto más bajo es por donde se empieza a trabajar.</div>
+        <div class="ex"><span class="f">La regla</span>La curva se llena con lo que la persona dijo en la entrevista, no con lo que al equipo le parece que debe sentir.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Las etapas</span>Sale de casa → se acerca → se asoma → decide → hace la fila → pide → paga → sale.</div>
+      <div class="ex"><span class="f">Dónde cae la curva</span>En <b>«se asoma»</b>. No en hacer la fila ni en pagar: en el instante en que mira desde la puerta y tiene que decidir a ciegas.</div>
+      <div class="ex"><span class="f">Lo que cambió el proyecto</span>El equipo venía pensando en poner otra caja, que ataca la etapa «pagar». El journey mostró que a esa etapa ni siquiera llegan: se van tres etapas antes.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">El mapa de etapas con la curva de emoción y el punto más bajo marcado.</div></div>
+  </div>
+</section>
+
+<!-- ==== Clustering ==== -->
+<section class="screen" id="s-dtd1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 1 · Definir</span>
+    <h1><span class="hl">Clustering</span></h1>
+    <p class="sub">Vaciar todo lo recogido y dejar que se agrupe solo.</p>
+  </div>
+
+  <div class="card lead">
+    <p>También se le dice «satura y agrupa». Se escribe cada observación, frase o dato en una nota, se pegan todas en una pared y después se van juntando las que hablan de lo mismo. El nombre de cada grupo sale al final, no al principio. Es el primer paso de la etapa de definir y no se puede saltar: sin esto, los hallazgos salen de la memoria del que más habla.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-d1"/></svg></div>
+    <p class="cap">Primero las notas sueltas, sin orden. Después los bloques, que aparecen solos cuando las notas se empiezan a tocar.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Una idea por nota</div>
+        <div class="pd">Si una nota tiene dos cosas, se parte en dos. Notas con párrafos no se pueden agrupar.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Vacía todo antes de agrupar</div>
+        <div class="pd">Toda la pared llena primero. Si se empieza a agrupar cuando todavía falta material, los primeros grupos secuestran el resto.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Agrupa en silencio</div>
+        <div class="pd">Cada uno mueve notas sin discutir, diez minutos. Discutir mientras se agrupa convierte el ejercicio en una pelea de interpretaciones.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Nombra los grupos al final</div>
+        <div class="pd">Y que el nombre sea una frase, no una palabra. «Tiempo incierto» dice más que «tiempo».</div>
+        <div class="ex"><span class="f">Qué hacer con las huérfanas</span>Las notas que no entran en ningún grupo se dejan aparte, no se fuerzan. A veces una de esas es el hallazgo.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">El material</span>62 notas: frases de 9 entrevistas, 14 observaciones y los reclamos del último mes.</div>
+      <div class="ex"><span class="f">Los cuatro grupos que salieron</span>1) No se sabe cuánto se va a esperar · 2) El producto favorito se acaba temprano · 3) Pagar es el paso más lento · 4) No hay dónde esperar sin estorbar.</div>
+      <div class="ex"><span class="f">La nota huérfana</span>«Yo mando a mi hijo y él me hace la fila.» No entró en ningún grupo, y terminó siendo la semilla de una de las ideas.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Los temas agrupados, cada uno con las notas que lo sostienen.</div></div>
+  </div>
+</section>
+
+<!-- ==== Mapa de empatía ==== -->
+<section class="screen" id="s-dtd2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 2 · Definir</span>
+    <h1>Mapa de <span class="hl">empatía</span></h1>
+    <p class="sub">Ordenar a una persona en cuatro cuadrantes: dice, hace, piensa y siente.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un lienzo con la persona en el centro y cuatro cuadrantes alrededor. Lo potente no son los cuadrantes: es el contraste entre ellos. Cuando lo que alguien <em>dice</em> no coincide con lo que <em>hace</em>, ahí hay algo que vale la pena. Esa contradicción es casi siempre el punto de partida de una buena idea.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-d2"/></svg></div>
+    <p class="cap">Los dos cuadrantes de arriba son observables: se ven y se oyen. Los dos de abajo son inferencia tuya.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Un mapa por persona</div>
+        <div class="pd">No uno por «segmento». Si mezclas dos personas distintas en un mapa, las contradicciones se anulan entre sí.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Llena primero dice y hace</div>
+        <div class="pd">Son los hechos: frases literales de la entrevista y acciones de la observación.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Después piensa y siente</div>
+        <div class="pd">Inferencias, marcadas como tales. De aquí salen hipótesis, no verdades.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Busca la contradicción</div>
+        <div class="pd">Léelo entero y subraya donde dice una cosa y hace otra. Esa línea es el hallazgo.</div>
+        <div class="ex"><span class="f">El patrón más común</span>Dice que le importa la calidad, y hace lo rápido. No está mintiendo: es que en ese momento otra cosa pesa más.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · Andrés, el de las 6:40</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Dice</span>«Es el mejor pan del barrio, por eso vengo.»</div>
+      <div class="ex"><span class="f">Hace</span>Se asoma, ve la fila y se va a comprar a la tienda de la esquina, donde el pan es peor.</div>
+      <div class="ex"><span class="f">Piensa</span>«Si me demoro acá, llego tarde y no vale la pena.»</div>
+      <div class="ex"><span class="f">Siente</span>Fastidio consigo mismo por conformarse con el pan malo.</div>
+      <div class="ex"><span class="f">La contradicción</span>Dice que viene por la calidad y termina eligiendo por el tiempo. <b>El producto no es lo que está en juego: es la certidumbre.</b></div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Un lienzo por persona, con la contradicción subrayada.</div></div>
+  </div>
+</section>
+
+<!-- ==== Personas ==== -->
+<section class="screen" id="s-dtd3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 3 · Definir</span>
+    <h1><span class="hl">Personas</span></h1>
+    <p class="sub">Darle cara, nombre y vida a la persona para la que estás diseñando.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Una ficha de una página que convierte todo lo aprendido en un arquetipo concreto: nombre, foto, contexto, objetivos, frustraciones y una frase suya. No es un cliente real ni un invento: es el destilado de varias personas reales que se comportan parecido. Sirve para que las discusiones dejen de ser sobre «el usuario» en abstracto y pasen a ser sobre Andrés.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-d3"/></svg></div>
+    <p class="cap">La ficha: a la izquierda quién es, a la derecha qué busca y qué lo frena, y abajo su frase.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Constrúyela con datos, no con imaginación</div>
+        <div class="pd">Cada línea de la ficha tiene que poder rastrearse a una entrevista o a una observación. Si inventaste la edad, no pasa nada; si inventaste la frustración, la ficha es basura.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Ponle nombre y foto</div>
+        <div class="pd">Suena ingenuo y funciona: es lo que hace que seis meses después alguien diga «eso Andrés no lo haría».</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Incluye el contexto, no solo el perfil</div>
+        <div class="pd">A qué hora se levanta, con qué cuenta y con qué no. El contexto explica las decisiones; la demografía no.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Máximo dos o tres personas</div>
+        <div class="pd">Con más, nadie se las acuerda y vuelven a decir «el usuario».</div>
+        <div class="ex"><span class="f">La línea que más sirve</span>La frase textual suya, entre comillas, sacada de la entrevista.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ficha de Andrés</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Quién</span>Andrés, 34 años. Sale de casa a las 6:40. Entra a trabajar a las 7:10 y el jefe mira la hora.</div>
+      <div class="ex"><span class="f">Qué busca</span>Desayunar bien sin arriesgar la llegada.</div>
+      <div class="ex"><span class="f">Qué lo frena</span>No puede calcular cuánto va a tardar en la panadería, y equivocarse le cuesta caro.</div>
+      <div class="ex"><span class="f">Su frase</span>«No es que no quiera esperar. Es que no sé cuánto voy a esperar.»</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Dos o tres fichas, cada línea rastreable a una entrevista.</div></div>
+  </div>
+</section>
+
+<!-- ==== Insights ==== -->
+<section class="screen" id="s-dtd4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 4 · Definir</span>
+    <h1><span class="hl">Insights</span></h1>
+    <p class="sub">La frase que resume el descubrimiento, no el dato.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un insight no es una estadística ni una queja: es una tensión que explica por qué la gente se comporta como se comporta. Si al leerlo el equipo dice «eso ya lo sabíamos», no es un insight. Si dice «uy, es verdad» y cambia la conversación, sí lo es. Es la pieza que convierte un montón de observaciones en un punto de partida para diseñar.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-d4"/></svg></div>
+    <p class="cap">Una sola frase, enmarcada. Entra mucho material y sale una línea.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Arranca de un grupo del clustering</div>
+        <div class="pd">Un insight por tema. Si sale de la nada, probablemente es una opinión del equipo disfrazada.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Escríbelo con esta estructura</div>
+        <div class="pd">Observación + tensión + por qué importa. La tensión es la parte que no se puede saltar.</div>
+        <div class="ex"><span class="f">La plantilla</span>«<b>[La persona]</b> hace [X], aunque dice que quiere [Y], <b>porque</b> [la tensión].»</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Pásale las tres pruebas</div>
+        <div class="pd">¿Es sorprendente? ¿Explica un comportamiento? ¿Sugiere más de una solución? Si falla la tercera, es una solución disfrazada de hallazgo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Quédate con tres o cuatro</div>
+        <div class="pd">Más de cinco insights significa que ninguno es el importante.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">El insight</span>«El cliente de la mañana <b>se va antes de entrar</b>, aunque prefiere este pan, <b>porque</b> la espera es invisible: no puede calcularla y equivocarse le cuesta llegar tarde.»</div>
+      <div class="ex"><span class="f">Por qué pasa la prueba</span>Es sorprendente (el problema no es esperar), explica el comportamiento (por eso se va sin preguntar) y sugiere varias salidas (mostrar el tiempo, reservar, entregar afuera).</div>
+      <div class="ex"><span class="f">Lo que NO era un insight</span>«A la gente no le gusta hacer fila.» Nadie se sorprende, no explica nada y no abre ninguna puerta.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Tres o cuatro frases que cambian la conversación del equipo.</div></div>
+  </div>
+</section>
+
+<!-- ==== ¿Cómo podríamos…? ==== -->
+<section class="screen" id="s-dtd5" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 5 · Definir</span>
+    <h1>¿Cómo <span class="hl">podríamos…?</span></h1>
+    <p class="sub">Convertir el hallazgo en una pregunta que se pueda contestar con ideas.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Se toma el insight y se le da la vuelta en forma de pregunta que empieza por «¿Cómo podríamos…?». Es el punto exacto donde termina el primer diamante y arranca el segundo: cierra el entendimiento y abre la ideación. Es la pieza más corta de todo el método y la que más proyectos tuerce, porque si la pregunta está mal planteada todas las ideas que salgan después van a estar mal dirigidas.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-d5"/></svg></div>
+    <p class="cap">La pregunta en el centro, y debajo las ramas de ideas que va a abrir.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Toma un insight y dale la vuelta</div>
+        <div class="pd">La tensión del insight se vuelve el objetivo de la pregunta.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Revisa que no esté ni muy amplia ni muy estrecha</div>
+        <div class="pd">Muy amplia no orienta; muy estrecha ya trae la solución adentro y mata la ideación.</div>
+        <div class="ex"><span class="f">Las tres fallas</span><b>Muy amplia:</b> «¿Cómo podríamos mejorar la panadería?» · <b>Muy estrecha:</b> «¿Cómo podríamos poner una pantalla de turnos?» (ya decidiste) · <b>Al derecho:</b> ver abajo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Escribe varias y escoge</div>
+        <div class="pd">De un mismo insight salen tres o cuatro preguntas distintas. Escribirlas todas y escoger es mejor que quedarse con la primera.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Pruébala en voz alta</div>
+        <div class="pd">Si al leerla a alguien de fuera se le ocurren ideas de inmediato, está bien formulada. Si pregunta «¿a qué te refieres?», todavía no.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La que quedó</span>«¿Cómo podríamos hacer que el cliente de afán <b>sepa, antes de entrar</b>, cuánto va a esperar?»</div>
+      <div class="ex"><span class="f">Otras dos que se escribieron</span>«¿Cómo podríamos hacer que la espera valga la pena?» y «¿Cómo podríamos sacarle el pan sin que entre?» Las tres son válidas y llevan a lugares distintos.</div>
+      <div class="ex"><span class="f">La que se descartó</span>«¿Cómo podríamos reducir el tiempo de la fila?» Ataca el síntoma que el insight ya había descartado: el problema no era la duración, era no poder calcularla.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Una pregunta de diseño lista para entrar a la lluvia de ideas.</div></div>
+  </div>
+</section>
+
+<!-- ==== Lluvia de ideas ==== -->
+<section class="screen" id="s-dti1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 1 · Idear</span>
+    <h1>Lluvia de <span class="hl">ideas</span></h1>
+    <p class="sub">Mucha cantidad primero. La calidad se filtra después.</p>
+  </div>
+
+  <div class="card lead">
+    <p>La sesión en la que se abre el segundo diamante. No es «reunirse a ver qué se nos ocurre»: tiene una pregunta fija (la del ¿Cómo podríamos…?), un tiempo cerrado y una regla que lo sostiene todo — en la fase de generar no se juzga. Se juzga después, y en otra sesión si se puede.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-i1"/></svg></div>
+    <p class="cap">Todas las ideas salen de la misma pregunta. Si cada uno contesta una pregunta distinta, no es lluvia: es conversación.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Escribe la pregunta en grande y déjala a la vista</div>
+        <div class="pd">La del ¿Cómo podríamos…?. Cada vez que la sesión se desvía, se señala la pregunta.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Primero cada uno solo, en silencio</div>
+        <div class="pd">Cinco minutos escribiendo sin hablar. Esto evita que el primero que habla fije el rumbo de todos.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Después en voz alta, construyendo</div>
+        <div class="pd">Cada uno lee una idea y los demás pueden encadenar. La frase que se usa es «sí, y…», nunca «sí, pero…».</div>
+        <div class="ex"><span class="f">Las cuatro reglas</span>No se juzga · se busca cantidad, no calidad · se permiten las ideas absurdas · se construye sobre lo del otro.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Pon una meta de cantidad</div>
+        <div class="pd">«40 ideas en 20 minutos.» La meta numérica es lo que empuja a pasar de las obvias, que son las primeras diez.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Cierra sin decidir</div>
+        <div class="pd">Al final no se vota. Se agrupan y se pasan a la selección, que es otra herramienta.</div>
+        <div class="ex"><span class="f">El error de siempre</span>Alguien dice «eso no se puede por el presupuesto». Ahí se murió la sesión: ese comentario pertenece a la selección, no a la generación.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La pregunta</span>«¿Cómo podríamos hacer que el cliente de afán sepa, antes de entrar, cuánto va a esperar?»</div>
+      <div class="ex"><span class="f">Algunas de las 43 ideas</span>Un semáforo en la puerta · una cuenta de WhatsApp que publica la foto de la fila · pedir la noche anterior · una ventanilla solo para pedidos fijos · un tablero con «última persona atendida a las 6:47» · que el vigilante cante el turno.</div>
+      <div class="ex"><span class="f">La idea absurda que sirvió</span>«Que la gente pida por la ventana sin entrar.» Era un chiste, y de ahí salió la ventanilla express, que fue el prototipo que se probó.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Entre 30 y 50 ideas sin filtrar, todas respondiendo a la misma pregunta.</div></div>
+  </div>
+</section>
+
+<!-- ==== SCAMPER ==== -->
+<section class="screen" id="s-dti2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 2 · Idear</span>
+    <h1><span class="hl">SCAMPER</span></h1>
+    <p class="sub">Siete palancas para forzar ideas cuando ya se agotaron las obvias.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un acrónimo de siete verbos que se aplican uno por uno a la situación actual. Sirve justo cuando la lluvia de ideas se seca: en vez de pedir creatividad en abstracto, te obliga a mirar el problema desde siete ángulos predefinidos. Se usa después de la lluvia, no en vez de ella.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-i2"/></svg></div>
+    <p class="cap">Las siete palancas. Se recorren de arriba abajo, una por una, sin saltarse ninguna aunque parezca que no aplica.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Describe el estado actual en una línea</div>
+        <div class="pd">Qué se hace hoy, tal como es. Las siete palancas se aplican sobre esa línea.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Recorre las siete, una por una</div>
+        <div class="pd"><b>S</b>ustituir · <b>C</b>ombinar · <b>A</b>daptar · <b>M</b>odificar · <b>P</b>ara otro uso · <b>E</b>liminar · <b>R</b>eordenar. Dos o tres minutos cada una.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Obliga una idea por palanca</div>
+        <div class="pd">Aunque sea mala. La palanca que parece que no aplica es la que más seguido da la idea rara que sirve.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Marca las que sorprenden</div>
+        <div class="pd">Al final se escogen tres o cuatro para pasar a selección. Las demás quedan en el registro.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Estado actual</span>El cliente entra, hace la fila, pide en el mostrador y paga en la caja.</div>
+      <div class="ex"><span class="f">Sustituir</span>Que la fila la haga un tablero de turnos en vez del cuerpo del cliente.</div>
+      <div class="ex"><span class="f">Combinar</span>Juntar pedir y pagar en un solo punto para los pedidos fijos.</div>
+      <div class="ex"><span class="f">Adaptar</span>Copiar el sistema de las carnicerías: número de turno al entrar.</div>
+      <div class="ex"><span class="f">Modificar</span>Que el pan de la mañana venga ya empacado en combos de a tres.</div>
+      <div class="ex"><span class="f">Para otro uso</span>La vitrina de las tortas, vacía a esa hora, se vuelve el punto de entrega express.</div>
+      <div class="ex"><span class="f">Eliminar</span>Quitar el paso de pagar en caja: se paga al recibir.</div>
+      <div class="ex"><span class="f">Reordenar</span>Pagar primero y recibir después, como en los restaurantes de comida rápida.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Una idea por cada una de las siete palancas, mínimo.</div></div>
+  </div>
+</section>
+
+<!-- ==== Misión imposible ==== -->
+<section class="screen" id="s-dti3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 3 · Idear</span>
+    <h1>Misión <span class="hl">imposible</span></h1>
+    <p class="sub">Quitar la restricción para ver qué idea estaba escondida detrás.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Se plantea el objetivo en una versión exagerada, imposible a propósito, y se obliga al equipo a resolverla. Después se vuelve a la realidad y casi siempre queda una versión aplicable de la idea imposible. Funciona porque el cerebro, cuando sabe que algo es imposible, deja de censurarse y empieza a proponer en serio.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-i3"/></svg></div>
+    <p class="cap">El salto es a propósito: lo que se busca no es la idea imposible, es lo que quedó en el camino de vuelta.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Escribe la versión imposible</div>
+        <div class="pd">Toma el objetivo y exagéralo hasta que claramente no se pueda: «cero espera», «sin que el cliente haga nada», «gratis».</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Resuélvela en serio, diez minutos</div>
+        <div class="pd">Sin decir «pero eso no se puede». La regla de esta herramienta es que durante el ejercicio sí se puede.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Vuelve a la realidad y rescata</div>
+        <div class="pd">De cada idea imposible, pregunta: «¿cuál es la versión de esto que sí podemos hacer el lunes?»</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Anota qué restricción cayó</div>
+        <div class="pd">A veces la respuesta no es una idea, es darse cuenta de que una de las restricciones que se daban por fijas en realidad no lo era.</div>
+        <div class="ex"><span class="f">Por qué sirve</span>Las restricciones heredadas («siempre se ha pagado en caja») se vuelven invisibles. Esta herramienta las saca a la luz obligando a trabajar sin ellas.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La misión imposible</span>«Que el cliente reciba su pan en cero segundos, sin hacer fila y sin pedir nada.»</div>
+      <div class="ex"><span class="f">Las ideas que salieron</span>Que el pan esté listo porque el sistema ya sabe qué compra · que alguien se lo lleve a la oficina · que haya un casillero con su nombre.</div>
+      <div class="ex"><span class="f">La versión del lunes</span>Los diez clientes fijos de la mañana dejan su pedido estándar registrado; a las 6:30 sus bolsas ya están empacadas con el nombre en un canasto aparte. No es cero segundos, pero es treinta.</div>
+      <div class="ex"><span class="f">La restricción que cayó</span>«El cliente tiene que decir qué quiere.» No era cierta para los que compran lo mismo todos los días.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Dos o tres ideas rescatadas, cada una con su versión aplicable.</div></div>
+  </div>
+</section>
+
+<!-- ==== Selección N.U.F. ==== -->
+<section class="screen" id="s-dti4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 4 · Idear</span>
+    <h1>Selección <span class="hl">N.U.F.</span></h1>
+    <p class="sub">Filtrar 40 ideas con tres preguntas, no con opiniones.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Cada idea se califica de 1 a 10 en tres criterios: si es <b>N</b>ueva, si es <b>Ú</b>til y si es <b>F</b>actible. Las tres notas se suman y las ideas se ordenan. Es el cierre del segundo diamante: aquí se pasa de muchas ideas a las dos o tres que se van a prototipar, y se hace con un criterio explícito en vez de con la intuición del que tiene más jerarquía.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-i4"/></svg></div>
+    <p class="cap">Tres columnas de nota y una de suma. Lo que importa no es solo el total: una idea con 10 en útil y 2 en factible es un aviso, no un descarte.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Agrupa las ideas repetidas primero</div>
+        <div class="pd">De 43 ideas quedan unas 15 distintas. Calificar duplicados infla los resultados.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Califica cada idea en los tres criterios</div>
+        <div class="pd"><b>Nueva:</b> ¿ya se intentó o ya existe? · <b>Útil:</b> ¿resuelve la pregunta de diseño? · <b>Factible:</b> ¿se puede hacer con lo que hay?</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Califica en silencio y después compara</div>
+        <div class="pd">Cada uno pone sus notas aparte. Las diferencias grandes de nota son la parte valiosa: ahí hay información que alguien tiene y el resto no.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Lee las notas bajas, no solo el total</div>
+        <div class="pd">Una idea muy útil pero poco factible no se bota: se guarda y se le busca una versión más simple.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Escoge dos o tres para prototipar</div>
+        <div class="pd">No una. Prototipar dos ideas distintas enseña más que pulir una.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Tablero con «última persona atendida a las 6:47»</span>Nueva 7 · Útil 9 · Factible 9 = <b>25</b></div>
+      <div class="ex"><span class="f">Ventanilla express de pedidos fijos</span>Nueva 8 · Útil 9 · Factible 7 = <b>24</b></div>
+      <div class="ex"><span class="f">App de pedidos con pago en línea</span>Nueva 4 · Útil 8 · Factible 2 = <b>14</b></div>
+      <div class="ex"><span class="f">Lo que se decidió</span>Se prototipan las dos primeras. La app queda anotada: la nota de útil era alta, así que el problema no es la idea, es que todavía no se puede. Se revisará si los prototipos confirman el insight.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">La lista ordenada y las dos o tres ideas elegidas, con el motivo.</div></div>
+  </div>
+</section>
+
+<!-- ==== Storyboard ==== -->
+<section class="screen" id="s-dti5" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 5 · Idear</span>
+    <h1><span class="hl">Storyboard</span></h1>
+    <p class="sub">Dibujar la idea como una tira de escenas para ver si se sostiene.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Seis u ocho cuadros dibujados, en orden, que cuentan cómo una persona vive la idea de principio a fin. Es el puente entre idear y prototipar: fuerza a bajar la idea a hechos concretos y casi siempre aparece un cuadro que nadie sabe cómo dibujar — ese cuadro es el hueco de la idea.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-i5"/></svg></div>
+    <p class="cap">Cada cuadro es un momento, en orden. Si un cuadro no se puede dibujar, la idea tiene un hueco ahí.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Empieza antes de que la idea aparezca</div>
+        <div class="pd">El primer cuadro es la persona en su vida normal, sin la solución. Sin ese cuadro no se entiende qué cambia.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Un momento por cuadro, seis u ocho en total</div>
+        <div class="pd">Si necesitas quince, la idea es dos ideas.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Dibuja mal, a propósito</div>
+        <div class="pd">Monigotes. Un storyboard bonito hace que la gente opine del dibujo; uno feo hace que opine de la idea.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Escribe una línea bajo cada cuadro</div>
+        <div class="pd">Qué pasa y qué siente. La línea es lo que se lee; el dibujo es el apoyo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Busca el cuadro imposible</div>
+        <div class="pd">El que nadie sabe cómo dibujar. Ese es el que hay que resolver antes de prototipar.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Cuadro 1</span>Andrés sale de casa a las 6:40, mira el reloj.</div>
+      <div class="ex"><span class="f">Cuadro 2</span>Llega a la panadería y ve dos filas: una larga y una ventanilla con nadie.</div>
+      <div class="ex"><span class="f">Cuadro 3</span>Se acerca a la ventanilla. En un letrero: «Pedidos de siempre».</div>
+      <div class="ex"><span class="f">Cuadro 4</span>Dice su nombre. La cajera saca una bolsa ya empacada.</div>
+      <div class="ex"><span class="f">Cuadro 5</span>Paga con el código QR pegado en la ventanilla.</div>
+      <div class="ex"><span class="f">Cuadro 6</span>Sale a los 40 segundos, mira el reloj y sonríe.</div>
+      <div class="ex"><span class="f">El cuadro imposible</span>El 4. Nadie sabía cómo la cajera iba a saber cuál bolsa es de Andrés sin preguntar. Eso se resolvió con el nombre escrito en la bolsa, y fue lo primero que se probó en el prototipo.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Una tira de seis a ocho cuadros con el cuadro imposible identificado.</div></div>
+  </div>
+</section>
+
+<!-- ==== Prototipo en bruto ==== -->
+<section class="screen" id="s-dtp1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 1 · Prototipar</span>
+    <h1>Prototipo en <span class="hl">bruto</span></h1>
+    <p class="sub">Armar la idea con lo que haya, en una hora, para que falle rápido.</p>
+  </div>
+
+  <div class="card lead">
+    <p>La primera versión física de la idea, hecha con cartón, cinta, marcadores y lo que esté sobre la mesa. No busca parecerse al resultado final: busca contestar <b>una</b> pregunta. Entre más feo, mejor — un prototipo acabado hace que la gente no se atreva a criticarlo, y criticarlo es justo para lo que existe.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-p1"/></svg></div>
+    <p class="cap">Materiales de ferretería y una hora de reloj. El prototipo es un medio para aprender, no un entregable.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Escribe qué quieres aprender</div>
+        <div class="pd">Una sola pregunta, antes de tocar el cartón. «¿La gente entiende qué es esa ventanilla sin que nadie le explique?» Si no hay pregunta, no hay prototipo: hay manualidad.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Pon un límite de tiempo y de plata</div>
+        <div class="pd">Una hora y lo que haya. El límite es lo que impide que el equipo se enamore del prototipo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Construye solo la parte que contesta la pregunta</div>
+        <div class="pd">Si la pregunta es sobre el letrero, se hace el letrero; no la ventanilla entera.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Pruébalo con alguien de fuera el mismo día</div>
+        <div class="pd">Un prototipo que no se prueba el día que se hizo casi nunca se prueba.</div>
+        <div class="ex"><span class="f">La señal de que está bien hecho</span>Da pena mostrarlo. Si da orgullo, se gastó demasiado tiempo.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La pregunta</span>«¿Un cliente de afán entiende, sin que le expliquen, que esa ventanilla es para él?»</div>
+      <div class="ex"><span class="f">Lo que se armó</span>Una mesa plegable al lado de la puerta, un letrero en cartulina que decía «PEDIDO DE SIEMPRE · 30 segundos» y cinco bolsas de papel con nombres escritos en marcador.</div>
+      <div class="ex"><span class="f">Lo que costó</span>Nada. Cuarenta minutos.</div>
+      <div class="ex"><span class="f">Lo que se aprendió el mismo día</span>Siete de diez clientes de la mañana no se acercaron porque creyeron que era una promoción. El problema no era la ventanilla: era la palabra del letrero.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Un objeto imperfecto, la pregunta que contesta y lo que se aprendió al probarlo.</div></div>
+  </div>
+</section>
+
+<!-- ==== Prototipado en papel ==== -->
+<section class="screen" id="s-dtp2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 2 · Prototipar</span>
+    <h1>Prototipado en <span class="hl">papel</span></h1>
+    <p class="sub">Probar una pantalla o un formato antes de programar nada.</p>
+  </div>
+
+  <div class="card lead">
+    <p>La interfaz dibujada a mano en hojas, una hoja por pantalla, que se van cambiando con la mano mientras alguien «la usa» con el dedo. Sirve para todo lo que tenga pantallas, formularios, letreros o pasos: detecta en veinte minutos los problemas que en código costarían semanas.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-p2"/></svg></div>
+    <p class="cap">Una hoja por pantalla. El que prueba toca con el dedo y el que facilita cambia la hoja según lo que toque.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Dibuja una hoja por pantalla o por paso</div>
+        <div class="pd">A mano, con marcador grueso. El detalle fino distrae del flujo, que es lo que se está probando.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Dibuja también las pantallas del error</div>
+        <div class="pd">Lo que pasa cuando se equivoca es la mitad de lo que hay que probar, y es la mitad que siempre se olvida.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Dale una tarea, no un recorrido</div>
+        <div class="pd">«Pida su pan de siempre», no «mire las pantallas y dígame qué opina». La tarea revela el problema; la opinión no.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Cambia la hoja según lo que toque</div>
+        <div class="pd">Si toca donde no esperabas, pon la hoja del error y mira qué hace. Ahí está el hallazgo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">No expliques</div>
+        <div class="pd">Si tienes que explicar la pantalla, la pantalla no funciona. Anótalo y sigue.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · el tablero de espera</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Lo que se probó</span>El tablero que iría en la puerta de la panadería: tres versiones en cartulina.</div>
+      <div class="ex"><span class="f">Versión A</span>«Tiempo de espera: 6 minutos.»</div>
+      <div class="ex"><span class="f">Versión B</span>«Última persona atendida: 6:47.»</div>
+      <div class="ex"><span class="f">Versión C</span>Un semáforo verde / amarillo / rojo.</div>
+      <div class="ex"><span class="f">La tarea que se dio</span>«Usted va camino al trabajo. Mire esto y dígame qué hace.»</div>
+      <div class="ex"><span class="f">Lo que pasó</span>La versión A generó desconfianza («eso nunca es verdad»). La C no decía cuánto. La B funcionó: la gente la creía porque es un hecho, no una promesa, y calculaba sola.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Las hojas dibujadas, la tarea que se dio y qué hizo la gente con cada versión.</div></div>
+  </div>
+</section>
+
+<!-- ==== Juego de roles ==== -->
+<section class="screen" id="s-dtp3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 3 · Prototipar</span>
+    <h1>Juego de <span class="hl">roles</span></h1>
+    <p class="sub">Actuar el servicio para encontrar lo que ningún dibujo muestra.</p>
+  </div>
+
+  <div class="card lead">
+    <p>El equipo representa la escena completa: uno hace de cliente, otro de cajera, otro de panadero, y se vive el servicio en tiempo real. Sirve para las ideas que no son un objeto sino una interacción — un protocolo, una forma de atender, un cambio de turno. Lo que aparece aquí son los roces humanos: la frase incómoda, el momento en que dos personas se estorban, el paso que en el papel era obvio y en el cuerpo no.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-p3"/></svg></div>
+    <p class="cap">La escena se actúa a escala real, con el espacio marcado en el piso. El que observa anota los roces, no las opiniones.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Marca el espacio</div>
+        <div class="pd">Con cinta en el piso: dónde está el mostrador, la puerta, la ventanilla. La distancia real cambia la escena.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Reparte los roles e inclúyete a ti</div>
+        <div class="pd">El que diseñó la idea debe hacer de cliente al menos una vez. Es la forma más rápida de que sienta el problema.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Actúa en tiempo real, sin cortar</div>
+        <div class="pd">Sin pausas para explicar. Los roces aparecen por el ritmo, y si se corta se pierden.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Deja un observador que no actúe</div>
+        <div class="pd">Con una hoja, anotando cada momento de duda, cada frase que no salió, cada vez que dos se cruzaron.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Repite la escena cambiando una cosa</div>
+        <div class="pd">Misma escena, una sola variable distinta. Así se sabe qué causó la mejora.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La escena</span>6:50 a.m. Cuatro clientes en fila normal, dos clientes de pedido fijo, una cajera, un panadero surtiendo.</div>
+      <div class="ex"><span class="f">Primer roce</span>La cajera tenía que girarse a buscar la bolsa del pedido fijo y, mientras lo hacía, la fila normal se quedaba esperando. La ventanilla hacía más lenta la fila que quería agilizar.</div>
+      <div class="ex"><span class="f">Segundo roce</span>Un cliente de la fila normal reclamó: «¿Por qué ese pasa primero?» Nadie lo había previsto.</div>
+      <div class="ex"><span class="f">Lo que cambió</span>Las bolsas de pedido fijo se pusieron en un canasto <b>al lado de la ventanilla</b>, no detrás de la cajera, y el letrero pasó a decir «Pedidos dejados desde ayer», que explica por sí solo por qué ese pasa de una.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Las notas del observador, con la lista de roces y qué se cambió por cada uno.</div></div>
+  </div>
+</section>
+
+<!-- ==== Mago de Oz ==== -->
+<section class="screen" id="s-dtp4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 4 · Prototipar</span>
+    <h1>Mago de <span class="hl">Oz</span></h1>
+    <p class="sub">Hacer que la idea parezca automática cuando en realidad hay alguien detrás haciéndolo a mano.</p>
+  </div>
+
+  <div class="card lead">
+    <p>El usuario cree que está usando el sistema terminado; detrás de la cortina hay una persona haciendo manualmente lo que el sistema haría. Es la forma más barata de validar una idea que requeriría software, integración o maquinaria: se prueba si la gente la usaría y si resuelve el problema, antes de construir nada.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-p4"/></svg></div>
+    <p class="cap">Por delante parece el sistema funcionando. Por detrás hay una persona ejecutando a mano, y es exactamente el punto.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Define la fachada</div>
+        <div class="pd">Qué ve el usuario y qué cree que está pasando. Esa fachada tiene que ser creíble; lo de atrás no importa que sea artesanal.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Pon a alguien a hacer el trabajo a mano</div>
+        <div class="pd">Y que esté escondido o que parezca parte del paisaje. Un WhatsApp contestado por una persona parece un bot si contesta rápido.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Limítalo en tiempo y en número de usuarios</div>
+        <div class="pd">Una semana, diez usuarios. No es escalable a propósito: es un experimento, no un piloto.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Mide lo que pasaría de verdad</div>
+        <div class="pd">Cuántos lo usan, cuántos vuelven, cuántos se quejan. Son los números que después justifican (o no) construirlo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Dile la verdad al usuario al final</div>
+        <div class="pd">Cuando termina el experimento, se le cuenta. Es parte de hacerlo bien.</div>
+        <div class="ex"><span class="f">Cuándo usarlo</span>Cuando la idea tiene buena nota en «útil» y mala en «factible». Deja probar la utilidad sin pagar la factibilidad.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la app de pedidos que no se podía hacer</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La idea original</span>Una app donde el cliente pide la noche anterior y recoge sin fila. Factibilidad 2 de 10: nadie iba a programar una app para probar una hipótesis.</div>
+      <div class="ex"><span class="f">La fachada</span>Un número de WhatsApp en un aviso en la puerta: «Pida hoy, recoja mañana sin fila.»</div>
+      <div class="ex"><span class="f">El mago detrás</span>El dueño leyendo los mensajes a las 9 de la noche y anotando los pedidos en un cuaderno. Cero tecnología.</div>
+      <div class="ex"><span class="f">El resultado en una semana</span>31 pedidos de 14 personas distintas, 9 de ellas repitieron. La hipótesis quedó validada, y ahí sí tuvo sentido pensar en construir algo.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Los números del experimento y una decisión: construirlo, cambiarlo o botarlo.</div></div>
+  </div>
+</section>
+
+<!-- ==== Pruebas de usabilidad ==== -->
+<section class="screen" id="s-dtt1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 1 · Testear</span>
+    <h1>Pruebas de <span class="hl">usabilidad</span></h1>
+    <p class="sub">Mirar a alguien usar la idea sin ayudarlo.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Se le da una tarea real a una persona que no conoce el proyecto y se la observa sin intervenir. No se le pregunta si le gusta: se mira si puede. La regla única y la más difícil de cumplir es no ayudar — cada vez que ayudas, borras el hallazgo que estabas a punto de conseguir.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-t1"/></svg></div>
+    <p class="cap">Tres actores: el que prueba, el que observa en silencio y el que toma nota. El que diseñó la idea nunca es el que facilita.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Escribe la tarea, no la pregunta</div>
+        <div class="pd">«Pida su pan de siempre y pague» es una tarea. «¿Qué opina de la ventanilla?» no sirve.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Prueba con cinco personas, no con cincuenta</div>
+        <div class="pd">Con cinco aparece la mayoría de los problemas. Lo que se busca son problemas, no porcentajes.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Pídele que piense en voz alta</div>
+        <div class="pd">«Dígame qué está pensando mientras lo hace.» Es lo que convierte una observación en una explicación.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">No ayudes</div>
+        <div class="pd">Aunque se trabe. Aunque dé pena. Cuenta hasta diez. Lo que haga cuando está trabado es el dato más valioso de la prueba.</div>
+        <div class="ex"><span class="f">Qué contestar cuando pregunte</span>«¿Qué hago acá?» → «¿Qué haría usted si yo no estuviera?» Siempre esa frase.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Anota dónde se trabó, no qué opinó</div>
+        <div class="pd">Dos columnas: momento y qué pasó. Las opiniones se anotan aparte y pesan menos.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">La tarea</span>«Son las 6:50, usted va al trabajo y quiere su pan de siempre. Hágalo.»</div>
+      <div class="ex"><span class="f">Persona 1</span>Se fue derecho a la fila normal. No vio la ventanilla porque estaba mirando el mostrador, no la pared.</div>
+      <div class="ex"><span class="f">Persona 3</span>Vio el letrero, lo leyó dos veces y preguntó «¿esto es para pedir ahora?». El letrero decía dos cosas a la vez.</div>
+      <div class="ex"><span class="f">Persona 4</span>Funcionó en 35 segundos, pero se fue sin la factura y tuvo que volver.</div>
+      <div class="ex"><span class="f">Lo que se arregló</span>La ventanilla se movió a la línea de visión de quien entra, el letrero se partió en dos frases y la factura se metió dentro de la bolsa.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Las notas de cinco pruebas y la lista de arreglos por orden de gravedad.</div></div>
+  </div>
+</section>
+
+<!-- ==== Matriz de feedback ==== -->
+<section class="screen" id="s-dtt2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 2 · Testear</span>
+    <h1>Matriz de <span class="hl">feedback</span></h1>
+    <p class="sub">Ordenar lo que dijeron en cuatro casillas para poder hacer algo con eso.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Una rejilla de cuatro cuadrantes donde se vacía todo el feedback de las pruebas: lo que funcionó, lo que hay que mejorar, las preguntas que quedaron y las ideas nuevas que surgieron. Sin esto, el feedback queda como una conversación que cada uno recuerda a su manera; con esto, queda como una lista de decisiones.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-t2"/></svg></div>
+    <p class="cap">Los dos cuadrantes de arriba son juicios sobre lo que ya existe. Los dos de abajo son lo que abre la siguiente vuelta.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Llena la matriz durante la prueba, no después</div>
+        <div class="pd">Cada comentario cae en su casilla al momento. Reconstruirlo de memoria al día siguiente pierde la mitad.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Una matriz por prototipo</div>
+        <div class="pd">Si pruebas dos ideas, dos matrices. Mezclarlas hace imposible saber qué mejorar de cuál.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Las preguntas también se anotan</div>
+        <div class="pd">Lo que el usuario preguntó es la mejor lista de lo que no quedó claro. Suele ser el cuadrante más útil y el que menos se llena.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Convierte «mejorar» en acciones concretas</div>
+        <div class="pd">Cada punto del cuadrante de mejorar tiene que quedar como un cambio específico con responsable, o no es feedback: es una queja archivada.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">✓ Funcionó</span>La bolsa con el nombre escrito · los 35 segundos reales · que no hubiera que hablar.</div>
+      <div class="ex"><span class="f">△ Mejorar</span>La ubicación: no se ve al entrar · el letrero dice dos cosas · falta la factura dentro.</div>
+      <div class="ex"><span class="f">? Preguntas</span>«¿Esto sirve si cambio el pedido?» · «¿Y si llego a las 8, igual está?» · «¿Tengo que avisar el día anterior?»</div>
+      <div class="ex"><span class="f">✦ Ideas nuevas</span>Que la bolsa tenga el valor escrito para pagar exacto · que haya una lista en la pared con los nombres del día.</div>
+      <div class="ex"><span class="f">Lo que se decidió</span>Las tres de «mejorar» se arreglaron esa semana. Las preguntas se contestaron con una frase en el letrero, y una de las ideas nuevas entró al siguiente prototipo.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Una matriz por prototipo, con el cuadrante de mejorar convertido en acciones.</div></div>
+  </div>
+</section>
+
+<!-- ==== Evaluación del valor ==== -->
+<section class="screen" id="s-dtt3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 3 · Testear</span>
+    <h1>Evaluación del <span class="hl">valor</span></h1>
+    <p class="sub">Decidir si la solución vale lo que cuesta, antes de implementarla.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un contraste explícito entre lo que la solución entrega y lo que exige. No es un estudio financiero: son dos columnas y una decisión. Se hace al final de testear, cuando ya hay evidencia real de las pruebas, y es lo que impide que un prototipo que gustó mucho se implemente sin que nadie haya hecho la cuenta.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-t3"/></svg></div>
+    <p class="cap">A un lado el valor, al otro el costo, y abajo la decisión, que tiene que quedar escrita.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Escribe el valor con los datos de la prueba</div>
+        <div class="pd">No con proyecciones. «De 10 clientes de afán, 7 lo usaron y 9 volvieron» es valor medido; «aumentará las ventas 20%» es una esperanza.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Escribe el costo completo</div>
+        <div class="pd">Plata, sí, pero también tiempo de la gente, espacio, y lo que deja de hacerse por hacer esto. Lo último es el costo que nunca se escribe.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Separa el costo de arrancar del de sostener</div>
+        <div class="pd">Muchas soluciones son baratas de montar y carísimas de mantener. Es el error más común.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Toma la decisión y escríbela</div>
+        <div class="pd">Va, no va, o va en versión reducida. Y queda escrito el motivo, porque en tres meses alguien va a preguntar.</div>
+        <div class="ex"><span class="f">La tercera opción</span>Casi siempre existe una versión reducida que entrega el 70% del valor con el 20% del costo. Vale la pena buscarla antes de decidir.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Valor medido</span>7 de 10 clientes de afán la usaron · tiempo de 4 minutos a 35 segundos · 3 clientes que se habían ido volvieron · la fila normal bajó dos personas en promedio.</div>
+      <div class="ex"><span class="f">Costo de arrancar</span>Una mesa, un letrero impreso y dos horas de reorganizar el mostrador.</div>
+      <div class="ex"><span class="f">Costo de sostener</span>20 minutos diarios de alguien empacando los pedidos fijos a las 6:15. Ese es el costo real, y no estaba en ninguna cuenta.</div>
+      <div class="ex"><span class="f">La decisión</span>Va, pero limitada a los 15 pedidos fijos del día. Más de 15 y los 20 minutos se vuelven una hora, y ahí deja de valer la pena sin contratar a alguien.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Las dos columnas y una decisión escrita con su motivo y su límite.</div></div>
+  </div>
+</section>
+
+<!-- ==== Elevator pitch ==== -->
+<section class="screen" id="s-dtt4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Herramienta 4 · Testear</span>
+    <h1>Elevator <span class="hl">pitch</span></h1>
+    <p class="sub">Contar la solución en un minuto, a alguien que no estuvo en el proceso.</p>
+  </div>
+
+  <div class="card lead">
+    <p>El cierre del método. Un párrafo corto que dice para quién es, qué problema resuelve, en qué consiste y por qué funciona — con la evidencia de las pruebas. Sirve para dos cosas: conseguir el sí de quien decide, y como prueba final de claridad. Si no se puede contar en un minuto, probablemente la solución todavía no está entendida.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-t4"/></svg></div>
+    <p class="cap">La estructura de cinco piezas. Si falta la de la evidencia, es una idea; con ella, es una propuesta.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Usa esta estructura</div>
+        <div class="pd"><b>Para</b> [quién] <b>que</b> [problema] · <b>nuestra solución</b> es [qué] · <b>que</b> [cómo funciona] · <b>a diferencia de</b> [lo que se hacía] · <b>y lo sabemos porque</b> [la evidencia].</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Arranca por el problema, no por la solución</div>
+        <div class="pd">Si empiezas contando qué construiste, el que escucha no sabe por qué debería importarle.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Mete un número de las pruebas</div>
+        <div class="pd">Uno, el más fuerte. «De 4 minutos a 35 segundos» hace más que tres párrafos de argumento.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Dilo en voz alta y cronométralo</div>
+        <div class="pd">Un minuto. Lo que no cabe, se corta. Lo que se corta casi siempre era relleno.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Prueba con alguien que no estuvo</div>
+        <div class="pd">Si tiene que preguntar algo básico, falta esa pieza en el pitch.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la ventanilla express</h2>
+    <div class="card">
+      <div class="ex"><span class="f">El pitch</span>«<b>Para</b> el cliente que pasa por la panadería camino al trabajo <b>y que</b> hoy se va sin comprar porque no puede calcular cuánto va a esperar, <b>la ventanilla express</b> es un punto de entrega al lado de la puerta donde los pedidos de siempre están ya empacados con el nombre del cliente. <b>A diferencia de</b> poner otra caja, no ataca la velocidad de la fila sino la incertidumbre antes de entrar. <b>Y lo sabemos porque</b> en una semana de prueba 7 de cada 10 clientes de afán la usaron, el tiempo pasó de 4 minutos a 35 segundos y volvieron 3 clientes que habíamos perdido.»</div>
+      <div class="ex"><span class="f">Por qué funciona</span>Nombra a la persona, nombra el problema con sus palabras, dice qué es sin tecnicismos, se diferencia de la solución obvia y cierra con tres datos medidos.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Un párrafo de un minuto, probado con alguien ajeno al proyecto.</div></div>
+  </div>
+</section>
+
+<!-- ==== Matriz RACI ==== -->
+<section class="screen" id="s-dtx1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Transversal 1 · sirve en cualquier etapa</span>
+    <h1>Matriz <span class="hl">RACI</span></h1>
+    <p class="sub">Dejar por escrito quién hace, quién decide, a quién se consulta y a quién se le cuenta.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Una tabla con las tareas en las filas y las personas en las columnas. En cada cruce va una letra: <b>R</b> de responsable de hacerlo, <b>A</b> de quien aprueba, <b>C</b> de a quién se consulta antes, <b>I</b> de a quién se informa después. Se llena en diez minutos y evita el problema más caro de cualquier proyecto: que algo no se haga porque todos creían que lo hacía otro.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-x1"/></svg></div>
+    <p class="cap">Tareas en filas, personas en columnas. Una letra por cruce, y las casillas vacías también son información.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Lista las tareas, no las áreas</div>
+        <div class="pd">«Hacer las entrevistas», no «investigación». Si la fila es un área, nadie es responsable de nada concreto.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Una sola R por fila</div>
+        <div class="pd">Si hay dos responsables, no hay ninguno. Puede haber varios que ayuden, pero el que responde es uno.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Una sola A por fila, y que no sea la misma persona que la R</div>
+        <div class="pd">El que hace y el que aprueba separados. Cuando son el mismo, nadie revisa.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Usa la C con cuidado</div>
+        <div class="pd">Consultar a mucha gente paraliza. Si una fila tiene cinco C, el proyecto se va a frenar ahí.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Léela en voz alta con todos presentes</div>
+        <div class="pd">Fila por fila: «Andrés es responsable de esto, Marta aprueba». Las caras de sorpresa son el verdadero resultado del ejercicio.</div>
+        <div class="ex"><span class="f">La revisión rápida</span>Fila sin R → no se va a hacer · fila con dos A → se va a trabar · columna llena de R → esa persona es el cuello de botella.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · el proyecto de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Hacer las entrevistas</span>R: Nico · A: el dueño · C: la cajera · I: el panadero</div>
+      <div class="ex"><span class="f">Armar el prototipo de la ventanilla</span>R: Nico · A: el dueño · C: la cajera · I: —</div>
+      <div class="ex"><span class="f">Decidir si se implementa</span>R: el dueño · A: el dueño · C: Nico y la cajera · I: todo el personal</div>
+      <div class="ex"><span class="f">Empacar los pedidos a las 6:15</span>R: el panadero del primer turno · A: el dueño · C: — · I: la cajera</div>
+      <div class="ex"><span class="f">Lo que se descubrió al leerla</span>La última fila no tenía responsable. Todo el mundo asumía que «alguien» empacaría los pedidos. Esa casilla vacía era la que iba a hundir la solución a la semana.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">La tabla llena, leída en voz alta y sin filas sin R.</div></div>
+  </div>
+</section>
+
+<!-- ==== Tablero Kanban ==== -->
+<section class="screen" id="s-dtx2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Transversal 2 · sirve en cualquier etapa</span>
+    <h1>Tablero <span class="hl">Kanban</span></h1>
+    <p class="sub">Ver en qué va cada cosa, en una pared, sin tener que preguntar.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Tres columnas — por hacer, en curso, hecho — y una tarjeta por tarea que se mueve de izquierda a derecha. Su valor real no es la visibilidad: es el <b>límite</b> de la columna del medio. Poner un número máximo de tarjetas en curso es lo que obliga a terminar antes de empezar otra cosa, que es el problema de fondo de casi todos los equipos.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-x2"/></svg></div>
+    <p class="cap">El número sobre la columna del medio es el límite. Si está lleno, no entra nada nuevo hasta que algo salga.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Dibuja las tres columnas</div>
+        <div class="pd">En una pared o en un tablero. Físico funciona mejor que digital cuando el equipo está en el mismo sitio.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Una tarjeta por tarea, con un responsable</div>
+        <div class="pd">Tareas de uno o dos días. Una tarjeta que dure tres semanas no se mueve y el tablero deja de contar algo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Pon el límite de «en curso» y respétalo</div>
+        <div class="pd">Dos por persona, máximo. Es la regla que duele y la que hace que la herramienta sirva.</div>
+        <div class="ex"><span class="f">Qué pasa si lo respetas</span>Cuando la columna del medio está llena, la única forma de empezar algo nuevo es ir a ayudar a terminar algo que está atascado. Eso es exactamente lo que se busca.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Mira el tablero cinco minutos al día</div>
+        <div class="pd">De pie, mirando la pared. No se habla de lo que cada uno hizo: se habla de las tarjetas que no se movieron.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Vacía la columna «hecho» cada semana</div>
+        <div class="pd">Y antes de borrarla, mírala. Es lo único que muestra el avance real.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · el proyecto de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Por hacer</span>Entrevistar a 3 clientes más · diseñar el letrero v2 · contar la fila el sábado</div>
+      <div class="ex"><span class="f">En curso (límite 3)</span>Prototipo de la ventanilla · pruebas de usabilidad · matriz de feedback</div>
+      <div class="ex"><span class="f">Hecho</span>Mapa de actores · 9 entrevistas · clustering · insights · 2 personas · lluvia de ideas</div>
+      <div class="ex"><span class="f">Lo que se vio al tercer día</span>La tarjeta «contar la fila el sábado» llevaba dos semanas sin moverse en «por hacer». No era que faltara tiempo: era que nadie tenía ese dato asignado. Apareció solo porque la tarjeta estaba a la vista.</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Dónde más aparece</b>
+    En Lean Manufacturing se usa un <span class="k">kanban logístico</span>, que es otra cosa: una tarjeta que autoriza reponer material. Comparten la idea de la señal visual, pero este tablero es para tareas de equipo.
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">El tablero con el límite escrito y visible, y la columna del medio respetada.</div></div>
+  </div>
+</section>
+
+<!-- ==== Tarjetas rojas y verdes ==== -->
+<section class="screen" id="s-dtx3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Transversal 3 · sirve en cualquier etapa</span>
+    <h1>Tarjetas rojas y <span class="hl">verdes</span></h1>
+    <p class="sub">Separar lo que frena de lo que impulsa, para no discutirlo todo junto.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Dos colores de tarjeta. En las verdes va lo que está ayudando al proyecto; en las rojas, lo que lo está frenando. Se llenan en silencio, se pegan en la pared y después se habla. Sirve en cualquier momento del proceso, y sobre todo cuando el equipo siente que algo no avanza pero nadie sabe decir qué.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-x3"/></svg></div>
+    <p class="cap">Dos colores, dos montones, y el orden de la conversación: primero el verde, después el rojo.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Reparte las tarjetas y da cinco minutos en silencio</div>
+        <div class="pd">Cada uno escribe las que quiera, una idea por tarjeta. El silencio es lo que permite que salga lo incómodo.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Pega primero las verdes y léelas</div>
+        <div class="pd">Empezar por lo que funciona no es cortesía: es lo que hace que la gente se atreva a poner las rojas.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Agrupa las rojas repetidas</div>
+        <div class="pd">Lo que tres personas escribieron por separado es el problema real del proyecto.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Convierte las rojas en una acción o en una decisión</div>
+        <div class="pd">Cada grupo rojo sale de la sesión con algo: un cambio, un responsable, o la decisión explícita de aceptarlo y seguir.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Guarda las verdes</div>
+        <div class="pd">Es lo que hay que proteger cuando el proyecto crezca. Casi siempre se pierde justo eso.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · el proyecto de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Verdes</span>La cajera conoce a los clientes por el nombre · el dueño decide rápido · el local tiene una pared con buena visibilidad desde la calle.</div>
+      <div class="ex"><span class="f">Rojas</span>Nadie sabe cuántas personas se van sin comprar · el panadero no estuvo en ninguna sesión y es el que va a ejecutar · entre 6:30 y 8 nadie tiene un minuto para medir nada.</div>
+      <div class="ex"><span class="f">La roja que escribieron tres</span>«El panadero no estuvo.» Se corrigió esa misma semana: entró al equipo y aportó el dato de a qué hora se acaba cada producto, que cambió el prototipo.</div>
+      <div class="ex"><span class="f">La verde que se protegió</span>Que la cajera sepa los nombres. La ventanilla express se diseñó encima de eso, no a pesar de eso.</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Ojo con el nombre</b>
+    En Lean existen las <span class="k">tarjetas rojas</span> del 5S, que se usan para marcar objetos que no deberían estar en un puesto de trabajo. Es otra herramienta con el mismo nombre.
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Los dos montones agrupados, y cada grupo rojo con una acción o una decisión.</div></div>
+  </div>
+</section>
+
+<!-- ==== Matriz de impacto y esfuerzo ==== -->
+<section class="screen" id="s-dtx4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Transversal 4 · sirve en cualquier etapa</span>
+    <h1>Matriz de impacto y <span class="hl">esfuerzo</span></h1>
+    <p class="sub">Cuatro cuadrantes para decidir qué se hace primero.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Un plano con el impacto en el eje vertical y el esfuerzo en el horizontal. Cada idea o tarea se ubica según esas dos preguntas, y los cuatro cuadrantes dicen qué hacer con ella. Es la herramienta de priorización más rápida que existe y la que más seguido desarma la discusión de «todo es importante».</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-x4"/></svg></div>
+    <p class="cap">Arriba a la izquierda se empieza. Abajo a la derecha se descarta. Los otros dos cuadrantes son los que hay que discutir.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Define las dos escalas antes de ubicar nada</div>
+        <div class="pd">Impacto en qué (¿clientes recuperados? ¿tiempo ahorrado?) y esfuerzo medido en qué (¿días? ¿plata?). Sin esto, cada uno ubica con una escala distinta.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Ubica una idea a la vez, en voz alta</div>
+        <div class="pd">El que la propone dice dónde la pone y por qué. Los demás pueden moverla, pero argumentando.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Prohibido el centro</div>
+        <div class="pd">Si todo queda en la mitad, la matriz no decidió nada. Se obliga a cada idea a caer en un cuadrante.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Empieza por arriba-izquierda y hazlo esta semana</div>
+        <div class="pd">Mucho impacto, poco esfuerzo. Son las victorias rápidas, y hacerlas primero es lo que le da aire al proyecto.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Decide explícitamente sobre arriba-derecha</div>
+        <div class="pd">Mucho impacto y mucho esfuerzo: son los proyectos grandes. No se hacen ya, pero se agendan. Si no se agendan, nunca pasan.</div>
+        <div class="ex"><span class="f">El cuadrante peligroso</span>Abajo-izquierda: poco impacto, poco esfuerzo. Son fáciles y por eso se hacen, y llenan el calendario sin mover nada. Se hacen solo si sobra tiempo.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · la fila de la panadería</h2>
+    <div class="card">
+      <div class="ex"><span class="f">Arriba-izquierda · hacer ya</span>El tablero de «última persona atendida» · mover el canasto al lado de la ventanilla · partir el letrero en dos frases.</div>
+      <div class="ex"><span class="f">Arriba-derecha · agendar</span>La app de pedidos · reorganizar el layout del mostrador.</div>
+      <div class="ex"><span class="f">Abajo-izquierda · si sobra tiempo</span>Cambiar el color de las bolsas · poner música.</div>
+      <div class="ex"><span class="f">Abajo-derecha · descartar</span>Contratar una persona solo para la ventanilla en hora pico.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">Las ideas ubicadas, el cuadrante de victorias rápidas con fecha y el de proyectos grandes agendado.</div></div>
+  </div>
+</section>
+
+<!-- ==== Seis sombreros ==== -->
+<section class="screen" id="s-dtx5" hidden>
+  <div class="hero">
+    <span class="eyebrow">Transversal 5 · sirve en cualquier etapa</span>
+    <h1>Seis <span class="hl">sombreros</span></h1>
+    <p class="sub">Discutir mirando un solo ángulo a la vez, todos al mismo tiempo.</p>
+  </div>
+
+  <div class="card lead">
+    <p>Seis sombreros de colores, cada uno un modo de pensar. Todo el grupo se pone el mismo sombrero a la vez y habla solo desde ahí, unos minutos, y después se cambian todos. Resuelve el problema de las reuniones donde el optimista y el crítico pelean por el aire: a los dos les llega su turno, y a los dos les toca también el turno del otro.</p>
+  </div>
+
+  <div class="block">
+    <h2>Así se ve</h2>
+    <div class="bigfig"><svg viewBox="0 0 120 80"><use href="#t-x5"/></svg></div>
+    <p class="cap">Los seis modos. Todos se ponen el mismo a la vez; el azul es el que organiza la sesión.</p>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se hace</h2>
+    <div class="card stepcard">
+      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+        <div class="pt">Explica los seis antes de empezar</div>
+        <div class="pd"><b>⚪ Blanco:</b> solo datos · <b>🔴 Rojo:</b> lo que sientes, sin justificar · <b>⚫ Negro:</b> riesgos y qué puede fallar · <b>🟡 Amarillo:</b> beneficios y por qué sí · <b>🟢 Verde:</b> alternativas nuevas · <b>🔵 Azul:</b> cómo vamos a discutir esto.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+        <div class="pt">Fija el orden y los tiempos con el azul</div>
+        <div class="pd">Un orden que funciona: azul → blanco → amarillo → negro → verde → azul. Cuatro minutos cada uno.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+        <div class="pt">Todos con el mismo sombrero a la vez</div>
+        <div class="pd">Esto es la clave. No se reparten los sombreros entre personas: se cambian todos juntos. Repartirlos encasilla a la gente y es justo lo contrario de lo que se busca.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+        <div class="pt">Corta a quien se salga del sombrero</div>
+        <div class="pd">Con una frase: «eso es sombrero negro, ya vamos a llegar». Sin esto el ejercicio se deshace en cinco minutos.</div>
+      </div></div>
+      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+        <div class="pt">Cierra con azul y escribe la decisión</div>
+        <div class="pd">El último turno de azul es para resumir y decidir. Sin ese cierre, la sesión fue una conversación bonita.</div>
+        <div class="ex"><span class="f">Para qué sirve de verdad</span>Obliga al escéptico a pasar cuatro minutos en amarillo y al entusiasta a pasar cuatro en negro. Ahí es donde cambian las posiciones.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Ejemplo · ¿se implementa la ventanilla express?</h2>
+    <div class="card">
+      <div class="ex"><span class="f">🔵 Azul</span>«Vamos a decidir si va o no. Veinticinco minutos, en este orden.»</div>
+      <div class="ex"><span class="f">⚪ Blanco</span>7 de 10 la usaron · 35 segundos promedio · cuesta 20 minutos diarios de alguien · 3 clientes recuperados.</div>
+      <div class="ex"><span class="f">🟡 Amarillo</span>Recupera clientes perdidos · no requiere inversión · le da reconocimiento al cliente fiel.</div>
+      <div class="ex"><span class="f">⚫ Negro</span>Si el panadero falta, nadie empaca · puede generar reclamos de la fila normal · a más de 15 pedidos no da el tiempo.</div>
+      <div class="ex"><span class="f">🟢 Verde</span>Que el cliente se empaque él mismo de un canasto · que solo opere martes a viernes · que el letrero diga el límite de 15.</div>
+      <div class="ex"><span class="f">🔵 Azul (cierre)</span>Va, con límite de 15 pedidos y el letrero diciéndolo. El riesgo del panadero se cubre con un segundo responsable en la RACI.</div>
+    </div>
+  </div>
+
+  <div class="out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+    <div><div class="out-t">Entrega</div><div class="out-v">La decisión escrita, con los riesgos del sombrero negro atendidos uno por uno.</div></div>
+  </div>
+</section>
+
 </main>
 </div>
 
@@ -4043,6 +6095,41 @@ img{max-width:100%}
     minmax:    {el:"s-minmax",    title:"Reposición por consumo", eyebrow:"Principio 4", parent:"p4"},
     jit:       {el:"s-jit",       title:"Just-In-Time", eyebrow:"Principio 4", parent:"p4"},
     wmstms:    {el:"s-wmstms",    title:"Integración WMS y TMS", eyebrow:"Principio 4", parent:"p4"},
+    dt:        {el:"s-dt",        title:"Design Thinking", eyebrow:"Método", parent:"inicio"},
+    dtf1:      {el:"s-dtf1",      title:"Empatizar", eyebrow:"Design Thinking", parent:"dt"},
+    dte1:      {el:"s-dte1",      title:"Mapa de actores", eyebrow:"Empatizar", parent:"dtf1"},
+    dte2:      {el:"s-dte2",      title:"Usuarios extremos", eyebrow:"Empatizar", parent:"dtf1"},
+    dte3:      {el:"s-dte3",      title:"Entrevista cualitativa", eyebrow:"Empatizar", parent:"dtf1"},
+    dte4:      {el:"s-dte4",      title:"¿Qué, cómo, por qué?", eyebrow:"Empatizar", parent:"dtf1"},
+    dte5:      {el:"s-dte5",      title:"Customer Journey", eyebrow:"Empatizar", parent:"dtf1"},
+    dtf2:      {el:"s-dtf2",      title:"Definir", eyebrow:"Design Thinking", parent:"dt"},
+    dtd1:      {el:"s-dtd1",      title:"Clustering", eyebrow:"Definir", parent:"dtf2"},
+    dtd2:      {el:"s-dtd2",      title:"Mapa de empatía", eyebrow:"Definir", parent:"dtf2"},
+    dtd3:      {el:"s-dtd3",      title:"Personas", eyebrow:"Definir", parent:"dtf2"},
+    dtd4:      {el:"s-dtd4",      title:"Insights", eyebrow:"Definir", parent:"dtf2"},
+    dtd5:      {el:"s-dtd5",      title:"¿Cómo podríamos…?", eyebrow:"Definir", parent:"dtf2"},
+    dtf3:      {el:"s-dtf3",      title:"Idear", eyebrow:"Design Thinking", parent:"dt"},
+    dti1:      {el:"s-dti1",      title:"Lluvia de ideas", eyebrow:"Idear", parent:"dtf3"},
+    dti2:      {el:"s-dti2",      title:"SCAMPER", eyebrow:"Idear", parent:"dtf3"},
+    dti3:      {el:"s-dti3",      title:"Misión imposible", eyebrow:"Idear", parent:"dtf3"},
+    dti4:      {el:"s-dti4",      title:"Selección N.U.F.", eyebrow:"Idear", parent:"dtf3"},
+    dti5:      {el:"s-dti5",      title:"Storyboard", eyebrow:"Idear", parent:"dtf3"},
+    dtf4:      {el:"s-dtf4",      title:"Prototipar", eyebrow:"Design Thinking", parent:"dt"},
+    dtp1:      {el:"s-dtp1",      title:"Prototipo en bruto", eyebrow:"Prototipar", parent:"dtf4"},
+    dtp2:      {el:"s-dtp2",      title:"Prototipado en papel", eyebrow:"Prototipar", parent:"dtf4"},
+    dtp3:      {el:"s-dtp3",      title:"Juego de roles", eyebrow:"Prototipar", parent:"dtf4"},
+    dtp4:      {el:"s-dtp4",      title:"Mago de Oz", eyebrow:"Prototipar", parent:"dtf4"},
+    dtf5:      {el:"s-dtf5",      title:"Testear", eyebrow:"Design Thinking", parent:"dt"},
+    dtt1:      {el:"s-dtt1",      title:"Pruebas de usabilidad", eyebrow:"Testear", parent:"dtf5"},
+    dtt2:      {el:"s-dtt2",      title:"Matriz de feedback", eyebrow:"Testear", parent:"dtf5"},
+    dtt3:      {el:"s-dtt3",      title:"Evaluación del valor", eyebrow:"Testear", parent:"dtf5"},
+    dtt4:      {el:"s-dtt4",      title:"Elevator pitch", eyebrow:"Testear", parent:"dtf5"},
+    dtf6:      {el:"s-dtf6",      title:"Transversales", eyebrow:"Design Thinking", parent:"dt"},
+    dtx1:      {el:"s-dtx1",      title:"Matriz RACI", eyebrow:"Transversales", parent:"dtf6"},
+    dtx2:      {el:"s-dtx2",      title:"Tablero Kanban", eyebrow:"Transversales", parent:"dtf6"},
+    dtx3:      {el:"s-dtx3",      title:"Tarjetas rojas y verdes", eyebrow:"Transversales", parent:"dtf6"},
+    dtx4:      {el:"s-dtx4",      title:"Matriz de impacto y esfuerzo", eyebrow:"Transversales", parent:"dtf6"},
+    dtx5:      {el:"s-dtx5",      title:"Seis sombreros", eyebrow:"Transversales", parent:"dtf6"},
     p5:        {el:"s-p5",        title:"5 · Buscar la perfección", eyebrow:"Lean Manufacturing", parent:"lean"},
     pdca:      {el:"s-pdca",      title:"Ciclos PDCA", eyebrow:"Principio 5", parent:"p5"},
     gemba:     {el:"s-gemba",     title:"Gemba Walk", eyebrow:"Principio 5", parent:"p5"},
