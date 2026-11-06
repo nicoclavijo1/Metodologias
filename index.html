@@ -228,6 +228,25 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .bigfig svg{width:100%;max-width:300px;height:auto}
 .exfig{border-radius:16px;border:1px solid var(--figline);background:var(--figbg);padding:12px 10px;display:block;overflow:hidden}
 .exfig svg{width:100%;height:auto;display:block}
+/* ---------- ejemplos limpios ---------- */
+.exlist{display:flex;flex-direction:column;gap:20px;padding:2px 0}
+.exlist .ex{margin:0;padding:1px 0 1px 15px;border:0;border-left:2px solid var(--blue-line);border-radius:0;background:transparent;font-size:13.5px;color:var(--fg-dim);line-height:1.68}
+.exlist .ex .f{display:block;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--blue-soft);font-weight:800;margin-bottom:6px}
+.exlist .ex b{color:var(--fg);font-weight:700}
+
+/* ---------- recorrido por pasos ---------- */
+.stepbar{display:flex;align-items:center;gap:4px;margin:-4px 0 20px}
+.stepbar i{flex:1;height:4px;border-radius:2px;background:var(--line)}
+.stepbar i.done{background:var(--blue-line)}
+.stepbar i.now{background:var(--blue);box-shadow:0 0 0 3px var(--blue-bg-2)}
+.stepnav{display:flex;gap:10px;margin-top:24px}
+.stepnav button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:4px;padding:13px 14px;border-radius:15px;border:1px solid var(--line);background:var(--surface);color:inherit;font:inherit;text-align:left;cursor:pointer;transition:box-shadow .15s ease}
+.stepnav button:hover{box-shadow:0 0 0 1px var(--blue)}
+.stepnav button[disabled]{opacity:.35;pointer-events:none}
+.stepnav .sn-k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-faint);font-weight:800}
+.stepnav .sn-t{font-size:12.5px;font-weight:700;line-height:1.35;color:var(--fg)}
+.stepnav .nx{text-align:right;align-items:flex-end}
+.pnum.sub{width:auto;min-width:25px;padding:0 7px;border-radius:999px;font-size:11px}
 .dtphases{display:flex;flex-direction:column;gap:10px}
 .dtp{display:flex;align-items:center;gap:14px;padding:15px;border-radius:16px;border:1px solid var(--blue-line);background:linear-gradient(140deg,var(--blue-bg-2) 0%,var(--surface) 58%);color:inherit;text-align:left;font:inherit;width:100%;cursor:pointer;transition:box-shadow .15s ease,transform .15s ease}
 .dtp:active{transform:scale(.99)}
@@ -3296,7 +3315,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="facts">
         <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg><span>Referencia: <b>bultos de harina de 25 kg</b>. Un contenedor es una estiba de <b>40 bultos</b>.</span></div>
         <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9M9 18V4M15 18v-6M21 18V7"/><path d="M2 21h20"/></svg><span>Consumo medio: <b>24 bultos al día</b>.</span></div>
@@ -3402,7 +3421,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="facts">
         <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18"/></svg><span>Ubicación: <b>bolsas de empaque</b> junto a la zona de empaque.</span></div>
         <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9M9 18V4M15 18v-6M21 18V7"/><path d="M2 21h20"/></svg><span>Consumo medio: <b>500 bolsas al día</b>. Reposición desde bodega: <b>medio día</b>.</span></div>
@@ -3524,7 +3543,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex">
         <span class="f">Antes</span>
         Se horneaba el pan de toda la semana el lunes y el martes, se congelaba y se despachaba desde el congelador. Inventario alto, producto perdiendo frescura y, cuando el jueves la tienda pedía un sabor que no se hizo, tocaba decir que no.
@@ -3629,7 +3648,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex">
         <span class="f">A las 4 p.m.</span>
         La tienda confirma el pedido. El WMS libera el picking de inmediato y calcula peso y volumen reales. El TMS recibe ese dato y arma la ruta de la madrugada sin esperar a que alguien pase una lista por correo.
@@ -3799,7 +3818,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex">
         <span class="f">Plan</span>
         «El 6% de los pedidos sale con producto equivocado. Creo que es porque las bandejas de pan blanco e integral se ven iguales al empacar. Si les pongo rótulos de color, el error debería bajar por debajo del 2% en dos semanas.»
@@ -3885,7 +3904,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex">
         <span class="f">Propósito</span>
         Entender por qué el empaque se queda esperando, si el horno va a tiempo.
@@ -4180,27 +4199,27 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="dte1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Mapa de actores</span><span class="trow-d">¿Quién está metido en esto y quién decide?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Mapa de actores</span><span class="trow-d">¿Quién está metido en esto y quién decide?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dte2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Usuarios extremos</span><span class="trow-d">¿A quién vale la pena observar?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · Usuarios extremos</span><span class="trow-d">¿A quién vale la pena observar?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dte3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Entrevista cualitativa</span><span class="trow-d">Preguntar sin meterle la respuesta en la boca</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Entrevista cualitativa</span><span class="trow-d">Preguntar sin meterle la respuesta en la boca</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dte4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">¿Qué, cómo, por qué?</span><span class="trow-d">Pasar de lo que ves a lo que significa</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · ¿Qué, cómo, por qué?</span><span class="trow-d">Pasar de lo que ves a lo que significa</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dte5">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-e5"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Customer Journey</span><span class="trow-d">Cómo vive el recorrido completo</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">5</span> · Customer Journey</span><span class="trow-d">Cómo vive el recorrido completo</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -4222,27 +4241,27 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="dtd1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Clustering</span><span class="trow-d">Agrupar lo que se repite</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Clustering</span><span class="trow-d">Agrupar lo que se repite</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtd2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Mapa de empatía</span><span class="trow-d">Qué dice, hace, piensa y siente</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · Mapa de empatía</span><span class="trow-d">Qué dice, hace, piensa y siente</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtd3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Personas</span><span class="trow-d">Darle cara y nombre al usuario</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Personas</span><span class="trow-d">Darle cara y nombre al usuario</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtd4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Insights</span><span class="trow-d">La frase que resume el descubrimiento</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · Insights</span><span class="trow-d">La frase que resume el descubrimiento</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtd5">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-d5"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">¿Cómo podríamos…?</span><span class="trow-d">Convertir el hallazgo en reto de diseño</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">5</span> · ¿Cómo podríamos…?</span><span class="trow-d">Convertir el hallazgo en reto de diseño</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -4264,27 +4283,27 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="dti1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Lluvia de ideas</span><span class="trow-d">Divergir con reglas, no a lo loco</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Lluvia de ideas</span><span class="trow-d">Divergir con reglas, no a lo loco</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dti2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">SCAMPER</span><span class="trow-d">Siete preguntas para cuando ya no se les ocurre nada</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · SCAMPER</span><span class="trow-d">Siete preguntas para cuando ya no se les ocurre nada</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dti3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Misión imposible</span><span class="trow-d">Romper el supuesto que nadie se atreve a tocar</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Misión imposible</span><span class="trow-d">Romper el supuesto que nadie se atreve a tocar</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dti4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Selección N.U.F.</span><span class="trow-d">Puntuar por nuevo, útil y factible</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · Selección N.U.F.</span><span class="trow-d">Puntuar por nuevo, útil y factible</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dti5">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-i5"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Storyboard</span><span class="trow-d">Contar la idea elegida como una secuencia</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">5</span> · Storyboard</span><span class="trow-d">Contar la idea elegida como una secuencia</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -4306,22 +4325,22 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="dtp1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Prototipo en bruto</span><span class="trow-d">Con lo que haya encima de la mesa</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Prototipo en bruto</span><span class="trow-d">Con lo que haya encima de la mesa</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtp2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Prototipado en papel</span><span class="trow-d">Para pantallas y apps</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · Prototipado en papel</span><span class="trow-d">Para pantallas y apps</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtp3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Juego de roles</span><span class="trow-d">Para servicios y atención, donde no hay objeto</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Juego de roles</span><span class="trow-d">Para servicios y atención, donde no hay objeto</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtp4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-p4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Mago de Oz</span><span class="trow-d">Simular la máquina con una persona detrás</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · Mago de Oz</span><span class="trow-d">Simular la máquina con una persona detrás</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -4343,22 +4362,22 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="dtt1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Pruebas de usabilidad</span><span class="trow-d">¿Lo sabe usar sin que le expliquen?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Pruebas de usabilidad</span><span class="trow-d">¿Lo sabe usar sin que le expliquen?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtt2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Matriz de feedback</span><span class="trow-d">Capturar lo aprendido en cuatro casillas</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · Matriz de feedback</span><span class="trow-d">Capturar lo aprendido en cuatro casillas</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtt3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Evaluación del valor</span><span class="trow-d">¿Lo usaría? ¿Lo pagaría?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Evaluación del valor</span><span class="trow-d">¿Lo usaría? ¿Lo pagaría?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtt4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-t4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Elevator pitch</span><span class="trow-d">Contarlo en treinta segundos</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · Elevator pitch</span><span class="trow-d">Contarlo en treinta segundos</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -4380,27 +4399,27 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="dtx1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Matriz RACI</span><span class="trow-d">Quién hace, quién aprueba, quién opina</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Matriz RACI</span><span class="trow-d">Quién hace, quién aprueba, quién opina</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtx2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Tablero Kanban</span><span class="trow-d">En qué va cada cosa</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · Tablero Kanban</span><span class="trow-d">En qué va cada cosa</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtx3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Tarjetas rojas y verdes</span><span class="trow-d">Feedback en caliente, durante la sesión</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Tarjetas rojas y verdes</span><span class="trow-d">Feedback en caliente, durante la sesión</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtx4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Matriz de impacto y esfuerzo</span><span class="trow-d">Priorizar cuando sobran ideas y falta tiempo</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · Matriz de impacto y esfuerzo</span><span class="trow-d">Priorizar cuando sobran ideas y falta tiempo</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="dtx5">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-x5"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Seis sombreros</span><span class="trow-d">Que la reunión no sea una pelea de opiniones</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">5</span> · Seis sombreros</span><span class="trow-d">Que la reunión no sea una pelea de opiniones</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -4410,7 +4429,7 @@ img{max-width:100%}
 <!-- ==== Mapa de actores ==== -->
 <section class="screen" id="s-dte1" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 1 · Empatizar</span>
+    <span class="eyebrow">Empatizar · herramienta 1 de 5</span>
     <h1>Mapa de <span class="hl">actores</span></h1>
     <p class="sub">Quién está metido en el problema y quién puede hundirlo.</p>
   </div>
@@ -4450,7 +4469,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El centro</span>El cliente de la mañana: el que entra entre 6:30 y 8 con afán.</div>
       <div class="ex"><span class="f">Círculo cercano</span>La cajera, el panadero del turno y el que surte la vitrina. Son los que le dan forma a la espera.</div>
       <div class="ex"><span class="f">Círculo medio</span>El dueño, que decide si se compra algo; y el domiciliario, que entra y sale cruzando la fila.</div>
@@ -4462,12 +4481,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El mapa de quién influye y la lista de a quién hay que escuchar.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera de la fase</span></button>
+    <button class="nx" data-go="dte2"><span class="sn-k">Siguiente</span><span class="sn-t">Usuarios extremos</span></button>
+  </div>
 </section>
 
 <!-- ==== Usuarios extremos ==== -->
 <section class="screen" id="s-dte2" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 2 · Empatizar</span>
+    <span class="eyebrow">Empatizar · herramienta 2 de 5</span>
     <h1>Usuarios <span class="hl">extremos</span></h1>
     <p class="sub">El promedio no enseña nada. Los extremos sí.</p>
   </div>
@@ -4507,7 +4531,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Eje elegido</span>Cuánto tiempo puede esperar.</div>
       <div class="ex"><span class="f">Extremo 1</span>Andrés, entra a trabajar a las 7. Tiene menos de cinco minutos y compra siempre lo mismo.</div>
       <div class="ex"><span class="f">Extremo 2</span>Doña Marta, viene a las 9, compra para toda la semana y se queda conversando.</div>
@@ -4519,12 +4543,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Dos o tres personas concretas por cada extremo, con nombre y motivo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dte1"><span class="sn-k">Anterior</span><span class="sn-t">Mapa de actores</span></button>
+    <button class="nx" data-go="dte3"><span class="sn-k">Siguiente</span><span class="sn-t">Entrevista cualitativa</span></button>
+  </div>
 </section>
 
 <!-- ==== Entrevista cualitativa ==== -->
 <section class="screen" id="s-dte3" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 3 · Empatizar</span>
+    <span class="eyebrow">Empatizar · herramienta 3 de 5</span>
     <h1>Entrevista <span class="hl">cualitativa</span></h1>
     <p class="sub">Preguntar sin meterle la respuesta en la boca.</p>
   </div>
@@ -4569,7 +4598,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Pregunta del guion</span>«Cuénteme qué hizo esta mañana desde que salió de casa hasta que llegó al trabajo.»</div>
       <div class="ex"><span class="f">Lo que contestó Andrés</span>«Pasé por la panadería, me asomé, vi que había como ocho personas y seguí derecho. Compré en la tienda de la esquina, que es peor pan, pero no me podía arriesgar.»</div>
       <div class="ex"><span class="f">Lo que apareció sin preguntarlo</span>No se fue por la fila en sí. Se fue porque <b>no podía calcular</b> cuánto iba a tardar, y el riesgo de llegar tarde pesaba más que el pan.</div>
@@ -4580,12 +4609,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El guion y las frases literales de cada persona entrevistada.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dte2"><span class="sn-k">Anterior</span><span class="sn-t">Usuarios extremos</span></button>
+    <button class="nx" data-go="dte4"><span class="sn-k">Siguiente</span><span class="sn-t">¿Qué, cómo, por qué?</span></button>
+  </div>
 </section>
 
 <!-- ==== ¿Qué, cómo, por qué? ==== -->
 <section class="screen" id="s-dte4" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 4 · Empatizar</span>
+    <span class="eyebrow">Empatizar · herramienta 4 de 5</span>
     <h1>¿Qué, cómo, por <span class="hl">qué?</span></h1>
     <p class="sub">Pasar de lo que ves a lo que significa, sin saltarte el paso del medio.</p>
   </div>
@@ -4625,7 +4659,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Qué</span>Entró, se quedó en la puerta tres segundos, miró hacia el mostrador y salió sin hablar con nadie.</div>
       <div class="ex"><span class="f">Cómo</span>Sin quitarse los audífonos. Miró el reloj del celular antes de salir. Caminó rápido al salir, más rápido que al entrar.</div>
       <div class="ex"><span class="f">Por qué (hipótesis)</span>No estaba evaluando el pan ni el precio: estaba calculando el tiempo. El reloj dice que la decisión fue contra el reloj, no contra la panadería.</div>
@@ -4641,12 +4675,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una rejilla por observación, con la columna de hipótesis marcada para verificar.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dte3"><span class="sn-k">Anterior</span><span class="sn-t">Entrevista cualitativa</span></button>
+    <button class="nx" data-go="dte5"><span class="sn-k">Siguiente</span><span class="sn-t">Customer Journey</span></button>
+  </div>
 </section>
 
 <!-- ==== Customer Journey ==== -->
 <section class="screen" id="s-dte5" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 5 · Empatizar</span>
+    <span class="eyebrow">Empatizar · herramienta 5 de 5</span>
     <h1>Customer <span class="hl">Journey</span></h1>
     <p class="sub">Cómo vive el recorrido completo, no solo el momento de comprar.</p>
   </div>
@@ -4686,7 +4725,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Las etapas</span>Sale de casa → se acerca → se asoma → decide → hace la fila → pide → paga → sale.</div>
       <div class="ex"><span class="f">Dónde cae la curva</span>En <b>«se asoma»</b>. No en hacer la fila ni en pagar: en el instante en que mira desde la puerta y tiene que decidir a ciegas.</div>
       <div class="ex"><span class="f">Lo que cambió el proyecto</span>El equipo venía pensando en poner otra caja, que ataca la etapa «pagar». El journey mostró que a esa etapa ni siquiera llegan: se van tres etapas antes.</div>
@@ -4697,12 +4736,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El mapa de etapas con la curva de emoción y el punto más bajo marcado.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dte4"><span class="sn-k">Anterior</span><span class="sn-t">¿Qué, cómo, por qué?</span></button>
+    <button class="nx" data-go="dt"><span class="sn-k">Fase completa</span><span class="sn-t">Volver al método</span></button>
+  </div>
 </section>
 
 <!-- ==== Clustering ==== -->
 <section class="screen" id="s-dtd1" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 1 · Definir</span>
+    <span class="eyebrow">Definir · herramienta 1 de 5</span>
     <h1><span class="hl">Clustering</span></h1>
     <p class="sub">Vaciar todo lo recogido y dejar que se agrupe solo.</p>
   </div>
@@ -4742,7 +4786,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El material</span>62 notas: frases de 9 entrevistas, 14 observaciones y los reclamos del último mes.</div>
       <div class="ex"><span class="f">Los cuatro grupos que salieron</span>1) No se sabe cuánto se va a esperar · 2) El producto favorito se acaba temprano · 3) Pagar es el paso más lento · 4) No hay dónde esperar sin estorbar.</div>
       <div class="ex"><span class="f">La nota huérfana</span>«Yo mando a mi hijo y él me hace la fila.» No entró en ningún grupo, y terminó siendo la semilla de una de las ideas.</div>
@@ -4753,12 +4797,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Los temas agrupados, cada uno con las notas que lo sostienen.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera de la fase</span></button>
+    <button class="nx" data-go="dtd2"><span class="sn-k">Siguiente</span><span class="sn-t">Mapa de empatía</span></button>
+  </div>
 </section>
 
 <!-- ==== Mapa de empatía ==== -->
 <section class="screen" id="s-dtd2" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 2 · Definir</span>
+    <span class="eyebrow">Definir · herramienta 2 de 5</span>
     <h1>Mapa de <span class="hl">empatía</span></h1>
     <p class="sub">Ordenar a una persona en cuatro cuadrantes: dice, hace, piensa y siente.</p>
   </div>
@@ -4798,7 +4847,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · Andrés, el de las 6:40</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Dice</span>«Es el mejor pan del barrio, por eso vengo.»</div>
       <div class="ex"><span class="f">Hace</span>Se asoma, ve la fila y se va a comprar a la tienda de la esquina, donde el pan es peor.</div>
       <div class="ex"><span class="f">Piensa</span>«Si me demoro acá, llego tarde y no vale la pena.»</div>
@@ -4811,12 +4860,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Un lienzo por persona, con la contradicción subrayada.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtd1"><span class="sn-k">Anterior</span><span class="sn-t">Clustering</span></button>
+    <button class="nx" data-go="dtd3"><span class="sn-k">Siguiente</span><span class="sn-t">Personas</span></button>
+  </div>
 </section>
 
 <!-- ==== Personas ==== -->
 <section class="screen" id="s-dtd3" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 3 · Definir</span>
+    <span class="eyebrow">Definir · herramienta 3 de 5</span>
     <h1><span class="hl">Personas</span></h1>
     <p class="sub">Darle cara, nombre y vida a la persona para la que estás diseñando.</p>
   </div>
@@ -4856,7 +4910,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ficha de Andrés</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Quién</span>Andrés, 34 años. Sale de casa a las 6:40. Entra a trabajar a las 7:10 y el jefe mira la hora.</div>
       <div class="ex"><span class="f">Qué busca</span>Desayunar bien sin arriesgar la llegada.</div>
       <div class="ex"><span class="f">Qué lo frena</span>No puede calcular cuánto va a tardar en la panadería, y equivocarse le cuesta caro.</div>
@@ -4868,12 +4922,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Dos o tres fichas, cada línea rastreable a una entrevista.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtd2"><span class="sn-k">Anterior</span><span class="sn-t">Mapa de empatía</span></button>
+    <button class="nx" data-go="dtd4"><span class="sn-k">Siguiente</span><span class="sn-t">Insights</span></button>
+  </div>
 </section>
 
 <!-- ==== Insights ==== -->
 <section class="screen" id="s-dtd4" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 4 · Definir</span>
+    <span class="eyebrow">Definir · herramienta 4 de 5</span>
     <h1><span class="hl">Insights</span></h1>
     <p class="sub">La frase que resume el descubrimiento, no el dato.</p>
   </div>
@@ -4913,7 +4972,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El insight</span>«El cliente de la mañana <b>se va antes de entrar</b>, aunque prefiere este pan, <b>porque</b> la espera es invisible: no puede calcularla y equivocarse le cuesta llegar tarde.»</div>
       <div class="ex"><span class="f">Por qué pasa la prueba</span>Es sorprendente (el problema no es esperar), explica el comportamiento (por eso se va sin preguntar) y sugiere varias salidas (mostrar el tiempo, reservar, entregar afuera).</div>
       <div class="ex"><span class="f">Lo que NO era un insight</span>«A la gente no le gusta hacer fila.» Nadie se sorprende, no explica nada y no abre ninguna puerta.</div>
@@ -4924,12 +4983,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Tres o cuatro frases que cambian la conversación del equipo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtd3"><span class="sn-k">Anterior</span><span class="sn-t">Personas</span></button>
+    <button class="nx" data-go="dtd5"><span class="sn-k">Siguiente</span><span class="sn-t">¿Cómo podríamos…?</span></button>
+  </div>
 </section>
 
 <!-- ==== ¿Cómo podríamos…? ==== -->
 <section class="screen" id="s-dtd5" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 5 · Definir</span>
+    <span class="eyebrow">Definir · herramienta 5 de 5</span>
     <h1>¿Cómo <span class="hl">podríamos…?</span></h1>
     <p class="sub">Convertir el hallazgo en una pregunta que se pueda contestar con ideas.</p>
   </div>
@@ -4969,7 +5033,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La que quedó</span>«¿Cómo podríamos hacer que el cliente de afán <b>sepa, antes de entrar</b>, cuánto va a esperar?»</div>
       <div class="ex"><span class="f">Otras dos que se escribieron</span>«¿Cómo podríamos hacer que la espera valga la pena?» y «¿Cómo podríamos sacarle el pan sin que entre?» Las tres son válidas y llevan a lugares distintos.</div>
       <div class="ex"><span class="f">La que se descartó</span>«¿Cómo podríamos reducir el tiempo de la fila?» Ataca el síntoma que el insight ya había descartado: el problema no era la duración, era no poder calcularla.</div>
@@ -4980,12 +5044,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una pregunta de diseño lista para entrar a la lluvia de ideas.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtd4"><span class="sn-k">Anterior</span><span class="sn-t">Insights</span></button>
+    <button class="nx" data-go="dt"><span class="sn-k">Fase completa</span><span class="sn-t">Volver al método</span></button>
+  </div>
 </section>
 
 <!-- ==== Lluvia de ideas ==== -->
 <section class="screen" id="s-dti1" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 1 · Idear</span>
+    <span class="eyebrow">Idear · herramienta 1 de 5</span>
     <h1>Lluvia de <span class="hl">ideas</span></h1>
     <p class="sub">Mucha cantidad primero. La calidad se filtra después.</p>
   </div>
@@ -5030,7 +5099,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La pregunta</span>«¿Cómo podríamos hacer que el cliente de afán sepa, antes de entrar, cuánto va a esperar?»</div>
       <div class="ex"><span class="f">Algunas de las 43 ideas</span>Un semáforo en la puerta · una cuenta de WhatsApp que publica la foto de la fila · pedir la noche anterior · una ventanilla solo para pedidos fijos · un tablero con «última persona atendida a las 6:47» · que el vigilante cante el turno.</div>
       <div class="ex"><span class="f">La idea absurda que sirvió</span>«Que la gente pida por la ventana sin entrar.» Era un chiste, y de ahí salió la ventanilla express, que fue el prototipo que se probó.</div>
@@ -5041,12 +5110,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Entre 30 y 50 ideas sin filtrar, todas respondiendo a la misma pregunta.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera de la fase</span></button>
+    <button class="nx" data-go="dti2"><span class="sn-k">Siguiente</span><span class="sn-t">SCAMPER</span></button>
+  </div>
 </section>
 
 <!-- ==== SCAMPER ==== -->
 <section class="screen" id="s-dti2" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 2 · Idear</span>
+    <span class="eyebrow">Idear · herramienta 2 de 5</span>
     <h1><span class="hl">SCAMPER</span></h1>
     <p class="sub">Siete palancas para forzar ideas cuando ya se agotaron las obvias.</p>
   </div>
@@ -5085,15 +5159,10 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Estado actual</span>El cliente entra, hace la fila, pide en el mostrador y paga en la caja.</div>
-      <div class="ex"><span class="f">Sustituir</span>Que la fila la haga un tablero de turnos en vez del cuerpo del cliente.</div>
-      <div class="ex"><span class="f">Combinar</span>Juntar pedir y pagar en un solo punto para los pedidos fijos.</div>
-      <div class="ex"><span class="f">Adaptar</span>Copiar el sistema de las carnicerías: número de turno al entrar.</div>
-      <div class="ex"><span class="f">Modificar</span>Que el pan de la mañana venga ya empacado en combos de a tres.</div>
-      <div class="ex"><span class="f">Para otro uso</span>La vitrina de las tortas, vacía a esa hora, se vuelve el punto de entrega express.</div>
-      <div class="ex"><span class="f">Eliminar</span>Quitar el paso de pagar en caja: se paga al recibir.</div>
-      <div class="ex"><span class="f">Reordenar</span>Pagar primero y recibir después, como en los restaurantes de comida rápida.</div>
+      <div class="ex"><span class="f">La palanca que dio la idea ganadora</span><b>Para otro uso.</b> La vitrina de las tortas, que a esa hora está vacía, se convirtió en el punto de entrega express.</div>
+      <div class="ex"><span class="f">La que nadie esperaba</span><b>Eliminar.</b> Quitar el paso de pagar en caja parecía imposible, y terminó siendo el código QR pegado en la ventanilla.</div>
     </div>
   </div>
 
@@ -5101,12 +5170,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una idea por cada una de las siete palancas, mínimo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dti1"><span class="sn-k">Anterior</span><span class="sn-t">Lluvia de ideas</span></button>
+    <button class="nx" data-go="dti3"><span class="sn-k">Siguiente</span><span class="sn-t">Misión imposible</span></button>
+  </div>
 </section>
 
 <!-- ==== Misión imposible ==== -->
 <section class="screen" id="s-dti3" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 3 · Idear</span>
+    <span class="eyebrow">Idear · herramienta 3 de 5</span>
     <h1>Misión <span class="hl">imposible</span></h1>
     <p class="sub">Quitar la restricción para ver qué idea estaba escondida detrás.</p>
   </div>
@@ -5146,7 +5220,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La misión imposible</span>«Que el cliente reciba su pan en cero segundos, sin hacer fila y sin pedir nada.»</div>
       <div class="ex"><span class="f">Las ideas que salieron</span>Que el pan esté listo porque el sistema ya sabe qué compra · que alguien se lo lleve a la oficina · que haya un casillero con su nombre.</div>
       <div class="ex"><span class="f">La versión del lunes</span>Los diez clientes fijos de la mañana dejan su pedido estándar registrado; a las 6:30 sus bolsas ya están empacadas con el nombre en un canasto aparte. No es cero segundos, pero es treinta.</div>
@@ -5158,12 +5232,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Dos o tres ideas rescatadas, cada una con su versión aplicable.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dti2"><span class="sn-k">Anterior</span><span class="sn-t">SCAMPER</span></button>
+    <button class="nx" data-go="dti4"><span class="sn-k">Siguiente</span><span class="sn-t">Selección N.U.F.</span></button>
+  </div>
 </section>
 
 <!-- ==== Selección N.U.F. ==== -->
 <section class="screen" id="s-dti4" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 4 · Idear</span>
+    <span class="eyebrow">Idear · herramienta 4 de 5</span>
     <h1>Selección <span class="hl">N.U.F.</span></h1>
     <p class="sub">Filtrar 40 ideas con tres preguntas, no con opiniones.</p>
   </div>
@@ -5206,7 +5285,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Tablero con «última persona atendida a las 6:47»</span>Nueva 7 · Útil 9 · Factible 9 = <b>25</b></div>
       <div class="ex"><span class="f">Ventanilla express de pedidos fijos</span>Nueva 8 · Útil 9 · Factible 7 = <b>24</b></div>
       <div class="ex"><span class="f">App de pedidos con pago en línea</span>Nueva 4 · Útil 8 · Factible 2 = <b>14</b></div>
@@ -5218,12 +5297,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">La lista ordenada y las dos o tres ideas elegidas, con el motivo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dti3"><span class="sn-k">Anterior</span><span class="sn-t">Misión imposible</span></button>
+    <button class="nx" data-go="dti5"><span class="sn-k">Siguiente</span><span class="sn-t">Storyboard</span></button>
+  </div>
 </section>
 
 <!-- ==== Storyboard ==== -->
 <section class="screen" id="s-dti5" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 5 · Idear</span>
+    <span class="eyebrow">Idear · herramienta 5 de 5</span>
     <h1><span class="hl">Storyboard</span></h1>
     <p class="sub">Dibujar la idea como una tira de escenas para ver si se sostiene.</p>
   </div>
@@ -5266,14 +5350,10 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
-      <div class="ex"><span class="f">Cuadro 1</span>Andrés sale de casa a las 6:40, mira el reloj.</div>
-      <div class="ex"><span class="f">Cuadro 2</span>Llega a la panadería y ve dos filas: una larga y una ventanilla con nadie.</div>
-      <div class="ex"><span class="f">Cuadro 3</span>Se acerca a la ventanilla. En un letrero: «Pedidos de siempre».</div>
-      <div class="ex"><span class="f">Cuadro 4</span>Dice su nombre. La cajera saca una bolsa ya empacada.</div>
-      <div class="ex"><span class="f">Cuadro 5</span>Paga con el código QR pegado en la ventanilla.</div>
-      <div class="ex"><span class="f">Cuadro 6</span>Sale a los 40 segundos, mira el reloj y sonríe.</div>
-      <div class="ex"><span class="f">El cuadro imposible</span>El 4. Nadie sabía cómo la cajera iba a saber cuál bolsa es de Andrés sin preguntar. Eso se resolvió con el nombre escrito en la bolsa, y fue lo primero que se probó en el prototipo.</div>
+    <div class="exlist">
+      <div class="ex"><span class="f">Para qué se dibujó</span>Para ver si la ventanilla express se sostenía de principio a fin, antes de gastar una mañana armándola.</div>
+      <div class="ex"><span class="f">El cuadro imposible</span>El 4. Nadie sabía cómo la cajera iba a saber cuál bolsa era de Andrés sin preguntarle.</div>
+      <div class="ex"><span class="f">Lo que cambió</span>Se resolvió con el nombre escrito en marcador sobre la bolsa, y fue lo primero que se probó en el prototipo.</div>
     </div>
   </div>
 
@@ -5281,12 +5361,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una tira de seis a ocho cuadros con el cuadro imposible identificado.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dti4"><span class="sn-k">Anterior</span><span class="sn-t">Selección N.U.F.</span></button>
+    <button class="nx" data-go="dt"><span class="sn-k">Fase completa</span><span class="sn-t">Volver al método</span></button>
+  </div>
 </section>
 
 <!-- ==== Prototipo en bruto ==== -->
 <section class="screen" id="s-dtp1" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 1 · Prototipar</span>
+    <span class="eyebrow">Prototipar · herramienta 1 de 4</span>
     <h1>Prototipo en <span class="hl">bruto</span></h1>
     <p class="sub">Armar la idea con lo que haya, en una hora, para que falle rápido.</p>
   </div>
@@ -5326,7 +5411,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La pregunta</span>«¿Un cliente de afán entiende, sin que le expliquen, que esa ventanilla es para él?»</div>
       <div class="ex"><span class="f">Lo que se armó</span>Una mesa plegable al lado de la puerta, un letrero en cartulina que decía «PEDIDO DE SIEMPRE · 30 segundos» y cinco bolsas de papel con nombres escritos en marcador.</div>
       <div class="ex"><span class="f">Lo que costó</span>Nada. Cuarenta minutos.</div>
@@ -5338,12 +5423,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Un objeto imperfecto, la pregunta que contesta y lo que se aprendió al probarlo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera de la fase</span></button>
+    <button class="nx" data-go="dtp2"><span class="sn-k">Siguiente</span><span class="sn-t">Prototipado en papel</span></button>
+  </div>
 </section>
 
 <!-- ==== Prototipado en papel ==== -->
 <section class="screen" id="s-dtp2" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 2 · Prototipar</span>
+    <span class="eyebrow">Prototipar · herramienta 2 de 4</span>
     <h1>Prototipado en <span class="hl">papel</span></h1>
     <p class="sub">Probar una pantalla o un formato antes de programar nada.</p>
   </div>
@@ -5386,13 +5476,10 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el tablero de espera</h2>
-    <div class="card">
-      <div class="ex"><span class="f">Lo que se probó</span>El tablero que iría en la puerta de la panadería: tres versiones en cartulina.</div>
-      <div class="ex"><span class="f">Versión A</span>«Tiempo de espera: 6 minutos.»</div>
-      <div class="ex"><span class="f">Versión B</span>«Última persona atendida: 6:47.»</div>
-      <div class="ex"><span class="f">Versión C</span>Un semáforo verde / amarillo / rojo.</div>
-      <div class="ex"><span class="f">La tarea que se dio</span>«Usted va camino al trabajo. Mire esto y dígame qué hace.»</div>
-      <div class="ex"><span class="f">Lo que pasó</span>La versión A generó desconfianza («eso nunca es verdad»). La C no decía cuánto. La B funcionó: la gente la creía porque es un hecho, no una promesa, y calculaba sola.</div>
+    <div class="exlist">
+      <div class="ex"><span class="f">La tarea</span>«Usted va camino al trabajo. Mire esto y dígame qué hace.»</div>
+      <div class="ex"><span class="f">Lo que separó las tres versiones</span>La A prometía un tiempo y generaba desconfianza. La C mostraba un estado pero no decía cuánto. La B daba un hecho —«última persona atendida: 6:47»— y la gente calculaba sola.</div>
+      <div class="ex"><span class="f">Lo que costó</span>Tres cartulinas y veinte minutos, en vez de semanas programando una pantalla.</div>
     </div>
   </div>
 
@@ -5400,12 +5487,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Las hojas dibujadas, la tarea que se dio y qué hizo la gente con cada versión.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtp1"><span class="sn-k">Anterior</span><span class="sn-t">Prototipo en bruto</span></button>
+    <button class="nx" data-go="dtp3"><span class="sn-k">Siguiente</span><span class="sn-t">Juego de roles</span></button>
+  </div>
 </section>
 
 <!-- ==== Juego de roles ==== -->
 <section class="screen" id="s-dtp3" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 3 · Prototipar</span>
+    <span class="eyebrow">Prototipar · herramienta 3 de 4</span>
     <h1>Juego de <span class="hl">roles</span></h1>
     <p class="sub">Actuar el servicio para encontrar lo que ningún dibujo muestra.</p>
   </div>
@@ -5448,7 +5540,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La escena</span>6:50 a.m. Cuatro clientes en fila normal, dos clientes de pedido fijo, una cajera, un panadero surtiendo.</div>
       <div class="ex"><span class="f">Primer roce</span>La cajera tenía que girarse a buscar la bolsa del pedido fijo y, mientras lo hacía, la fila normal se quedaba esperando. La ventanilla hacía más lenta la fila que quería agilizar.</div>
       <div class="ex"><span class="f">Segundo roce</span>Un cliente de la fila normal reclamó: «¿Por qué ese pasa primero?» Nadie lo había previsto.</div>
@@ -5460,12 +5552,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Las notas del observador, con la lista de roces y qué se cambió por cada uno.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtp2"><span class="sn-k">Anterior</span><span class="sn-t">Prototipado en papel</span></button>
+    <button class="nx" data-go="dtp4"><span class="sn-k">Siguiente</span><span class="sn-t">Mago de Oz</span></button>
+  </div>
 </section>
 
 <!-- ==== Mago de Oz ==== -->
 <section class="screen" id="s-dtp4" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 4 · Prototipar</span>
+    <span class="eyebrow">Prototipar · herramienta 4 de 4</span>
     <h1>Mago de <span class="hl">Oz</span></h1>
     <p class="sub">Hacer que la idea parezca automática cuando en realidad hay alguien detrás haciéndolo a mano.</p>
   </div>
@@ -5509,7 +5606,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la app de pedidos que no se podía hacer</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La idea original</span>Una app donde el cliente pide la noche anterior y recoge sin fila. Factibilidad 2 de 10: nadie iba a programar una app para probar una hipótesis.</div>
       <div class="ex"><span class="f">La fachada</span>Un número de WhatsApp en un aviso en la puerta: «Pida hoy, recoja mañana sin fila.»</div>
       <div class="ex"><span class="f">El mago detrás</span>El dueño leyendo los mensajes a las 9 de la noche y anotando los pedidos en un cuaderno. Cero tecnología.</div>
@@ -5521,12 +5618,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Los números del experimento y una decisión: construirlo, cambiarlo o botarlo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtp3"><span class="sn-k">Anterior</span><span class="sn-t">Juego de roles</span></button>
+    <button class="nx" data-go="dt"><span class="sn-k">Fase completa</span><span class="sn-t">Volver al método</span></button>
+  </div>
 </section>
 
 <!-- ==== Pruebas de usabilidad ==== -->
 <section class="screen" id="s-dtt1" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 1 · Testear</span>
+    <span class="eyebrow">Testear · herramienta 1 de 4</span>
     <h1>Pruebas de <span class="hl">usabilidad</span></h1>
     <p class="sub">Mirar a alguien usar la idea sin ayudarlo.</p>
   </div>
@@ -5570,7 +5672,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La tarea</span>«Son las 6:50, usted va al trabajo y quiere su pan de siempre. Hágalo.»</div>
       <div class="ex"><span class="f">Persona 1</span>Se fue derecho a la fila normal. No vio la ventanilla porque estaba mirando el mostrador, no la pared.</div>
       <div class="ex"><span class="f">Persona 3</span>Vio el letrero, lo leyó dos veces y preguntó «¿esto es para pedir ahora?». El letrero decía dos cosas a la vez.</div>
@@ -5583,12 +5685,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Las notas de cinco pruebas y la lista de arreglos por orden de gravedad.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera de la fase</span></button>
+    <button class="nx" data-go="dtt2"><span class="sn-k">Siguiente</span><span class="sn-t">Matriz de feedback</span></button>
+  </div>
 </section>
 
 <!-- ==== Matriz de feedback ==== -->
 <section class="screen" id="s-dtt2" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 2 · Testear</span>
+    <span class="eyebrow">Testear · herramienta 2 de 4</span>
     <h1>Matriz de <span class="hl">feedback</span></h1>
     <p class="sub">Ordenar lo que dijeron en cuatro casillas para poder hacer algo con eso.</p>
   </div>
@@ -5627,7 +5734,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">✓ Funcionó</span>La bolsa con el nombre escrito · los 35 segundos reales · que no hubiera que hablar.</div>
       <div class="ex"><span class="f">△ Mejorar</span>La ubicación: no se ve al entrar · el letrero dice dos cosas · falta la factura dentro.</div>
       <div class="ex"><span class="f">? Preguntas</span>«¿Esto sirve si cambio el pedido?» · «¿Y si llego a las 8, igual está?» · «¿Tengo que avisar el día anterior?»</div>
@@ -5640,12 +5747,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una matriz por prototipo, con el cuadrante de mejorar convertido en acciones.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtt1"><span class="sn-k">Anterior</span><span class="sn-t">Pruebas de usabilidad</span></button>
+    <button class="nx" data-go="dtt3"><span class="sn-k">Siguiente</span><span class="sn-t">Evaluación del valor</span></button>
+  </div>
 </section>
 
 <!-- ==== Evaluación del valor ==== -->
 <section class="screen" id="s-dtt3" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 3 · Testear</span>
+    <span class="eyebrow">Testear · herramienta 3 de 4</span>
     <h1>Evaluación del <span class="hl">valor</span></h1>
     <p class="sub">Decidir si la solución vale lo que cuesta, antes de implementarla.</p>
   </div>
@@ -5685,7 +5797,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Valor medido</span>7 de 10 clientes de afán la usaron · tiempo de 4 minutos a 35 segundos · 3 clientes que se habían ido volvieron · la fila normal bajó dos personas en promedio.</div>
       <div class="ex"><span class="f">Costo de arrancar</span>Una mesa, un letrero impreso y dos horas de reorganizar el mostrador.</div>
       <div class="ex"><span class="f">Costo de sostener</span>20 minutos diarios de alguien empacando los pedidos fijos a las 6:15. Ese es el costo real, y no estaba en ninguna cuenta.</div>
@@ -5697,12 +5809,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Las dos columnas y una decisión escrita con su motivo y su límite.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtt2"><span class="sn-k">Anterior</span><span class="sn-t">Matriz de feedback</span></button>
+    <button class="nx" data-go="dtt4"><span class="sn-k">Siguiente</span><span class="sn-t">Elevator pitch</span></button>
+  </div>
 </section>
 
 <!-- ==== Elevator pitch ==== -->
 <section class="screen" id="s-dtt4" hidden>
   <div class="hero">
-    <span class="eyebrow">Herramienta 4 · Testear</span>
+    <span class="eyebrow">Testear · herramienta 4 de 4</span>
     <h1>Elevator <span class="hl">pitch</span></h1>
     <p class="sub">Contar la solución en un minuto, a alguien que no estuvo en el proceso.</p>
   </div>
@@ -5745,7 +5862,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la ventanilla express</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El pitch</span>«<b>Para</b> el cliente que pasa por la panadería camino al trabajo <b>y que</b> hoy se va sin comprar porque no puede calcular cuánto va a esperar, <b>la ventanilla express</b> es un punto de entrega al lado de la puerta donde los pedidos de siempre están ya empacados con el nombre del cliente. <b>A diferencia de</b> poner otra caja, no ataca la velocidad de la fila sino la incertidumbre antes de entrar. <b>Y lo sabemos porque</b> en una semana de prueba 7 de cada 10 clientes de afán la usaron, el tiempo pasó de 4 minutos a 35 segundos y volvieron 3 clientes que habíamos perdido.»</div>
       <div class="ex"><span class="f">Por qué funciona</span>Nombra a la persona, nombra el problema con sus palabras, dice qué es sin tecnicismos, se diferencia de la solución obvia y cierra con tres datos medidos.</div>
     </div>
@@ -5755,12 +5872,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Un párrafo de un minuto, probado con alguien ajeno al proyecto.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtt3"><span class="sn-k">Anterior</span><span class="sn-t">Evaluación del valor</span></button>
+    <button class="nx" data-go="dt"><span class="sn-k">Fase completa</span><span class="sn-t">Volver al método</span></button>
+  </div>
 </section>
 
 <!-- ==== Matriz RACI ==== -->
 <section class="screen" id="s-dtx1" hidden>
   <div class="hero">
-    <span class="eyebrow">Transversal 1 · sirve en cualquier etapa</span>
+    <span class="eyebrow">Transversales · herramienta 1 de 5</span>
     <h1>Matriz <span class="hl">RACI</span></h1>
     <p class="sub">Dejar por escrito quién hace, quién decide, a quién se consulta y a quién se le cuenta.</p>
   </div>
@@ -5804,7 +5926,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el proyecto de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Hacer las entrevistas</span>R: Nico · A: el dueño · C: la cajera · I: el panadero</div>
       <div class="ex"><span class="f">Armar el prototipo de la ventanilla</span>R: Nico · A: el dueño · C: la cajera · I: —</div>
       <div class="ex"><span class="f">Decidir si se implementa</span>R: el dueño · A: el dueño · C: Nico y la cajera · I: todo el personal</div>
@@ -5817,12 +5939,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">La tabla llena, leída en voz alta y sin filas sin R.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera de la fase</span></button>
+    <button class="nx" data-go="dtx2"><span class="sn-k">Siguiente</span><span class="sn-t">Tablero Kanban</span></button>
+  </div>
 </section>
 
 <!-- ==== Tablero Kanban ==== -->
 <section class="screen" id="s-dtx2" hidden>
   <div class="hero">
-    <span class="eyebrow">Transversal 2 · sirve en cualquier etapa</span>
+    <span class="eyebrow">Transversales · herramienta 2 de 5</span>
     <h1>Tablero <span class="hl">Kanban</span></h1>
     <p class="sub">Ver en qué va cada cosa, en una pared, sin tener que preguntar.</p>
   </div>
@@ -5866,7 +5993,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el proyecto de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Por hacer</span>Entrevistar a 3 clientes más · diseñar el letrero v2 · contar la fila el sábado</div>
       <div class="ex"><span class="f">En curso (límite 3)</span>Prototipo de la ventanilla · pruebas de usabilidad · matriz de feedback</div>
       <div class="ex"><span class="f">Hecho</span>Mapa de actores · 9 entrevistas · clustering · insights · 2 personas · lluvia de ideas</div>
@@ -5883,12 +6010,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El tablero con el límite escrito y visible, y la columna del medio respetada.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtx1"><span class="sn-k">Anterior</span><span class="sn-t">Matriz RACI</span></button>
+    <button class="nx" data-go="dtx3"><span class="sn-k">Siguiente</span><span class="sn-t">Tarjetas rojas y verdes</span></button>
+  </div>
 </section>
 
 <!-- ==== Tarjetas rojas y verdes ==== -->
 <section class="screen" id="s-dtx3" hidden>
   <div class="hero">
-    <span class="eyebrow">Transversal 3 · sirve en cualquier etapa</span>
+    <span class="eyebrow">Transversales · herramienta 3 de 5</span>
     <h1>Tarjetas rojas y <span class="hl">verdes</span></h1>
     <p class="sub">Separar lo que frena de lo que impulsa, para no discutirlo todo junto.</p>
   </div>
@@ -5931,7 +6063,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el proyecto de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Verdes</span>La cajera conoce a los clientes por el nombre · el dueño decide rápido · el local tiene una pared con buena visibilidad desde la calle.</div>
       <div class="ex"><span class="f">Rojas</span>Nadie sabe cuántas personas se van sin comprar · el panadero no estuvo en ninguna sesión y es el que va a ejecutar · entre 6:30 y 8 nadie tiene un minuto para medir nada.</div>
       <div class="ex"><span class="f">La roja que escribieron tres</span>«El panadero no estuvo.» Se corrigió esa misma semana: entró al equipo y aportó el dato de a qué hora se acaba cada producto, que cambió el prototipo.</div>
@@ -5948,12 +6080,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Los dos montones agrupados, y cada grupo rojo con una acción o una decisión.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtx2"><span class="sn-k">Anterior</span><span class="sn-t">Tablero Kanban</span></button>
+    <button class="nx" data-go="dtx4"><span class="sn-k">Siguiente</span><span class="sn-t">Matriz de impacto y esfuerzo</span></button>
+  </div>
 </section>
 
 <!-- ==== Matriz de impacto y esfuerzo ==== -->
 <section class="screen" id="s-dtx4" hidden>
   <div class="hero">
-    <span class="eyebrow">Transversal 4 · sirve en cualquier etapa</span>
+    <span class="eyebrow">Transversales · herramienta 4 de 5</span>
     <h1>Matriz de impacto y <span class="hl">esfuerzo</span></h1>
     <p class="sub">Cuatro cuadrantes para decidir qué se hace primero.</p>
   </div>
@@ -5997,7 +6134,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la fila de la panadería</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Arriba-izquierda · hacer ya</span>El tablero de «última persona atendida» · mover el canasto al lado de la ventanilla · partir el letrero en dos frases.</div>
       <div class="ex"><span class="f">Arriba-derecha · agendar</span>La app de pedidos · reorganizar el layout del mostrador.</div>
       <div class="ex"><span class="f">Abajo-izquierda · si sobra tiempo</span>Cambiar el color de las bolsas · poner música.</div>
@@ -6009,12 +6146,17 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Las ideas ubicadas, el cuadrante de victorias rápidas con fecha y el de proyectos grandes agendado.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtx3"><span class="sn-k">Anterior</span><span class="sn-t">Tarjetas rojas y verdes</span></button>
+    <button class="nx" data-go="dtx5"><span class="sn-k">Siguiente</span><span class="sn-t">Seis sombreros</span></button>
+  </div>
 </section>
 
 <!-- ==== Seis sombreros ==== -->
 <section class="screen" id="s-dtx5" hidden>
   <div class="hero">
-    <span class="eyebrow">Transversal 5 · sirve en cualquier etapa</span>
+    <span class="eyebrow">Transversales · herramienta 5 de 5</span>
     <h1>Seis <span class="hl">sombreros</span></h1>
     <p class="sub">Discutir mirando un solo ángulo a la vez, todos al mismo tiempo.</p>
   </div>
@@ -6058,19 +6200,21 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · ¿se implementa la ventanilla express?</h2>
-    <div class="card">
-      <div class="ex"><span class="f">🔵 Azul</span>«Vamos a decidir si va o no. Veinticinco minutos, en este orden.»</div>
-      <div class="ex"><span class="f">⚪ Blanco</span>7 de 10 la usaron · 35 segundos promedio · cuesta 20 minutos diarios de alguien · 3 clientes recuperados.</div>
-      <div class="ex"><span class="f">🟡 Amarillo</span>Recupera clientes perdidos · no requiere inversión · le da reconocimiento al cliente fiel.</div>
-      <div class="ex"><span class="f">⚫ Negro</span>Si el panadero falta, nadie empaca · puede generar reclamos de la fila normal · a más de 15 pedidos no da el tiempo.</div>
-      <div class="ex"><span class="f">🟢 Verde</span>Que el cliente se empaque él mismo de un canasto · que solo opere martes a viernes · que el letrero diga el límite de 15.</div>
-      <div class="ex"><span class="f">🔵 Azul (cierre)</span>Va, con límite de 15 pedidos y el letrero diciéndolo. El riesgo del panadero se cubre con un segundo responsable en la RACI.</div>
+    <div class="exlist">
+      <div class="ex"><span class="f">La pregunta</span>¿Se implementa la ventanilla express? Veinticinco minutos, cuatro por sombrero.</div>
+      <div class="ex"><span class="f">Dónde cambió la conversación</span>En el amarillo. Los dos que estaban en contra tuvieron que pasar cuatro minutos buscando razones a favor, y ahí apareció lo de recuperar clientes perdidos.</div>
+      <div class="ex"><span class="f">La decisión del cierre</span>Va, con límite de 15 pedidos y el letrero diciéndolo. El riesgo que salió en el sombrero negro quedó cubierto con un segundo responsable en la RACI.</div>
     </div>
   </div>
 
   <div class="out">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">La decisión escrita, con los riesgos del sombrero negro atendidos uno por uno.</div></div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="dtx4"><span class="sn-k">Anterior</span><span class="sn-t">Matriz de impacto y esfuerzo</span></button>
+    <button class="nx" data-go="dt"><span class="sn-k">Fase completa</span><span class="sn-t">Volver al método</span></button>
   </div>
 </section>
 
@@ -6140,17 +6284,17 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="kz1">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k1"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Identificar la pérdida</span><span class="trow-d">¿Qué indicador está fuera de objetivo?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">1</span> · Identificar la pérdida</span><span class="trow-d">¿Qué indicador está fuera de objetivo?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz2">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k2"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Seleccionar y justificar</span><span class="trow-d">¿Qué parte exacta de esa pérdida vamos a atacar?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">2</span> · Seleccionar y justificar</span><span class="trow-d">¿Qué parte exacta de esa pérdida vamos a atacar?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz3">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k3"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Comprender el proceso</span><span class="trow-d">¿Cómo debería funcionar esto en teoría?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">3</span> · Comprender el proceso</span><span class="trow-d">¿Cómo debería funcionar esto en teoría?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -6171,32 +6315,32 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="kz4">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k4"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Evaluar la situación actual</span><span class="trow-d">¿Qué está pasando de verdad, en el piso?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">4</span> · Evaluar la situación actual</span><span class="trow-d">¿Qué está pasando de verdad, en el piso?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz5">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k5"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Establecer el objetivo</span><span class="trow-d">¿De cuánto a cuánto, y para cuándo?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">5</span> · Establecer el objetivo</span><span class="trow-d">¿De cuánto a cuánto, y para cuándo?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz6">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k6"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Definir el master plan</span><span class="trow-d">¿Quién hace qué y en qué fecha?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">6</span> · Definir el master plan</span><span class="trow-d">¿Quién hace qué y en qué fecha?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz7">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k7"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Realizar el análisis</span><span class="trow-d">¿Cuál es la causa raíz, no el síntoma?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">7</span> · Realizar el análisis</span><span class="trow-d">¿Cuál es la causa raíz, no el síntoma?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz8">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k8"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Proponer contramedidas</span><span class="trow-d">¿Qué solución evita que vuelva a pasar?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">8</span> · Proponer contramedidas</span><span class="trow-d">¿Qué solución evita que vuelva a pasar?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz9">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k9"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Implementar contramedidas</span><span class="trow-d">¿Se hizo, cuándo y quién lo verificó?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">9</span> · Implementar contramedidas</span><span class="trow-d">¿Se hizo, cuándo y quién lo verificó?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -6217,17 +6361,17 @@ img{max-width:100%}
     <div class="rows">
       <button class="trow" data-go="kz10">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k10"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Verificar resultados</span><span class="trow-d">¿El indicador se movió de verdad?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">10</span> · Verificar resultados</span><span class="trow-d">¿El indicador se movió de verdad?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz11">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k11"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Estandarización</span><span class="trow-d">¿Dónde queda escrito y quién lo revisa?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">11</span> · Estandarización</span><span class="trow-d">¿Dónde queda escrito y quién lo revisa?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="trow" data-go="kz12">
         <span class="thumb"><svg viewBox="0 0 120 80"><use href="#t-k12"/></svg></span>
-        <span class="trow-tx"><span class="trow-t">Planes futuros</span><span class="trow-d">¿Dónde más aplica y cuál sigue?</span></span>
+        <span class="trow-tx"><span class="trow-t"><span style="color:var(--blue-soft)">12</span> · Planes futuros</span><span class="trow-d">¿Dónde más aplica y cuál sigue?</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -6237,10 +6381,12 @@ img{max-width:100%}
 <!-- ==== Identificar la pérdida ==== -->
 <section class="screen" id="s-kz1" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 1 · Buscar</span>
+    <span class="eyebrow">Paso 1 de 12 · Buscar</span>
     <h1>Identificar la <span class="hl">pérdida</span></h1>
     <p class="sub">Todo inicia y todo termina con un indicador.</p>
   </div>
+
+  <div class="stepbar"><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Un Kaizen no arranca porque algo «se siente mal»: arranca porque hay un número fuera de objetivo. Puede ser el indicador de un pilar, de una línea o de la fábrica entera. La única excepción es una urgencia grande del negocio —un tema de calidad o de seguridad—, que entra directo sin esperar a que el indicador lo muestre.</p>
@@ -6255,20 +6401,20 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">1.1</span><div class="ptxt">
         <div class="pt">Mira el tablero y busca el que está fuera de objetivo</div>
         <div class="pd">No el que más te molesta ni el que más se menciona en las reuniones: el que tiene una brecha contra su meta.</div>
         <div class="ex"><span class="f">Los tres tipos de indicador</span><b>KMI</b> · el del negocio, lo que le importa a la gerencia (costo por unidad). <b>KPI</b> · el del proceso, cómo va la operación (% de merma). <b>KAI</b> · el de la actividad, si la rutina se está haciendo (% de calibraciones cumplidas).</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">1.2</span><div class="ptxt">
         <div class="pt">Confirma que la brecha es real y sostenida</div>
         <div class="pd">Un mal día no es una pérdida. Mira varias semanas seguidas: si el indicador vuelve solo a la meta, no hay Kaizen que hacer.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">1.3</span><div class="ptxt">
         <div class="pt">O entra por una urgencia</div>
         <div class="pd">Si hay un tema de seguridad o un reclamo de calidad grave, se arranca por ahí aunque el indicador todavía no lo refleje.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">1.4</span><div class="ptxt">
         <div class="pt">Escribe la pérdida en una sola frase con números</div>
         <div class="pd">Qué indicador, cuánto está, cuánto debería estar y desde cuándo. Si no te cabe en una frase, todavía no la tienes identificada.</div>
       </div></div>
@@ -6277,7 +6423,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la línea de pan</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El indicador</span>Merma de la línea de pan: porcentaje del pan producido que termina en la basura.</div>
       <div class="ex"><span class="f">Cómo está</span>6,2% promedio de las últimas 8 semanas, sin bajar nunca de 5,4%.</div>
       <div class="ex"><span class="f">Cómo debería estar</span>2,0%, que es la meta de la planta.</div>
@@ -6289,15 +6435,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una frase con el indicador, el valor actual, el objetivo y desde cuándo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Inicio</span><span class="sn-t">Primer paso</span></button>
+    <button class="nx" data-go="kz2"><span class="sn-k">Paso 2</span><span class="sn-t">Seleccionar y justificar</span></button>
+  </div>
 </section>
 
 <!-- ==== Seleccionar y justificar la pérdida ==== -->
 <section class="screen" id="s-kz2" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 2 · Buscar</span>
+    <span class="eyebrow">Paso 2 de 12 · Buscar</span>
     <h1>Seleccionar y justificar la <span class="hl">pérdida</span></h1>
     <p class="sub">Acotar hasta que quepa en una frase y se pueda erradicar.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Una pérdida sin acotar es un proyecto sin fin. Acá se parte el problema en pedazos y se escoge uno: el que vale la pena y además se puede cerrar. El alcance tiene que ser definido, realista y alcanzable, y siempre buscando la erradicación, no la reducción. Ni tan grande que no se pueda, ni tan pequeño que no valga el esfuerzo.</p>
@@ -6312,24 +6465,24 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">2.1</span><div class="ptxt">
         <div class="pt">Parte la pérdida en pedazos</div>
         <div class="pd">Por máquina, por turno, por producto, por tipo de defecto. Eso es <b>estratificar</b>: dejar de mirar el total y mirar de qué está hecho.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">2.2</span><div class="ptxt">
         <div class="pt">Cuenta cuánto aporta cada pedazo y ordénalos</div>
         <div class="pd">De mayor a menor. Eso es el <b>Pareto</b>, y casi siempre muestra que dos o tres causas explican la mayoría del problema.</div>
         <div class="ex"><span class="f">Para qué sirve de verdad</span>No para confirmar lo que ya sospechabas, sino para descartar lo que no es. La mitad de las ideas que el equipo traía se caen acá.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">2.3</span><div class="ptxt">
         <div class="pt">Escoge un solo pedazo</div>
         <div class="pd">El grande, pero que siga siendo una sola cosa. «Merma del horno 2» es un pedazo; «merma de la panadería» todavía es el total.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">2.4</span><div class="ptxt">
         <div class="pt">Escribe el alcance con números</div>
         <div class="pd">Qué, dónde, de cuánto a cuánto. Si no tiene número, no se va a poder cerrar.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">2.5</span><div class="ptxt">
         <div class="pt">Justifícalo</div>
         <div class="pd">Cuánto representa de la pérdida total y cuánto vale en plata o en tiempo. Ese número es el que consigue los recursos.</div>
       </div></div>
@@ -6338,7 +6491,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · la línea de pan</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La estratificación</span>Se clasificó el pan descartado durante 8 semanas: quemado del horno 2 (61%), pálido (17%), mala forma (11%), otros (11%).</div>
       <div class="ex"><span class="f">El pedazo elegido</span>El pan quemado del horno 2, que equivale a 3,8 puntos de los 6,2 de merma total.</div>
       <div class="ex"><span class="f">El alcance</span>«Reducir la merma por pan quemado en el horno 2 de 3,8% a 0,5% en 10 semanas.»</div>
@@ -6355,15 +6508,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El Pareto y una frase de alcance con número, lugar y plazo.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz1"><span class="sn-k">Paso 1</span><span class="sn-t">Identificar la pérdida</span></button>
+    <button class="nx" data-go="kz3"><span class="sn-k">Paso 3</span><span class="sn-t">Comprender el proceso</span></button>
+  </div>
 </section>
 
 <!-- ==== Comprender el proceso y el equipo ==== -->
 <section class="screen" id="s-kz3" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 3 · Buscar</span>
+    <span class="eyebrow">Paso 3 de 12 · Buscar</span>
     <h1>Comprender el proceso y el <span class="hl">equipo</span></h1>
     <p class="sub">Entender el deber ser antes de mirar lo que pasa.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Es el paso donde más tiempo hay que invertir, y el que casi todos se saltan. Acá no se describe lo que pasa hoy: se reconstruye <b>cómo debería funcionar</b> el proceso y, si hay una máquina involucrada, cuál es su principio de funcionamiento ideal. Eso significa ir a la documentación y entender de verdad cómo funciona, no suponerlo.</p>
@@ -6378,24 +6538,24 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">3.1</span><div class="ptxt">
         <div class="pt">Escribe el proceso como debería ser</div>
         <div class="pd">Paso por paso, en orden. Lo que la instrucción de trabajo dice que hay que hacer para completar la actividad.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">3.2</span><div class="ptxt">
         <div class="pt">Busca el estándar escrito</div>
         <div class="pd">La instrucción, el procedimiento, la ficha técnica. Si no existe, no sigas de largo: eso ya es un hallazgo y probablemente parte de la causa.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">3.3</span><div class="ptxt">
         <div class="pt">Si hay máquina, entiende su principio de funcionamiento</div>
         <div class="pd">Qué hace cada parte y qué condición necesita para hacerlo bien. Esto se saca del manual del equipo, no de la experiencia del que lleva años ahí.</div>
         <div class="ex"><span class="f">La pregunta que lo ordena</span>«¿Para qué existe esta pieza y qué pasa si no cumple su condición?» Si no puedes responderla de todas las partes principales, todavía no entiendes el equipo.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">3.4</span><div class="ptxt">
         <div class="pt">Anota los parámetros con número</div>
         <div class="pd">Temperatura, tiempo, velocidad, presión. Son los que vas a comparar contra la realidad en el paso 4.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">3.5</span><div class="ptxt">
         <div class="pt">No describas lo que pasa hoy</div>
         <div class="pd">Resiste la tentación. Mezclar teoría y práctica en este paso hace que después no puedas ver la diferencia entre las dos, que es justo lo que buscas.</div>
       </div></div>
@@ -6404,7 +6564,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El proceso ideal</span>Amasado → formado → fermentación → horneo → enfriado. El horneo es donde está la pérdida.</div>
       <div class="ex"><span class="f">El principio de funcionamiento</span>Las resistencias calientan la cámara, la turbina reparte el aire para que caliente parejo, el carro gira continuo para que todas las bandejas reciban lo mismo, y el temporizador corta a los 18 minutos.</div>
       <div class="ex"><span class="f">Los parámetros del estándar</span>210 °C, 18 minutos, carro girando, precalentado 20 minutos antes del primer lote.</div>
@@ -6416,15 +6576,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El proceso ideal escrito, el principio de funcionamiento del equipo y la lista de parámetros con número.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz2"><span class="sn-k">Paso 2</span><span class="sn-t">Seleccionar y justificar</span></button>
+    <button class="nx" data-go="kz4"><span class="sn-k">Paso 4</span><span class="sn-t">Evaluar la situación actual</span></button>
+  </div>
 </section>
 
 <!-- ==== Evaluar la situación actual ==== -->
 <section class="screen" id="s-kz4" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 4 · Erradicar</span>
+    <span class="eyebrow">Paso 4 de 12 · Erradicar</span>
     <h1>Evaluar la situación <span class="hl">actual</span></h1>
     <p class="sub">Ir al piso y comparar la teoría con lo que de verdad pasa.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Acá se compara el deber ser del paso 3 contra la realidad. Y es obligatorio ir a verlo: no se llena desde el escritorio ni se pregunta por WhatsApp. La diferencia entre las dos columnas es donde vive el problema, y casi nunca es donde el equipo creía.</p>
@@ -6439,21 +6606,21 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">4.1</span><div class="ptxt">
         <div class="pt">Ve al punto donde pasa</div>
         <div class="pd">Las <b>5G</b> son el recordatorio de qué hay que hacer allá.</div>
         <div class="ex"><span class="f">Las 5G</span><b>Genba</b> · ir al lugar donde pasa. <b>Genbutsu</b> · mirar la cosa física, el pan quemado y el horno. <b>Genjitsu</b> · revisar hechos y números, medir. <b>Genri</b> · contrastar contra la teoría. <b>Gensoku</b> · verificar que se esté siguiendo el método correcto.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">4.2</span><div class="ptxt">
         <div class="pt">Mide, no preguntes</div>
         <div class="pd">Cada parámetro del paso 3 se verifica con un instrumento. «A mí me parece que calienta más» no es un dato; 227 °C medidos sí lo son.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">4.3</span><div class="ptxt">
         <div class="pt">Llena el 5W+1H</div>
         <div class="pd">Qué, dónde, cuándo, quién, cuál y cómo. Sirve para acotar el fenómeno hasta que deje de ser «a veces sale quemado».</div>
         <div class="ex"><span class="f">Las dos que casi todos llenan mal</span><b>Quién:</b> el nombre no sirve. Lo que sirve es la capacidad: si es experto o no, si está cubriendo un cupo, si lo entrenaron. <b>Dónde:</b> no «en el horno», sino en qué parte exacta del proceso y del equipo.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">4.4</span><div class="ptxt">
         <div class="pt">Marca las diferencias</div>
         <div class="pd">Lo que coincide con la teoría se descarta. Lo que no coincide es la lista corta con la que entras al análisis.</div>
       </div></div>
@@ -6462,7 +6629,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Temperatura</span>El estándar dice 210 °C. Medido con termómetro propio: 227 °C. El tablero del horno mostraba 210.</div>
       <div class="ex"><span class="f">Carro giratorio</span>Debería girar continuo. Se traba en la posición 3 y las bandejas de abajo quedan siempre sobre la resistencia.</div>
       <div class="ex"><span class="f">Precalentado</span>El estándar pide 20 minutos. En el turno 1 se hace de 7, porque el horno se prende tarde.</div>
@@ -6479,15 +6646,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">La tabla de teoría contra práctica, el 5W+1H lleno y la lista corta de diferencias.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz3"><span class="sn-k">Paso 3</span><span class="sn-t">Comprender el proceso</span></button>
+    <button class="nx" data-go="kz5"><span class="sn-k">Paso 5</span><span class="sn-t">Establecer el objetivo</span></button>
+  </div>
 </section>
 
 <!-- ==== Establecer el objetivo ==== -->
 <section class="screen" id="s-kz5" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 5 · Erradicar</span>
+    <span class="eyebrow">Paso 5 de 12 · Erradicar</span>
     <h1>Establecer el <span class="hl">objetivo</span></h1>
     <p class="sub">Buscar la erradicación, no la mejora.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>El objetivo no es «bajar la merma»: es un número, con fecha, sobre el mismo indicador del paso 1. Y se busca erradicar, que quiere decir dejar la pérdida en un valor donde ya no importe. Antes de fijarlo hay que validar dos cosas: que valga la pena y que se pueda.</p>
@@ -6495,31 +6669,31 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Así se ve</h2>
-    <div class="exfig"><svg viewBox="0 0 340 250" font-family="Inter, system-ui, sans-serif"><text x="10" y="16" font-size="8" fill="#6C7B90" font-weight="600" text-anchor="start">De cuánto a cuánto, y para cuándo</text><line x1="40" y1="142" x2="320" y2="142" stroke="#3C4B60" stroke-width="1.1" stroke-linecap="round"/><rect x="36" y="43.2" width="68" height="98.8" rx="5" fill="rgba(248,113,113,.25)" stroke="#F87171" stroke-width="1.4"/><text x="70" y="34.2" font-size="12" fill="#F87171" font-weight="800" text-anchor="middle">3,8%</text><text x="70" y="158" font-size="7.2" fill="#93A3B8" font-weight="800" text-anchor="middle" letter-spacing=".1em">HOY</text><text x="70" y="170" font-size="7" fill="#6C7B90" font-weight="600" text-anchor="middle">merma por quemado</text><rect x="176" y="129.0" width="68" height="13.0" rx="5" fill="rgba(34,197,94,.25)" stroke="#22C55E" stroke-width="1.4"/><text x="210" y="120.0" font-size="12" fill="#22C55E" font-weight="800" text-anchor="middle">0,5%</text><text x="210" y="158" font-size="7.2" fill="#93A3B8" font-weight="800" text-anchor="middle" letter-spacing=".1em">META</text><text x="210" y="170" font-size="7" fill="#6C7B90" font-weight="600" text-anchor="middle">en 10 semanas</text><line x1="118" y1="96" x2="186" y2="96" stroke="#7CB2FF" stroke-width="1.5" stroke-linecap="round"/><path d="M180.6 98.6 L186 96 L180.6 93.4" fill="none" stroke="#7CB2FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="152" y="88" font-size="7.2" fill="#7CB2FF" font-weight="800" text-anchor="middle">erradicación</text><text x="152" y="110" font-size="6.8" fill="#6C7B90" font-weight="600" text-anchor="middle">no «reducir un poco»</text><rect x="8" y="184" width="158" height="56" rx="11" fill="rgba(59,130,246,.10)" stroke="#3B82F6" stroke-width="1.2"/><text x="20" y="200" font-size="7" fill="#7CB2FF" font-weight="800" text-anchor="start" letter-spacing=".1em">¿ES IMPORTANTE?</text><text x="20" y="216" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">3,3 puntos de merma</text><text x="20" y="230" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">= 1,9 puntos del total</text><rect x="174" y="184" width="158" height="56" rx="11" fill="rgba(34,197,94,.10)" stroke="#22C55E" stroke-width="1.2"/><text x="186" y="200" font-size="7" fill="#4ADE80" font-weight="800" text-anchor="start" letter-spacing=".1em">¿ES ALCANZABLE?</text><text x="186" y="216" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">El horno 1, mismo modelo,</text><text x="186" y="230" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">ya está en 0,4%</text></svg></div>
+    <div class="exfig"><svg viewBox="0 0 340 232" font-family="Inter, system-ui, sans-serif"><text x="10" y="16" font-size="8" fill="#6C7B90" font-weight="600" text-anchor="start">De cuánto a cuánto, y para cuándo</text><rect x="86" y="60.2" width="56" height="79.8" rx="5" fill="rgba(248,113,113,.22)" stroke="#F87171" stroke-width="1.3"/><text x="114" y="50.2" font-size="13" fill="#F87171" font-weight="800" text-anchor="middle">3,8%</text><text x="114" y="156" font-size="7.4" fill="#93A3B8" font-weight="800" text-anchor="middle" letter-spacing=".1em">HOY</text><text x="114" y="168" font-size="7" fill="#6C7B90" font-weight="600" text-anchor="middle">merma por quemado</text><rect x="206" y="129.5" width="56" height="10.5" rx="5" fill="rgba(34,197,94,.26)" stroke="#22C55E" stroke-width="1.3"/><text x="234" y="119.5" font-size="13" fill="#22C55E" font-weight="800" text-anchor="middle">0,5%</text><text x="234" y="156" font-size="7.4" fill="#93A3B8" font-weight="800" text-anchor="middle" letter-spacing=".1em">META</text><text x="234" y="168" font-size="7" fill="#6C7B90" font-weight="600" text-anchor="middle">en 10 semanas</text><line x1="30" y1="140" x2="310" y2="140" stroke="#3C4B60" stroke-width="1.1" stroke-linecap="round"/><line x1="150" y1="104" x2="200" y2="104" stroke="#7CB2FF" stroke-width="1.5" stroke-linecap="round"/><path d="M194.6 106.6 L200 104 L194.6 101.4" fill="none" stroke="#7CB2FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="175" y="96" font-size="7.4" fill="#7CB2FF" font-weight="800" text-anchor="middle">erradicación</text><line x1="16" y1="186" x2="324" y2="186" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><circle cx="20" cy="201" r="3.4" fill="#7CB2FF" stroke="none" stroke-width="0"/><text x="30" y="204" font-size="7.8" fill="#7CB2FF" font-weight="800" text-anchor="start">Importante</text><text x="96" y="204" font-size="7.8" fill="#E9EFF8" font-weight="550" text-anchor="start">3,3 puntos del horno = 1,9 de la merma total</text><circle cx="20" cy="220" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><text x="30" y="223" font-size="7.8" fill="#4ADE80" font-weight="800" text-anchor="start">Alcanzable</text><text x="96" y="223" font-size="7.8" fill="#E9EFF8" font-weight="550" text-anchor="start">el horno 1, mismo modelo, ya está en 0,4%</text></svg></div>
     <p class="cap">El objetivo del caso: de 3,8% a 0,5% en 10 semanas, con las dos validaciones que lo sostienen.</p>
   </div>
 
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">5.1</span><div class="ptxt">
         <div class="pt">Fíjalo sobre el mismo indicador del paso 1</div>
         <div class="pd">Mismo nombre, misma forma de medir, misma fuente. Si cambias la forma de medir a mitad de camino, nunca vas a saber si funcionó.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">5.2</span><div class="ptxt">
         <div class="pt">Escríbelo como «de X a Y, para cuándo»</div>
         <div class="pd">Sin eso no es un objetivo, es una intención. Y la fecha va alineada al master plan del paso 6.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">5.3</span><div class="ptxt">
         <div class="pt">Valida que sea importante</div>
         <div class="pd">¿Cuánto representa de la pérdida total? ¿Cuánto vale? Si la respuesta es poco, estás gastando un equipo en el problema equivocado.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">5.4</span><div class="ptxt">
         <div class="pt">Valida que sea alcanzable</div>
         <div class="pd">Busca una referencia real: otra máquina igual, otro turno, otra planta, o el valor que la teoría dice que se puede lograr. Un objetivo sin referencia es un deseo.</div>
         <div class="ex"><span class="f">La referencia más fácil de encontrar</span>Casi siempre hay otra máquina, otro turno u otra línea haciendo lo mismo con mejor resultado. Ese número es el objetivo defendible.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">5.5</span><div class="ptxt">
         <div class="pt">Apunta a erradicar</div>
         <div class="pd">Si el objetivo deja la pérdida en un valor con el que todavía hay que convivir, es muy flojo. La pregunta correcta es «¿cuánto es prácticamente cero?».</div>
       </div></div>
@@ -6528,7 +6702,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El objetivo</span>Bajar la merma por pan quemado del horno 2 de 3,8% a 0,5% en 10 semanas.</div>
       <div class="ex"><span class="f">Por qué es importante</span>Son 3,3 puntos de merma del horno, que equivalen a 1,9 puntos de la merma total de la línea: más de la mitad del problema original.</div>
       <div class="ex"><span class="f">Por qué es alcanzable</span>El horno 1 es el mismo modelo, hace el mismo pan y está en 0,4%. No hay que inventar nada: hay que igualar lo que ya existe al lado.</div>
@@ -6540,15 +6714,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Un objetivo con valor inicial, valor meta y fecha, con las dos validaciones escritas.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz4"><span class="sn-k">Paso 4</span><span class="sn-t">Evaluar la situación actual</span></button>
+    <button class="nx" data-go="kz6"><span class="sn-k">Paso 6</span><span class="sn-t">Definir el master plan</span></button>
+  </div>
 </section>
 
 <!-- ==== Definir el master plan ==== -->
 <section class="screen" id="s-kz6" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 6 · Erradicar</span>
+    <span class="eyebrow">Paso 6 de 12 · Erradicar</span>
     <h1>Definir el master <span class="hl">plan</span></h1>
     <p class="sub">Cómo y cuándo vamos a trabajar, con nombre propio.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>El master plan es el calendario del Kaizen: qué se hace, en qué semana y quién responde. La regla dura es que <b>no pase de dos meses</b>, porque pasado ese punto el equipo pierde el foco, cambian las prioridades y el proyecto se muere solo. Si tu plan necesita más, el alcance del paso 2 quedó demasiado grande.</p>
@@ -6563,23 +6744,23 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">6.1</span><div class="ptxt">
         <div class="pt">Lista las actividades por paso</div>
         <div class="pd">No tareas sueltas: los pasos del método, que ya te dan la secuencia. Se agregan las auditorías como hitos.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">6.2</span><div class="ptxt">
         <div class="pt">Pon fecha de inicio y de fin a cada una</div>
         <div class="pd">Una actividad sin fecha de fin no se termina nunca. Y las fechas tienen que caber dentro de los dos meses.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">6.3</span><div class="ptxt">
         <div class="pt">Asigna un responsable por actividad</div>
         <div class="pd">Uno. Una persona con nombre, no un área ni un grupo. Si dos personas responden, nadie responde.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">6.4</span><div class="ptxt">
         <div class="pt">Marca los hitos de auditoría</div>
         <div class="pd">Después del paso 4, del 8 y del 12. Son fechas fijas: el plan se acomoda a ellas, no al revés.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">6.5</span><div class="ptxt">
         <div class="pt">Revísalo en una reunión corta cada semana</div>
         <div class="pd">Quince minutos mirando el plan: qué venció, qué se movió y por qué. Un master plan que no se revisa es un adorno.</div>
         <div class="ex"><span class="f">La señal de alarma</span>Si en la semana 3 ya hay tres actividades corridas, el problema no es la gente: el alcance quedó mal dimensionado y hay que volver al paso 2.</div>
@@ -6589,7 +6770,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Semanas 1 y 2</span>Ir al piso, medir temperatura, observar los tres turnos. Responsable: Ana.</div>
       <div class="ex"><span class="f">Semanas 3 y 4</span>Ishikawa, 5 porqués y verificación de la causa raíz. Responsable: Ana. Al final, auditoría con el pilar.</div>
       <div class="ex"><span class="f">Semanas 5 y 6</span>Proponer e implementar las contramedidas. Responsable: Luis, de mantenimiento.</div>
@@ -6602,15 +6783,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Un plan de máximo dos meses con actividades, fechas, un responsable por fila y las auditorías marcadas.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz5"><span class="sn-k">Paso 5</span><span class="sn-t">Establecer el objetivo</span></button>
+    <button class="nx" data-go="kz7"><span class="sn-k">Paso 7</span><span class="sn-t">Realizar el análisis</span></button>
+  </div>
 </section>
 
 <!-- ==== Realizar el análisis ==== -->
 <section class="screen" id="s-kz7" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 7 · Erradicar</span>
+    <span class="eyebrow">Paso 7 de 12 · Erradicar</span>
     <h1>Realizar el <span class="hl">análisis</span></h1>
     <p class="sub">Llegar a la causa raíz, no quedarse en el síntoma.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Acá se busca <b>por qué</b> pasa lo que viste en el paso 4. La herramienta se escoge según el problema: desde unos simples 5 porqués hasta un PM análisis. Y hay una regla de eficiencia que se olvida seguido: no uses una herramienta avanzada para un problema sencillo, porque gastas semanas en algo que se resolvía en una tarde.</p>
@@ -6625,24 +6813,24 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">7.1</span><div class="ptxt">
         <div class="pt">Escoge la herramienta según el problema</div>
         <div class="pd">Si no tienes dirección, siempre es buena idea empezar con un <b>Ishikawa</b> (causa-efecto).</div>
         <div class="ex"><span class="f">Las tres más usadas</span><b>5 porqués</b> · preguntar «¿por qué?» cinco veces seguidas; sirve para problemas con una cadena clara. <b>Ishikawa</b> · un esqueleto de pescado que abre las causas posibles por categorías (máquina, método, mano de obra, material, medio, medición); sirve cuando no sabes por dónde empezar. <b>PM análisis</b> · descompone el fenómeno físico paso a paso; es pesado y se reserva para fallas crónicas que ya resistieron todo lo demás.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">7.2</span><div class="ptxt">
         <div class="pt">Abre con el Ishikawa y marca lo que el paso 4 ya confirmó</div>
         <div class="pd">No hay que llenar todas las ramas. Las que ya tienes medidas pasan; las que son suposiciones se marcan como pendientes de verificar.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">7.3</span><div class="ptxt">
         <div class="pt">Baja por 5 porqués hasta algo que puedas cambiar</div>
         <div class="pd">Si el último porqué es «porque la gente es descuidada», no llegaste: eso no se puede cambiar con una contramedida. Sigue bajando.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">7.4</span><div class="ptxt">
         <div class="pt">Verifica la causa en el piso</div>
         <div class="pd">La prueba es simple: si quitas esa causa, ¿el problema se va? Si no puedes responder con evidencia, todavía es una hipótesis.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">7.5</span><div class="ptxt">
         <div class="pt">Una causa raíz por cada rama confirmada</div>
         <div class="pd">Pueden ser varias. Cada una va a necesitar su propia contramedida en el paso 8.</div>
       </div></div>
@@ -6651,7 +6839,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Las ramas que se abrieron</span>Máquina (termostato, turbina, carro), método (precalentado corto), medición (el tablero del horno), mano de obra (el operario de reemplazo).</div>
       <div class="ex"><span class="f">Los 5 porqués de la rama confirmada</span>El pan se quema → el horno llega a 227 °C → el termostato marca 17 °C menos de lo real → está descalibrado → nunca se ha calibrado → <b>no está en ninguna rutina de mantenimiento</b>.</div>
       <div class="ex"><span class="f">La verificación</span>Se calibró el termostato un día y ese lote salió bien. La causa quedó confirmada con evidencia, no con argumento.</div>
@@ -6664,15 +6852,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una o varias causas raíz escritas y verificadas en el piso, no supuestas.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz6"><span class="sn-k">Paso 6</span><span class="sn-t">Definir el master plan</span></button>
+    <button class="nx" data-go="kz8"><span class="sn-k">Paso 8</span><span class="sn-t">Proponer contramedidas</span></button>
+  </div>
 </section>
 
 <!-- ==== Proponer contramedidas ==== -->
 <section class="screen" id="s-kz8" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 8 · Erradicar</span>
+    <span class="eyebrow">Paso 8 de 12 · Erradicar</span>
     <h1>Proponer <span class="hl">contramedidas</span></h1>
     <p class="sub">Soluciones que impidan que vuelva, no que avisen cuando vuelva.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Con la causa raíz en la mano, se proponen soluciones y se evalúan antes de hacerlas. La trampa de siempre es quedarse en entrenar y auditar, que son los niveles más baratos y los que menos duran. Por eso la regla: <b>al menos una contramedida de nivel 4 o superior por cada causa raíz</b>.</p>
@@ -6687,24 +6882,24 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">8.1</span><div class="ptxt">
         <div class="pt">Propón varias por cada causa raíz</div>
         <div class="pd">Tres o cuatro, sin filtrar todavía. Una sola opción nunca es una decisión.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">8.2</span><div class="ptxt">
         <div class="pt">Ubica cada una en la escalera</div>
         <div class="pd">Y mira dónde quedaron. Si todas cayeron en nivel 1 o 2, el problema va a volver en tres meses.</div>
         <div class="ex"><span class="f">Qué significan las siglas del nivel 2</span><b>CIL</b> · la rutina del operario de limpiar, inspeccionar y lubricar su equipo. <b>TBM</b> · mantenimiento por tiempo, cada cierto número de horas o días. <b>CBM</b> · mantenimiento por condición, cuando una medición indica que hace falta.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">8.3</span><div class="ptxt">
         <div class="pt">Exige al menos una de nivel 4 o más</div>
         <div class="pd">Nivel 4 es <b>poka-yoke</b>: un dispositivo o un cambio que hace que el error no se pueda cometer. Nivel 5 es automatizar y nivel 6 es eliminar la operación, que es la mejor de todas porque lo que no existe no falla.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">8.4</span><div class="ptxt">
         <div class="pt">Evalúa antes de implementar</div>
         <div class="pd">Para cada opción: ¿qué tan efectiva va a ser, cuánto cuesta y cuánto se demora? Esa comparación es la que se defiende en la auditoría.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">8.5</span><div class="ptxt">
         <div class="pt">Deja escritas las que descartaste</div>
         <div class="pd">Y por qué. En tres meses alguien va a proponer exactamente esa, y el registro ahorra la discusión completa.</div>
       </div></div>
@@ -6713,7 +6908,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Causa raíz 1</span>El termostato no está en ninguna rutina de calibración.</div>
       <div class="ex"><span class="f">Lo que se propuso</span>Nivel 1: entrenar al operario para que revise con termómetro. Nivel 2: meter la calibración en la rutina mensual. <b>Nivel 4: cambiar el termostato análogo por uno digital con corte automático a 210 °C.</b></div>
       <div class="ex"><span class="f">Lo que se escogió</span>El nivel 4, más la rutina del nivel 2 como respaldo. El entrenamiento solo no se aceptó: depende de que alguien se acuerde todos los días.</div>
@@ -6731,15 +6926,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">Una tabla de contramedidas por causa raíz, con su nivel, su costo y la decisión.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz7"><span class="sn-k">Paso 7</span><span class="sn-t">Realizar el análisis</span></button>
+    <button class="nx" data-go="kz9"><span class="sn-k">Paso 9</span><span class="sn-t">Implementar contramedidas</span></button>
+  </div>
 </section>
 
 <!-- ==== Implementar contramedidas ==== -->
 <section class="screen" id="s-kz9" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 9 · Erradicar</span>
+    <span class="eyebrow">Paso 9 de 12 · Erradicar</span>
     <h1>Implementar <span class="hl">contramedidas</span></h1>
     <p class="sub">Bajar la decisión a tareas con nombre, fecha y evidencia.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Acá se actualiza el master plan con las acciones concretas que salieron del paso 8, cada una con su responsable y su fecha, y se verifica que se cumplan. Es el paso menos interesante y donde más Kaizen se quedan: la contramedida está decidida, nadie la hizo, y a los dos meses el problema sigue igual.</p>
@@ -6747,30 +6949,30 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Así se ve</h2>
-    <div class="exfig"><svg viewBox="0 0 340 270" font-family="Inter, system-ui, sans-serif"><text x="10" y="16" font-size="8" fill="#6C7B90" font-weight="600" text-anchor="start">El master plan bajado a tareas concretas</text><text x="16" y="38" font-size="6.8" fill="#7CB2FF" font-weight="800" text-anchor="start" letter-spacing=".08em">Acción</text><text x="196" y="38" font-size="6.8" fill="#7CB2FF" font-weight="800" text-anchor="start" letter-spacing=".08em">Quién</text><text x="250" y="38" font-size="6.8" fill="#7CB2FF" font-weight="800" text-anchor="middle" letter-spacing=".08em">Fecha</text><text x="310" y="38" font-size="6.8" fill="#7CB2FF" font-weight="800" text-anchor="middle" letter-spacing=".08em">Evidencia</text><line x1="8" y1="44" x2="332" y2="44" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><rect x="8" y="52" width="324" height="28" rx="8" fill="#141D2E" stroke="rgba(74,222,128,.35)" stroke-width="1"/><circle cx="20" cy="66" r="7" fill="rgba(74,222,128,.18)" stroke="#4ADE80" stroke-width="1"/><path d="M17 66 l2.5 2.5 l5 -5" fill="none" stroke="#4ADE80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="70" font-size="7.2" fill="#E9EFF8" font-weight="600" text-anchor="start">Comprar e instalar el termostato digital</text><text x="196" y="70" font-size="7.2" fill="#7CB2FF" font-weight="700" text-anchor="middle">Luis</text><text x="250" y="70" font-size="7.2" fill="#93A3B8" font-weight="650" text-anchor="middle">S5</text><text x="310" y="70" font-size="6.6" fill="#4ADE80" font-weight="600" text-anchor="middle">Foto + factura</text><rect x="8" y="84" width="324" height="28" rx="8" fill="#141D2E" stroke="rgba(74,222,128,.35)" stroke-width="1"/><circle cx="20" cy="98" r="7" fill="rgba(74,222,128,.18)" stroke="#4ADE80" stroke-width="1"/><path d="M17 98 l2.5 2.5 l5 -5" fill="none" stroke="#4ADE80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="102" font-size="7.2" fill="#E9EFF8" font-weight="600" text-anchor="start">Cambiar el rodamiento del carro</text><text x="196" y="102" font-size="7.2" fill="#7CB2FF" font-weight="700" text-anchor="middle">Luis</text><text x="250" y="102" font-size="7.2" fill="#93A3B8" font-weight="650" text-anchor="middle">S5</text><text x="310" y="102" font-size="6.6" fill="#4ADE80" font-weight="600" text-anchor="middle">Orden de trabajo</text><rect x="8" y="116" width="324" height="28" rx="8" fill="#141D2E" stroke="rgba(74,222,128,.35)" stroke-width="1"/><circle cx="20" cy="130" r="7" fill="rgba(74,222,128,.18)" stroke="#4ADE80" stroke-width="1"/><path d="M17 130 l2.5 2.5 l5 -5" fill="none" stroke="#4ADE80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="134" font-size="7.2" fill="#E9EFF8" font-weight="600" text-anchor="start">Poner el tope que impide montarlo mal</text><text x="196" y="134" font-size="7.2" fill="#7CB2FF" font-weight="700" text-anchor="middle">Luis</text><text x="250" y="134" font-size="7.2" fill="#93A3B8" font-weight="650" text-anchor="middle">S5</text><text x="310" y="134" font-size="6.6" fill="#4ADE80" font-weight="600" text-anchor="middle">Foto</text><rect x="8" y="148" width="324" height="28" rx="8" fill="#141D2E" stroke="rgba(74,222,128,.35)" stroke-width="1"/><circle cx="20" cy="162" r="7" fill="rgba(74,222,128,.18)" stroke="#4ADE80" stroke-width="1"/><path d="M17 162 l2.5 2.5 l5 -5" fill="none" stroke="#4ADE80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="166" font-size="7.2" fill="#E9EFF8" font-weight="600" text-anchor="start">Meter la calibración en la rutina mensual</text><text x="196" y="166" font-size="7.2" fill="#7CB2FF" font-weight="700" text-anchor="middle">Ana</text><text x="250" y="166" font-size="7.2" fill="#93A3B8" font-weight="650" text-anchor="middle">S6</text><text x="310" y="166" font-size="6.6" fill="#4ADE80" font-weight="600" text-anchor="middle">Rutina firmada</text><rect x="8" y="180" width="324" height="28" rx="8" fill="#141D2E" stroke="#FBBF24" stroke-width="1"/><circle cx="20" cy="194" r="7" fill="none" stroke="#FBBF24" stroke-width="1.2"/><text x="32" y="198" font-size="7.2" fill="#E9EFF8" font-weight="600" text-anchor="start">Entrenar a los 3 turnos en el estándar</text><text x="196" y="198" font-size="7.2" fill="#7CB2FF" font-weight="700" text-anchor="middle">Ana</text><text x="250" y="198" font-size="7.2" fill="#93A3B8" font-weight="650" text-anchor="middle">S6</text><text x="310" y="198" font-size="6.6" fill="#FBBF24" font-weight="600" text-anchor="middle">Lista de asistencia</text><rect x="8" y="218" width="324" height="38" rx="10" fill="none" stroke="#FBBF24" stroke-width="1" stroke-dasharray="3 4"/><text x="18" y="234" font-size="7" fill="#FBBF24" font-weight="800" text-anchor="start" letter-spacing=".1em">SIN EVIDENCIA NO SE CIERRA</text><text x="18" y="248" font-size="7.6" fill="#E9EFF8" font-weight="600" text-anchor="start">Una foto, una firma, una orden de trabajo. «Ya quedó» no es evidencia.</text></svg></div>
-    <p class="cap">El plan del caso bajado a cinco tareas. Cada una tiene una evidencia definida de antemano, y la que no la tiene todavía está abierta.</p>
+    <div class="exfig"><svg viewBox="0 0 340 260" font-family="Inter, system-ui, sans-serif"><text x="10" y="16" font-size="8" fill="#6C7B90" font-weight="600" text-anchor="start">El master plan bajado a tareas concretas</text><line x1="8" y1="62" x2="332" y2="62" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><circle cx="20" cy="46" r="8" fill="rgba(74,222,128,.16)" stroke="#4ADE80" stroke-width="1.1"/><path d="M16.5 46 l2.8 2.8 l5.6 -5.6" fill="none" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="50" font-size="8" fill="#E9EFF8" font-weight="600" text-anchor="start">Instalar el termostato digital</text><text x="332" y="50" font-size="7.4" fill="#4ADE80" font-weight="700" text-anchor="end">Luis · S5</text><line x1="8" y1="96" x2="332" y2="96" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><circle cx="20" cy="80" r="8" fill="rgba(74,222,128,.16)" stroke="#4ADE80" stroke-width="1.1"/><path d="M16.5 80 l2.8 2.8 l5.6 -5.6" fill="none" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="84" font-size="8" fill="#E9EFF8" font-weight="600" text-anchor="start">Cambiar el rodamiento del carro</text><text x="332" y="84" font-size="7.4" fill="#4ADE80" font-weight="700" text-anchor="end">Luis · S5</text><line x1="8" y1="130" x2="332" y2="130" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><circle cx="20" cy="114" r="8" fill="rgba(74,222,128,.16)" stroke="#4ADE80" stroke-width="1.1"/><path d="M16.5 114 l2.8 2.8 l5.6 -5.6" fill="none" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="118" font-size="8" fill="#E9EFF8" font-weight="600" text-anchor="start">Poner el tope que impide montarlo mal</text><text x="332" y="118" font-size="7.4" fill="#4ADE80" font-weight="700" text-anchor="end">Luis · S5</text><line x1="8" y1="164" x2="332" y2="164" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><circle cx="20" cy="148" r="8" fill="rgba(74,222,128,.16)" stroke="#4ADE80" stroke-width="1.1"/><path d="M16.5 148 l2.8 2.8 l5.6 -5.6" fill="none" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="152" font-size="8" fill="#E9EFF8" font-weight="600" text-anchor="start">Meter la calibración en la rutina mensual</text><text x="332" y="152" font-size="7.4" fill="#4ADE80" font-weight="700" text-anchor="end">Ana · S6</text><line x1="8" y1="198" x2="332" y2="198" stroke="#2C3A4D" stroke-width="1" stroke-linecap="round"/><circle cx="20" cy="182" r="8" fill="none" stroke="#FBBF24" stroke-width="1.2"/><text x="38" y="186" font-size="8" fill="#E9EFF8" font-weight="600" text-anchor="start">Entrenar a los 3 turnos en el estándar</text><text x="332" y="186" font-size="7.4" fill="#FBBF24" font-weight="700" text-anchor="end">Ana · S6</text><rect x="8" y="212" width="324" height="36" rx="10" fill="none" stroke="#FBBF24" stroke-width="1" stroke-dasharray="3 4"/><text x="18" y="228" font-size="7.2" fill="#FBBF24" font-weight="800" text-anchor="start" letter-spacing=".1em">SIN EVIDENCIA NO SE CIERRA</text><text x="18" y="242" font-size="7.6" fill="#E9EFF8" font-weight="600" text-anchor="start">Una foto, una firma, una orden de trabajo. «Ya quedó» no es evidencia.</text></svg></div>
+    <p class="cap">El plan del caso bajado a cinco tareas, cada una con dueño y semana. La última sigue abierta porque faltaba el turno 3.</p>
   </div>
 
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">9.1</span><div class="ptxt">
         <div class="pt">Baja cada contramedida a tareas</div>
         <div class="pd">Una contramedida casi nunca es una sola tarea. «Cambiar el termostato» son tres: cotizar, comprar e instalar.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">9.2</span><div class="ptxt">
         <div class="pt">Un responsable y una fecha por tarea</div>
         <div class="pd">Las mismas reglas del master plan. Un nombre, no un área.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">9.3</span><div class="ptxt">
         <div class="pt">Define la evidencia antes de empezar</div>
         <div class="pd">¿Cómo vas a saber que quedó hecha? Una foto, una firma, una orden de trabajo, un registro. Definirlo después hace que todo el mundo cierre tareas con la palabra.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">9.4</span><div class="ptxt">
         <div class="pt">Revisa el cumplimiento cada semana</div>
         <div class="pd">Corto y de pie, mirando la tabla. Lo que importa son las tareas vencidas, no las que van bien.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">9.5</span><div class="ptxt">
         <div class="pt">No cierres nada sin evidencia</div>
         <div class="pd">Es la regla que sostiene el paso. Si una tarea se cierra con «ya quedó», en el paso 10 no vas a poder explicar por qué el indicador no se movió.</div>
       </div></div>
@@ -6779,7 +6981,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Lo que se hizo</span>Termostato digital con corte a 210 °C instalado, rodamiento del carro cambiado y tope puesto para que no se pueda montar mal.</div>
       <div class="ex"><span class="f">Lo que quedó de respaldo</span>La calibración entró a la rutina mensual de mantenimiento, firmada.</div>
       <div class="ex"><span class="f">Lo que se verificó</span>Foto del termostato instalado, orden de trabajo del rodamiento y la rutina con la firma del jefe de mantenimiento.</div>
@@ -6791,15 +6993,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El plan actualizado con cada tarea cerrada y su evidencia adjunta.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz8"><span class="sn-k">Paso 8</span><span class="sn-t">Proponer contramedidas</span></button>
+    <button class="nx" data-go="kz10"><span class="sn-k">Paso 10</span><span class="sn-t">Verificar resultados</span></button>
+  </div>
 </section>
 
 <!-- ==== Verificar resultados ==== -->
 <section class="screen" id="s-kz10" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 10 · Mantener</span>
+    <span class="eyebrow">Paso 10 de 12 · Mantener</span>
     <h1>Verificar <span class="hl">resultados</span></h1>
     <p class="sub">Comprobar con el indicador, no con la sensación de que mejoró.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Acá se comprueba que las contramedidas fueron efectivas y que la tendencia es buena. Y hay una sola salida si no lo fueron: volver al paso 7, revisar y ejecutar el análisis otra vez. No sirve agregar más contramedidas sobre una causa raíz equivocada.</p>
@@ -6807,30 +7016,30 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Así se ve</h2>
-    <div class="exfig"><svg viewBox="0 0 340 240" font-family="Inter, system-ui, sans-serif"><text x="10" y="16" font-size="8" fill="#6C7B90" font-weight="600" text-anchor="start">El mismo indicador del paso 1 · 10 semanas después</text><line x1="24" y1="150" x2="294" y2="150" stroke="#3C4B60" stroke-width="1.1" stroke-linecap="round"/><line x1="24" y1="137.14285714285714" x2="294" y2="137.14285714285714" stroke="#FBBF24" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="5 4"/><text x="296" y="149.14285714285714" font-size="6.8" fill="#FBBF24" font-weight="800" text-anchor="end">meta 0,5%</text><path d="M30.0 52.3 L58.0 49.7 L86.0 54.9 L114.0 52.3 L142.0 88.3 L170.0 121.7 L198.0 134.6 L226.0 137.1 L254.0 139.7 L282.0 139.7" fill="none" stroke="#4ADE80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="52.28571428571429" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="58" cy="49.71428571428572" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="86" cy="54.85714285714286" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="114" cy="52.28571428571429" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="142" cy="88.28571428571429" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="170" cy="121.71428571428571" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="198" cy="134.57142857142858" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="226" cy="137.14285714285714" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="254" cy="139.71428571428572" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="282" cy="139.71428571428572" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><line x1="128" y1="30" x2="128" y2="150" stroke="#3B82F6" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 4"/><text x="132" y="40" font-size="6.8" fill="#7CB2FF" font-weight="700" text-anchor="start">contramedidas</text><text x="30" y="164" font-size="7.4" fill="#F87171" font-weight="800" text-anchor="middle">3,8%</text><text x="282" y="164" font-size="7.4" fill="#4ADE80" font-weight="800" text-anchor="middle">0,4%</text><rect x="8" y="172" width="158" height="56" rx="11" fill="rgba(34,197,94,.10)" stroke="#22C55E" stroke-width="1.2"/><text x="20" y="188" font-size="7" fill="#4ADE80" font-weight="800" text-anchor="start" letter-spacing=".1em">SE MOVIÓ</text><text x="20" y="204" font-size="7.6" fill="#E9EFF8" font-weight="650" text-anchor="start">Sigue al paso 11:</text><text x="20" y="218" font-size="7.6" fill="#E9EFF8" font-weight="650" text-anchor="start">estandarizar.</text><rect x="174" y="172" width="158" height="56" rx="11" fill="rgba(248,113,113,.10)" stroke="#F87171" stroke-width="1.2"/><text x="186" y="188" font-size="7" fill="#F87171" font-weight="800" text-anchor="start" letter-spacing=".1em">NO SE MOVIÓ</text><text x="186" y="204" font-size="7.6" fill="#E9EFF8" font-weight="650" text-anchor="start">Vuelve al paso 7:</text><text x="186" y="218" font-size="7.6" fill="#E9EFF8" font-weight="650" text-anchor="start">la causa estaba mal.</text></svg></div>
+    <div class="exfig"><svg viewBox="0 0 340 246" font-family="Inter, system-ui, sans-serif"><text x="10" y="16" font-size="8" fill="#6C7B90" font-weight="600" text-anchor="start">El mismo indicador del paso 1 · 10 semanas después</text><line x1="26" y1="150" x2="304" y2="150" stroke="#3C4B60" stroke-width="1.1" stroke-linecap="round"/><line x1="26" y1="137.14285714285714" x2="304" y2="137.14285714285714" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 5"/><text x="30" y="130.14285714285714" font-size="7" fill="#FBBF24" font-weight="800" text-anchor="start">meta 0,5%</text><path d="M36.0 52.3 L64.0 49.7 L92.0 54.9 L120.0 52.3 L148.0 88.3 L176.0 121.7 L204.0 134.6 L232.0 137.1 L260.0 139.7 L288.0 139.7" fill="none" stroke="#4ADE80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="52.28571428571429" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="64" cy="49.71428571428572" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="92" cy="54.85714285714286" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="120" cy="52.28571428571429" r="3.4" fill="#F87171" stroke="none" stroke-width="0"/><circle cx="148" cy="88.28571428571429" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="176" cy="121.71428571428571" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="204" cy="134.57142857142858" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="232" cy="137.14285714285714" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="260" cy="139.71428571428572" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><circle cx="288" cy="139.71428571428572" r="3.4" fill="#4ADE80" stroke="none" stroke-width="0"/><line x1="134" y1="36" x2="134" y2="150" stroke="#3B82F6" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 4"/><text x="138" y="46" font-size="7" fill="#7CB2FF" font-weight="700" text-anchor="start">contramedidas</text><text x="36" y="165" font-size="7.6" fill="#F87171" font-weight="800" text-anchor="middle">3,8%</text><text x="288" y="165" font-size="7.6" fill="#4ADE80" font-weight="800" text-anchor="middle">0,4%</text><rect x="8" y="176" width="158" height="58" rx="11" fill="rgba(34,197,94,.10)" stroke="#22C55E" stroke-width="1.2"/><text x="20" y="193" font-size="7.2" fill="#4ADE80" font-weight="800" text-anchor="start" letter-spacing=".1em">SE MOVIÓ</text><text x="20" y="210" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">Sigue al paso 11:</text><text x="20" y="224" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">estandarizar.</text><rect x="174" y="176" width="158" height="58" rx="11" fill="rgba(248,113,113,.10)" stroke="#F87171" stroke-width="1.2"/><text x="186" y="193" font-size="7.2" fill="#F87171" font-weight="800" text-anchor="start" letter-spacing=".1em">NO SE MOVIÓ</text><text x="186" y="210" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">Vuelve al paso 7:</text><text x="186" y="224" font-size="7.8" fill="#E9EFF8" font-weight="650" text-anchor="start">la causa estaba mal.</text></svg></div>
     <p class="cap">La curva del caso. Baja justo después de la semana en que se implementaron las contramedidas, y se queda abajo cuatro semanas: eso es tendencia, no suerte.</p>
   </div>
 
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">10.1</span><div class="ptxt">
         <div class="pt">Mide con el mismo indicador y la misma forma</div>
         <div class="pd">El del paso 1. Si cambiaste la manera de contar a mitad de camino, el resultado no prueba nada.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">10.2</span><div class="ptxt">
         <div class="pt">Espera lo suficiente</div>
         <div class="pd">Una semana buena no es un resultado. Hay que ver varias semanas o varios ciclos, los suficientes para que una casualidad no explique la mejora.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">10.3</span><div class="ptxt">
         <div class="pt">Compara contra el objetivo del paso 5</div>
         <div class="pd">¿Llegó o no llegó? La respuesta es sí o no, no «mejoró bastante».</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">10.4</span><div class="ptxt">
         <div class="pt">Confirma que fue por la contramedida</div>
         <div class="pd">La pregunta incómoda: ¿cambió algo más al mismo tiempo? Menos producción, otro producto, otro operario. Si sí, el resultado todavía no está probado.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">10.5</span><div class="ptxt">
         <div class="pt">Si no se movió, vuelve al paso 7</div>
         <div class="pd">No al 8. Si el indicador no cambió, el problema no es que la contramedida fuera débil: es que la causa raíz estaba mal identificada.</div>
         <div class="ex"><span class="f">El error que esto evita</span>Seguir apilando contramedidas sobre una causa equivocada. Se gasta el doble y el indicador sigue igual.</div>
@@ -6840,7 +7049,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">El antes</span>3,8% de merma por quemado, estable durante las cuatro semanas previas.</div>
       <div class="ex"><span class="f">El después</span>0,4% sostenido durante cuatro semanas seguidas, por debajo de la meta de 0,5%.</div>
       <div class="ex"><span class="f">La verificación de que fue la contramedida</span>Se revisó que el volumen de producción y el tipo de pan fueran los mismos. Lo único que cambió fue el termostato y el carro.</div>
@@ -6852,15 +7061,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">La gráfica del antes y el después, con la confirmación de que el cambio vino de la contramedida.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz9"><span class="sn-k">Paso 9</span><span class="sn-t">Implementar contramedidas</span></button>
+    <button class="nx" data-go="kz11"><span class="sn-k">Paso 11</span><span class="sn-t">Estandarización</span></button>
+  </div>
 </section>
 
 <!-- ==== Estandarización ==== -->
 <section class="screen" id="s-kz11" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 11 · Mantener</span>
+    <span class="eyebrow">Paso 11 de 12 · Mantener</span>
     <h1><span class="hl">Estandarización</span></h1>
     <p class="sub">Dejarlo escrito donde se usa, con quién lo revisa y cada cuánto.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i></div>
 
   <div class="card lead">
     <p>Sin estándar no hay mejora continua: si la solución depende de que alguien se acuerde, vuelve en tres meses. Estandarizar no es escribir un documento, es responder seis preguntas y dejar cada respuesta con dueño.</p>
@@ -6875,23 +7091,23 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">11.1</span><div class="ptxt">
         <div class="pt">Escribe el estándar donde la gente lo usa</div>
         <div class="pd">Pegado en la máquina, no en una carpeta de la oficina. Un estándar que hay que ir a buscar no se consulta nunca.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">11.2</span><div class="ptxt">
         <div class="pt">Define el health-check</div>
         <div class="pd">Quién revisa que se esté cumpliendo, cada cuánto y contra qué. Un <b>health-check</b> es esa revisión periódica: sin ella, el estándar existe pero nadie sabe si se sigue.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">11.3</span><div class="ptxt">
         <div class="pt">Liga un indicador</div>
         <div class="pd">Uno que avise si se deja de cumplir, antes de que el problema vuelva a aparecer. Normalmente es un KAI: mide si la actividad se está haciendo.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">11.4</span><div class="ptxt">
         <div class="pt">Entrena y deja registro</div>
         <div class="pd">Todos los turnos, incluido el de la noche y los de reemplazo. Con lista de asistencia, porque en seis meses va a entrar alguien nuevo y hay que saber a quién falta.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">11.5</span><div class="ptxt">
         <div class="pt">Sube el nivel donde puedas</div>
         <div class="pd">Usa la escalera del paso 8 también acá: si el estándar se puede volver un control visual o un poka-yoke, deja de depender de la memoria de alguien.</div>
       </div></div>
@@ -6900,7 +7116,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">Dónde quedó</span>En la instrucción de trabajo del horno 2 y en una tarjeta pegada en la puerta de la máquina con los cuatro parámetros.</div>
       <div class="ex"><span class="f">Quién lo revisa</span>El jefe de mantenimiento, en la rutina mensual, midiendo la temperatura real con termómetro independiente.</div>
       <div class="ex"><span class="f">El indicador que avisa</span>Porcentaje de calibraciones cumplidas a tiempo. Si baja de 100%, alguien pregunta antes de que el pan se queme.</div>
@@ -6913,15 +7129,22 @@ img{max-width:100%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">El estándar escrito, el health-check con dueño y frecuencia, el indicador ligado y el entrenamiento registrado.</div></div>
   </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz10"><span class="sn-k">Paso 10</span><span class="sn-t">Verificar resultados</span></button>
+    <button class="nx" data-go="kz12"><span class="sn-k">Paso 12</span><span class="sn-t">Planes futuros</span></button>
+  </div>
 </section>
 
 <!-- ==== Planes futuros ==== -->
 <section class="screen" id="s-kz12" hidden>
   <div class="hero">
-    <span class="eyebrow">Paso 12 · Mantener</span>
+    <span class="eyebrow">Paso 12 de 12 · Mantener</span>
     <h1>Planes <span class="hl">futuros</span></h1>
     <p class="sub">Llevarlo a donde más aplique y escoger la siguiente pérdida.</p>
   </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i></div>
 
   <div class="card lead">
     <p>El último paso es el que cierra el loop. Lo que aprendiste en una máquina casi siempre sirve en otras, y el Kaizen no termina cuando el indicador baja: termina cuando la solución está replicada, vigilada y ya escogiste contra qué vas a ir después.</p>
@@ -6936,24 +7159,24 @@ img{max-width:100%}
   <div class="block">
     <h2>Cómo se hace</h2>
     <div class="card stepcard">
-      <div class="pstep"><span class="pnum">1</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">12.1</span><div class="ptxt">
         <div class="pt">Lista dónde más aplica</div>
         <div class="pd">Esto se llama <b>expansión horizontal</b>: llevar la misma solución a otras máquinas, líneas o plantas que tienen el mismo problema. Es la parte más barata de todo el Kaizen, porque el análisis ya está hecho.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">2</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">12.2</span><div class="ptxt">
         <div class="pt">Define el KAI que lo vigila</div>
         <div class="pd">Un indicador de actividad: mide si la rutina se está haciendo, no si el resultado está bien. Avisa antes de que el problema vuelva.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">3</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">12.3</span><div class="ptxt">
         <div class="pt">Mételo en la DOM</div>
         <div class="pd">La <b>DOM</b> es la reunión diaria de gestión donde se revisan los indicadores. Lo que no está ahí, nadie lo mira hasta que explota.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">4</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">12.4</span><div class="ptxt">
         <div class="pt">Define un trigger point</div>
         <div class="pd">Un <b>punto de disparo</b>: el valor que, si se cruza, obliga a actuar ese mismo día sin esperar a que alguien lo decida. Sin él, el indicador se mira y no pasa nada.</div>
         <div class="ex"><span class="f">Cómo se fija</span>Un poco por encima del valor normal y bastante por debajo del valor en que el problema ya es grave. Suficientemente apretado para avisar a tiempo, no tanto como para que salte todos los días.</div>
       </div></div>
-      <div class="pstep"><span class="pnum">5</span><div class="ptxt">
+      <div class="pstep"><span class="pnum sub">12.5</span><div class="ptxt">
         <div class="pt">Escoge la siguiente pérdida</div>
         <div class="pd">Vuelve al Pareto del paso 2: lo que quedó de segundo ya está medido y justificado. Ahí arranca el siguiente ciclo.</div>
       </div></div>
@@ -6962,7 +7185,7 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Ejemplo · el horno 2</h2>
-    <div class="card">
+    <div class="exlist">
       <div class="ex"><span class="f">La expansión</span>El mismo termostato digital y el mismo tope se instalaron en los hornos 1 y 3, y en los dos hornos de la sede norte. Cuatro máquinas más, sin repetir el análisis.</div>
       <div class="ex"><span class="f">El KAI</span>Porcentaje de calibraciones cumplidas a tiempo, revisado mensual.</div>
       <div class="ex"><span class="f">En la DOM</span>La merma del día del horno entra al tablero de la reunión de la mañana.</div>
@@ -6979,6 +7202,11 @@ img{max-width:100%}
   <div class="out">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
     <div><div class="out-t">Entrega</div><div class="out-v">La lista de expansión, el KAI, el trigger point y la siguiente pérdida elegida.</div></div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="kz11"><span class="sn-k">Paso 11</span><span class="sn-t">Estandarización</span></button>
+    <button class="nx" data-go="kz"><span class="sn-k">Cierra el loop</span><span class="sn-t">Volver al método</span></button>
   </div>
 </section>
 
