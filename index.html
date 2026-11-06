@@ -207,7 +207,43 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .lead{display:flex;flex-direction:column;gap:12px;border-left:3px solid var(--blue)}
 .lead p{margin:0;font-size:14px;line-height:1.7;color:var(--fg-dim)}
 
-/* ---------- 4 métodos ---------- */
+
+/* ---------- menú de inicio ---------- */
+.mhero{
+  display:flex;align-items:flex-start;gap:16px;width:100%;
+  padding:20px 18px;border-radius:20px;
+  border:1px solid var(--blue-line);
+  background:linear-gradient(145deg,var(--blue-bg) 0%,var(--surface) 62%);
+  color:inherit;text-align:left;font:inherit;cursor:pointer;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.mhero:active{transform:scale(.99)}
+.mhero:hover{box-shadow:0 0 0 1px var(--blue)}
+.mhero-ic{flex:none;width:54px;height:54px;border-radius:17px;display:grid;place-items:center;background:var(--blue);color:#fff}
+.mhero-ic svg{width:30px;height:30px}
+.mhero-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.mhero-n{font-size:17px;font-weight:800;letter-spacing:-.022em;line-height:1.25}
+.mhero-p{font-size:13px;color:var(--fg-dim);line-height:1.45}
+.mhero-m{font-size:10.5px;font-weight:800;color:var(--blue-soft);letter-spacing:.06em;text-transform:uppercase}
+.mhero-go{flex:none;color:var(--blue);align-self:center}
+.mhero-go svg{width:20px;height:20px;display:block}
+
+.mlist{display:flex;flex-direction:column;gap:9px}
+.mrow{display:flex;align-items:center;gap:13px;padding:14px;border-radius:15px;border:1px solid var(--line);background:var(--surface)}
+.mrow-ic{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--mbg);color:var(--mc)}
+.mrow-ic svg{width:20px;height:20px}
+.mrow-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.mrow-n{font-size:14px;font-weight:700;line-height:1.3;color:var(--fg-dim)}
+.mrow-p{font-size:11.5px;color:var(--fg-faint);line-height:1.4}
+.mrow-s{flex:none;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--fg-faint)}
+
+.prog{display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid var(--line)}
+.prog-b{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.prog-b i{height:4px;border-radius:2px;background:var(--line-2);display:block}
+.prog-b i.on{background:var(--blue)}
+.prog-t{font-size:11px;color:var(--fg-faint);text-align:center;letter-spacing:.05em}
+
+/* ---------- 4 métodos (en desuso) ---------- */
 .methods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .method{
   position:relative;display:flex;flex-direction:column;gap:15px;
@@ -255,7 +291,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 }
 .row-ico svg{width:19px;height:19px}
 .row.locked .row-ico{background:var(--surface-2);color:var(--fg-faint)}
-button.row{border-color:var(--blue-line)}
+button.row{border-color:var(--blue-line);background:linear-gradient(140deg,var(--blue-bg-2) 0%,var(--surface) 58%)}
 .row-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
 .row-t{font-size:14.5px;font-weight:700;line-height:1.4;letter-spacing:-.005em}
 .row.locked .row-t{color:var(--fg-dim)}
@@ -655,43 +691,54 @@ img{max-width:100%}
 <!-- ============ INICIO ============ -->
 <section class="screen" id="s-inicio">
   <div class="hero">
-    <span class="eyebrow">Caja de herramientas</span>
-    <h1>Los cinco <span class="hl">métodos</span></h1>
-    <p class="sub">Elige el método, la fase, y ahí está la herramienta.</p>
+    <span class="eyebrow">Mejora continua</span>
+    <h1>Elige el <span class="hl">método</span></h1>
+    <p class="sub">Cada método trae sus fases, y dentro de cada fase las herramientas con su paso a paso.</p>
   </div>
 
-  <div class="methods">
-    <button class="method" data-go="lean" style="--c:var(--m-blue);--cink:var(--m-blue-ink);--cbg:var(--blue-bg);--cline:var(--blue-line)">
-      <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4.5" cy="7" r="2"/><circle cx="12" cy="7" r="2"/><path d="M6.5 7h3.5"/><path d="M14 7h3a3 3 0 0 1 3 3v1.5a3 3 0 0 1-3 3H7a3 3 0 0 0-3 3V20"/><path d="M1.8 18.5L4 20.8l2.2-2.3"/></svg></div>
-      <div><div class="m-name">Lean Manufacturing</div><div class="m-sub">5 principios</div></div>
-    </button>
-
-    <button class="method locked" aria-disabled="true" style="--c:var(--m-violet);--cink:var(--m-violet-ink);--cbg:var(--violet-bg);--cline:var(--violet-line)">
-      <span class="m-flag">Pronto</span>
-      <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 18c3.5 0 3.2-12 9.5-12s6 12 9.5 12"/><path d="M12 6.5V18"/><path d="M2.5 18h19"/></svg></div>
-      <div><div class="m-name">Lean Six Sigma</div><div class="m-sub">DMAIC</div></div>
-    </button>
-
-    <button class="method locked" aria-disabled="true" style="--c:var(--m-green);--cink:var(--m-green-ink);--cbg:var(--green-bg);--cline:var(--green-line)">
-      <span class="m-flag">Pronto</span>
-      <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 9.6a3.4 3.4 0 1 0 0 4.8L12 12l2.4-2.4a3.4 3.4 0 1 1 0 4.8L12 12"/></svg></div>
-      <div><div class="m-name">Kaizen</div><div class="m-sub">12 pasos</div></div>
-    </button>
-
-    <button class="method locked" aria-disabled="true" style="--c:var(--m-amber);--cink:var(--m-amber-ink);--cbg:var(--amber-bg);--cline:var(--amber-line)">
-      <span class="m-flag">Pronto</span>
-      <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4.6-5.5L11.2 12l-4.6 5.5z"/><path d="M12.8 12l4.6-5.5L22 12l-4.6 5.5z"/></svg></div>
-      <div><div class="m-name">Design Thinking</div><div class="m-sub">Doble diamante</div></div>
-    </button>
-
-    <button class="method wide locked" aria-disabled="true" style="--c:var(--m-red);--cink:var(--m-red-ink);--cbg:var(--red-bg);--cline:var(--red-line)">
-      <span class="m-flag">Pronto</span>
-      <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.3 6.3a4 4 0 0 1 5.4 5.4L9 22.5 4.5 18z"/><path d="M11.8 8.8l3.4 3.4"/><circle cx="18.2" cy="5.8" r="2.3"/></svg></div>
-      <div><div class="m-name">TPM</div><div class="m-sub">Mantenimiento productivo total</div></div>
+  <div class="block">
+    <h2>Listo para usar</h2>
+    <button class="mhero" data-go="lean">
+      <span class="mhero-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4.5" cy="7" r="2"/><circle cx="12" cy="7" r="2"/><path d="M6.5 7h3.5"/><path d="M14 7h3a3 3 0 0 1 3 3v1.5a3 3 0 0 1-3 3H7a3 3 0 0 0-3 3V20"/><path d="M1.8 18.5L4 20.8l2.2-2.3"/></svg></span>
+      <span class="mhero-tx">
+        <span class="mhero-n">Lean Manufacturing</span>
+        <span class="mhero-p">Quitar del proceso todo lo que el cliente no paga</span>
+        <span class="mhero-m">5 principios · 20 herramientas</span>
+      </span>
+      <span class="mhero-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
     </button>
   </div>
 
-  <div class="ftr">Versión 1 · Lean Manufacturing completo</div>
+  <div class="block">
+    <h2>En construcción</h2>
+    <div class="mlist">
+      <div class="mrow" style="--mc:var(--violet-t);--mbg:var(--violet-bg)">
+        <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 18c3.5 0 3.2-12 9.5-12s6 12 9.5 12"/><path d="M12 6.5V18"/><path d="M2.5 18h19"/></svg></span>
+        <span class="mrow-tx"><span class="mrow-n">Lean Six Sigma</span><span class="mrow-p">Atacar la variación y los defectos · DMAIC</span></span>
+        <span class="mrow-s">Pendiente</span>
+      </div>
+      <div class="mrow" style="--mc:var(--green-t);--mbg:var(--green-bg)">
+        <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 9.6a3.4 3.4 0 1 0 0 4.8L12 12l2.4-2.4a3.4 3.4 0 1 1 0 4.8L12 12"/></svg></span>
+        <span class="mrow-tx"><span class="mrow-n">Kaizen</span><span class="mrow-p">Erradicar una pérdida concreta · 12 pasos</span></span>
+        <span class="mrow-s">Pendiente</span>
+      </div>
+      <div class="mrow" style="--mc:var(--amber-t);--mbg:var(--amber-bg)">
+        <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4.6-5.5L11.2 12l-4.6 5.5z"/><path d="M12.8 12l4.6-5.5L22 12l-4.6 5.5z"/></svg></span>
+        <span class="mrow-tx"><span class="mrow-n">Design Thinking</span><span class="mrow-p">Diseñar algo que no existe · doble diamante</span></span>
+        <span class="mrow-s">Pendiente</span>
+      </div>
+      <div class="mrow" style="--mc:var(--red-t);--mbg:var(--red-bg)">
+        <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.3 6.3a4 4 0 0 1 5.4 5.4L9 22.5 4.5 18z"/><path d="M11.8 8.8l3.4 3.4"/><circle cx="18.2" cy="5.8" r="2.3"/></svg></span>
+        <span class="mrow-tx"><span class="mrow-n">TPM</span><span class="mrow-p">Que la máquina deje de parar</span></span>
+        <span class="mrow-s">Pendiente</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="prog">
+    <div class="prog-b"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <div class="prog-t">1 de 5 métodos listos</div>
+  </div>
 </section>
 
 <!-- ============ LEAN ============ -->
@@ -741,27 +788,27 @@ img{max-width:100%}
   <div class="rows">
     <button class="row" data-go="p1">
       <span class="row-ico">1</span>
-      <span class="row-txt"><span class="row-t">Identificar el valor</span><span class="row-d">Qué aprecia el cliente</span></span>
+      <span class="row-txt"><span class="row-t">Identificar el valor</span><span class="row-d">Qué aprecia el cliente · 3 herramientas</span></span>
       <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
     </button>
     <button class="row" data-go="p2">
       <span class="row-ico">2</span>
-      <span class="row-txt"><span class="row-t">Mapear el flujo de valor</span><span class="row-d">Dónde se pierde el valor</span></span>
+      <span class="row-txt"><span class="row-t">Mapear el flujo de valor</span><span class="row-d">Dónde se pierde el valor · 4 herramientas</span></span>
       <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
     </button>
     <button class="row" data-go="p3">
       <span class="row-ico">3</span>
-      <span class="row-txt"><span class="row-t">Crear flujo continuo</span><span class="row-d">Que el producto avance sin parar</span></span>
+      <span class="row-txt"><span class="row-t">Crear flujo continuo</span><span class="row-d">Que el producto avance sin parar · 6 herramientas</span></span>
       <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
     </button>
     <button class="row" data-go="p4">
       <span class="row-ico">4</span>
-      <span class="row-txt"><span class="row-t">Establecer sistemas pull</span><span class="row-d">Mover solo cuando hay demanda real</span></span>
+      <span class="row-txt"><span class="row-t">Establecer sistemas pull</span><span class="row-d">Mover solo cuando hay demanda real · 4 herramientas</span></span>
       <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
     </button>
     <button class="row" data-go="p5">
       <span class="row-ico">5</span>
-      <span class="row-txt"><span class="row-t">Buscar la perfección · Kaizen</span><span class="row-d">Cultura, no proyecto aislado</span></span>
+      <span class="row-txt"><span class="row-t">Buscar la perfección</span><span class="row-d">Que lo logrado no se devuelva · 3 herramientas</span></span>
       <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
     </button>
   </div>
