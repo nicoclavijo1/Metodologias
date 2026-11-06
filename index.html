@@ -577,6 +577,17 @@ button.row{border-color:var(--blue-line)}
 .panel svg{display:block;width:100%;height:auto}
 .panel .pl{font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 9px 2px}
 
+/* ---------- glosario ---------- */
+.gloss{display:flex;flex-direction:column;gap:9px}
+.gl{padding:14px;border-radius:13px;background:var(--surface);border:1px solid var(--line)}
+.gl b{display:block;font-size:12.5px;font-weight:800;color:var(--blue-soft);margin-bottom:5px}
+.gl span{display:block;font-size:12.5px;color:var(--fg-dim);line-height:1.65}
+.gl em{font-style:normal;color:var(--fg);font-weight:600}
+.pair{padding:14px;border-radius:13px;background:var(--surface);border:1px solid var(--line)}
+.pair b{display:block;font-size:13px;font-weight:800;line-height:1.4;margin-bottom:6px}
+.pair span{display:block;font-size:12.5px;color:var(--fg-dim);line-height:1.65}
+.pairs{display:flex;flex-direction:column;gap:9px}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media (max-width:359px){.methods{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,1fr)}.qs{grid-template-columns:1fr}.pp{grid-template-columns:1fr}}
 
@@ -1892,11 +1903,23 @@ img{max-width:100%}
   </div>
 
   <div class="block">
+    <h2>Las palabras primero</h2>
+    <p class="sub">Este principio usa cuatro palabras de bodega que conviene tener claras antes de seguir.</p>
+    <div class="gloss">
+      <div class="gl"><b>Picking</b><span>Ir al estante y sacar las unidades que pide un pedido. Si una tienda pide 3 panes tajados y 2 baguettes, el picking es ir a buscar esas 5 cosas.</span></div>
+      <div class="gl"><b>Packing</b><span>Empacar lo que se sacó: meterlo en la caja o la bolsa de despacho, con su rótulo. Va justo después del picking.</span></div>
+      <div class="gl"><b>Consolidación</b><span>Juntar varios pedidos que van para el mismo lado, para que salgan en un solo viaje en vez de tres.</span></div>
+      <div class="gl"><b>Despacho</b><span>Entregarle la carga al transporte. Es el último paso dentro de la bodega.</span></div>
+      <div class="gl"><b>Lote</b><span>La cantidad que se trabaja de corrido antes de cambiar a otra cosa. Lote grande significa menos cambios, pero más producto esperando en el medio.</span></div>
+    </div>
+  </div>
+
+  <div class="block">
     <h2>Aplicación práctica en logística</h2>
     <div class="facts">
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h14"/><path d="M21 12l-6-4M21 12l-6 4"/></svg><span>Implementar <b>zonas de trabajo sincronizadas</b></span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="7"/><rect x="13" y="13" width="8" height="7"/></svg><span>Reducir el <b>tamaño de los lotes</b> para que las órdenes se procesen y avancen más rápido</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6 18L18 6"/></svg><span>Evitar <b>almacenes intermedios</b> innecesarios: el almacén del almacén</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h14"/><path d="M21 12l-6-4M21 12l-6 4"/></svg><span>Implementar <b>zonas de trabajo sincronizadas</b>: que cada zona termine justo cuando la siguiente está lista para recibir.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="7"/><rect x="13" y="13" width="8" height="7"/></svg><span>Reducir el <b>tamaño de los lotes</b> para que las órdenes se procesen y avancen más rápido.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6 18L18 6"/></svg><span>Evitar <b>almacenes intermedios</b> innecesarios: sitios donde el producto se guarda solo porque la siguiente zona no estaba lista.</span></div>
     </div>
     <div class="chain" style="margin-top:4px">
       <span>Picking</span><i>→</i><span>Packing</span><i>→</i><span>Consolidación</span><i>→</i><span>Despacho</span>
@@ -1928,7 +1951,7 @@ img{max-width:100%}
       </button>
       <button class="row" data-go="crossdock">
         <span class="row-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg></span>
-        <span class="row-txt"><span class="row-t">Cross-docking</span><span class="row-d">Que la mercancía entre por un muelle y salga por el otro, sin almacenarse</span></span>
+        <span class="row-txt"><span class="row-t">Cross-docking</span><span class="row-d">Que lo que llega salga el mismo día, sin guardarse en el estante</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="row" data-go="pullflow">
@@ -2785,11 +2808,22 @@ img{max-width:100%}
   <div class="hero">
     <span class="eyebrow">Herramienta 5 · Principio 3</span>
     <h1><span class="hl">Cross-docking</span></h1>
-    <p class="sub">La mercancía entra por un muelle y sale por el otro el mismo día. No se almacena.</p>
+    <p class="sub">Que lo que llega salga el mismo día, sin pasar por el estante.</p>
   </div>
 
   <div class="card lead">
-    <p>Es la forma más directa de atacar el <span class="k">almacén intermedio innecesario</span> del que habla este principio: en lugar de reducirlo, lo elimina. Lo que llega ya viene con destino asignado, se clasifica en el muelle y se vuelve a cargar.</p>
+    <p>Normalmente, lo que llega a una bodega se baja del camión, <span class="k">se guarda en un estante</span>, y días después alguien lo vuelve a sacar para despacharlo. Son tres manipuladas y varios días quieto.</p>
+    <p>El cross-docking elimina el paso del medio: lo que llega <span class="k">se clasifica ahí mismo y se sube al camión de salida el mismo día</span>. El producto nunca se guarda. De ahí el nombre: cruza del muelle de entrada al de salida.</p>
+  </div>
+
+  <div class="block">
+    <h2>Las palabras de esta herramienta</h2>
+    <div class="gloss">
+      <div class="gl"><b>Muelle</b><span>La puerta de la bodega donde se arrima el camión. Está a la altura de la carrocería, no del piso, para que lo que viene adentro se pueda empujar directo hacia afuera sin bajarlo ni levantarlo. Una bodega tiene <em>muelles de entrada</em> por un lado y <em>muelles de salida</em> por el otro.</span></div>
+      <div class="gl"><b>Estiba</b><span>La plataforma de madera sobre la que se apilan las cajas. También se le dice <em>pallet</em>. Sirve para mover 40 cajas de una sola vez con un montacargas, en vez de caja por caja.</span></div>
+      <div class="gl"><b>Aviso de despacho</b><span>El mensaje que el proveedor manda <em>antes</em> de que salga su camión, diciendo exactamente qué trae y para quién. Es lo que permite tener lista la clasificación cuando el camión llegue, en vez de empezar a averiguar ahí.</span></div>
+      <div class="gl"><b>Clasificar por destino</b><span>Separar lo que llegó según a qué tienda o a qué ruta va. Es el único trabajo que se hace en el medio.</span></div>
+    </div>
   </div>
 
   <div class="block">
@@ -2836,11 +2870,23 @@ img{max-width:100%}
 
   <div class="block">
     <h2>Qué hace falta para que funcione</h2>
-    <div class="facts">
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18L9 8l4 6 3-4 4 8"/></svg><span><b>La información va antes que el material.</b> El aviso de despacho tiene que llegar antes que el camión, con el detalle de qué trae y para quién.</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>Ventanas horarias cuadradas.</b> La llegada y la salida tienen que estar sincronizadas: si el camión de salida no está, la mercancía se almacena igual.</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M7 7v10M17 7v10"/></svg><span><b>Muelles enfrentados.</b> Entrada de un lado, salida del otro y la zona de clasificación en el medio. Si hay que cruzar media bodega, no es cross-docking.</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9M9 18V4M15 18v-6M21 18V7"/><path d="M2 21h20"/></svg><span><b>Volumen y rotación altos.</b> Con producto que sale poco no compensa: el muelle se vuelve estantería.</span></div>
+    <div class="pairs">
+      <div class="pair">
+        <b>1. La información tiene que llegar antes que el camión</b>
+        <span>Si el camión llega y nadie sabe qué trae, toca abrirlo, contar y averiguar, y mientras tanto la mercancía se queda ahí. Con el aviso de despacho por delante, cuando el camión abre ya está decidido a qué muelle de salida va cada estiba.</span>
+      </div>
+      <div class="pair">
+        <b>2. Las horas de llegada y de salida tienen que cuadrar</b>
+        <span>Si lo que llega a las 8 de la mañana sale en un camión que parte a las 6 de la tarde, esas diez horas el producto está guardado, aunque sea en el piso del muelle. Para que no se guarde, la salida tiene que estar lista cuando la entrada aterriza.</span>
+      </div>
+      <div class="pair">
+        <b>3. Los muelles tienen que estar enfrentados</b>
+        <span>Entrada de un lado, salida del otro y el espacio de clasificación en el medio. Si para pasar de uno a otro hay que cruzar media bodega, se perdió la ventaja: eso ya es un transporte interno.</span>
+      </div>
+      <div class="pair">
+        <b>4. Tiene que ser producto que se mueva mucho</b>
+        <span>Funciona con lo que sale todos los días. Con producto que sale una vez al mes no compensa, porque termina esperando en el muelle, y el muelle es el peor sitio para guardar: estorba y no tiene estante.</span>
+      </div>
     </div>
   </div>
 
@@ -2881,6 +2927,17 @@ img{max-width:100%}
 
   <div class="card lead">
     <p>En push, cada estación produce lo que su programa le dice y le pasa el resultado a la siguiente, esté lista o no. Lo que sobra se acumula entre procesos. En pull, <span class="k">nadie produce hasta que recibe una señal</span>, así que el inventario entre estaciones tiene un tope físico.</p>
+  </div>
+
+  <div class="block">
+    <h2>Las palabras de esta herramienta</h2>
+    <div class="gloss">
+      <div class="gl"><b>Señal</b><span>Cualquier cosa que avise «ya me lo consumí, repóngamelo». Puede ser una tarjeta, una caja vacía que se devuelve, o un espacio marcado en el estante que quedó vacío. No tiene que ser digital: tiene que ser imposible de no ver.</span></div>
+      <div class="gl"><b>Supermercado</b><span>Un sitio con una cantidad fija de material entre dos procesos. Se llama así porque funciona como la estantería de un supermercado de verdad: el cliente toma lo que necesita, y el que repone solo llena el hueco que quedó. Nunca pone más de lo que cabe.</span></div>
+      <div class="gl"><b>Carril FIFO</b><span>Un carril por donde el material pasa en fila india: lo primero que entra es lo primero que sale, y nadie se puede colar. FIFO son las iniciales en inglés de «primero en entrar, primero en salir». Se usa donde no cabe un supermercado.</span></div>
+      <div class="gl"><b>Punto de desacople</b><span>El punto del proceso donde se deja de trabajar adivinando y se empieza a trabajar contra pedido real. Antes de ese punto se produce por pronóstico; después, solo cuando alguien pide.</span></div>
+      <div class="gl"><b>Ruta de reaprovisionamiento</b><span>La persona o el carrito que pasa cada cierto tiempo recogiendo las señales y repartiendo el material. Funciona como la ruta de un lechero: pasa a una hora fija, recoge lo vacío y deja lo lleno. Si pasa cuando se acuerda, el sistema se cae.</span></div>
+    </div>
   </div>
 
   <div class="block">
@@ -3008,11 +3065,36 @@ img{max-width:100%}
   </div>
 
   <div class="block">
+    <h2>Las palabras primero</h2>
+    <p class="sub">Este principio es el que más vocabulario de bodega trae. Estas son todas las palabras que vas a ver aquí y en sus cuatro herramientas.</p>
+    <div class="gloss">
+      <div class="gl"><b>Picking</b><span>Ir al estante y sacar las unidades que pide un pedido. Si una tienda pide 3 panes tajados y 2 baguettes, el picking es ir a buscar esas 5 cosas. Es la tarea más repetitiva de una bodega y donde más errores se cometen.</span></div>
+      <div class="gl"><b>Ubicación de picking</b><span>El espacio exacto del estante donde vive una referencia. Es de donde se saca todos los días, y se repone desde la bodega del fondo. Una bodega tiene cientos de estas ubicaciones.</span></div>
+      <div class="gl"><b>Referencia</b><span>Cada producto distinto. Pan tajado es una referencia, baguette es otra, y pan tajado integral es una tercera.</span></div>
+      <div class="gl"><b>Orden validada</b><span>Un pedido que ya está confirmado: el cliente lo mandó, alguien revisó que se pueda cumplir y quedó en firme. Lo contrario es un pedido tentativo, que todavía puede cambiar.</span></div>
+      <div class="gl"><b>Reabastecer</b><span>Volver a llenar la ubicación de picking con producto traído de la bodega del fondo. También se le dice reponer.</span></div>
+      <div class="gl"><b>Stock de seguridad</b><span>Producto de más que se guarda <em>por si acaso</em>: por si el proveedor se demora o por si un día piden más de lo normal. No es malo en sí; es malo cuando el número se puso al ojo y nunca se revisó.</span></div>
+      <div class="gl"><b>Rotación</b><span>Qué tan seguido se vende o se consume algo. Alta rotación es un producto que sale todos los días. Baja rotación es uno que se queda semanas en el estante.</span></div>
+      <div class="gl"><b>Obsolescencia</b><span>Que el producto guardado se dañe, se venza o deje de servir antes de venderse. Es la factura que llega cuando se guarda de más.</span></div>
+    </div>
+  </div>
+
+  <div class="block">
     <h2>Aplicación práctica en logística</h2>
-    <div class="facts">
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5l2 2 3.5-3.5"/><path d="M13 7h7M4 15h7M15 15h5"/></svg><span>Activar el <b>picking solo cuando hay una orden validada</b>.</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V9M9 18V4M15 18v-6M21 18V7"/><path d="M2 21h20"/></svg><span>Reabastecer ubicaciones de picking <b>en función de consumos reales</b>, no de máximos arbitrarios.</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 8l5-5 5 5M7 16l5 5 5-5"/></svg><span>Sincronizar producción y distribución para evitar <b>stock de seguridad excesivo</b>.</span></div>
+    <p class="sub">Tus tres puntos, y debajo qué significa cada uno en el día a día.</p>
+    <div class="pairs">
+      <div class="pair">
+        <b>Activar el picking solo cuando hay una orden validada</b>
+        <span>Nadie va al estante a sacar producto «adelantando trabajo». Se sale a buscar únicamente cuando ya existe un pedido en firme. Si se adelanta, lo que se sacó queda armado en el piso esperando, estorbando; y si el pedido cambia, toca devolverlo todo al estante.</span>
+      </div>
+      <div class="pair">
+        <b>Reabastecer según el consumo real, no según máximos arbitrarios</b>
+        <span>Volver a llenar cada espacio del estante según lo que de verdad se usó esta semana, no según un tope que alguien puso hace dos años y nadie volvió a mirar. Si un producto dejó de venderse, su espacio no se puede seguir llenando igual: eso es plata parada ocupando sitio.</span>
+      </div>
+      <div class="pair">
+        <b>Sincronizar producción y distribución</b>
+        <span>Que lo que se fabrica y lo que se reparte vayan al mismo ritmo. Cuando producción va por su lado y reparto por el suyo, toca guardar producto en el medio para que los dos cuadren, y ese producto guardado es justo el stock de seguridad que sobra.</span>
+      </div>
     </div>
   </div>
 
@@ -3021,12 +3103,12 @@ img{max-width:100%}
     <div class="rows">
       <button class="row" data-go="kanbanlog">
         <span class="row-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4M7 13h4M15 9h2"/></svg></span>
-        <span class="row-txt"><span class="row-t">Kanban logístico</span><span class="row-d">Una tarjeta por contenedor. Sin tarjeta no se mueve nada</span></span>
+        <span class="row-txt"><span class="row-t">Kanban logístico</span><span class="row-d">Una tarjeta por caja. Sin tarjeta no se mueve nada</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="row" data-go="minmax">
         <span class="row-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 17h18" stroke-dasharray="3 2"/><path d="M4 10l5 5 4-6 3 4 4-6"/></svg></span>
-        <span class="row-txt"><span class="row-t">Reposición por consumo</span><span class="row-d">Min/max dinámico, recalculado con lo que de verdad se usa</span></span>
+        <span class="row-txt"><span class="row-t">Reposición por consumo</span><span class="row-d">Un mínimo y un máximo por estante, revisados cada cierto tiempo</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
       <button class="row" data-go="jit">
@@ -3036,7 +3118,7 @@ img{max-width:100%}
       </button>
       <button class="row" data-go="wmstms">
         <span class="row-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="8" height="7" rx="1"/><rect x="13.5" y="13" width="8" height="7" rx="1"/><path d="M10.5 7.5h7a2 2 0 0 1 2 2v2"/><path d="M13.5 16.5h-7a2 2 0 0 1-2-2v-2"/></svg></span>
-        <span class="row-txt"><span class="row-t">Integración WMS y TMS</span><span class="row-d">Que la señal viaje en segundos, no en un correo</span></span>
+        <span class="row-txt"><span class="row-t">Integración WMS y TMS</span><span class="row-d">Que los dos programas se pasen los datos solos</span></span>
         <span class="row-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </button>
     </div>
@@ -3061,6 +3143,17 @@ img{max-width:100%}
   </div>
 
   <div class="block">
+    <h2>Las palabras de esta herramienta</h2>
+    <div class="gloss">
+      <div class="gl"><b>Kanban</b><span>Palabra japonesa que significa «tarjeta visible». No es un software: en su forma original es literalmente una tarjeta de cartón pegada a un contenedor.</span></div>
+      <div class="gl"><b>Contenedor estándar</b><span>La caja, estiba o canasta en la que siempre se mueve ese producto, siempre con la misma cantidad adentro. Si una estiba de harina son 40 bultos, siempre son 40. Esa cantidad fija es lo que hace que el sistema sea contable.</span></div>
+      <div class="gl"><b>Tiempo de reposición</b><span>Cuánto se demora en llegar un contenedor nuevo desde que se pide. Incluye todo: que alguien vea la tarjeta, que haga el pedido, que el proveedor lo prepare y que el camión llegue.</span></div>
+      <div class="gl"><b>Circuito</b><span>El recorrido completo de una tarjeta: sale pegada a un contenedor lleno, el contenedor se consume, la tarjeta se cuelga en el tablero, alguien la recoge, se repone el contenedor y la tarjeta vuelve pegada a él. Da vueltas para siempre.</span></div>
+      <div class="gl"><b>Factor de seguridad</b><span>Un porcentaje de más que se le suma al cálculo para cubrir los días en que se consume más de lo normal o el proveedor se demora. Un 20% quiere decir «pido un 20% más de lo que estrictamente necesito».</span></div>
+    </div>
+  </div>
+
+  <div class="block">
     <h2>Los dos tipos de tarjeta</h2>
     <div class="qs">
       <div class="q-card">
@@ -3071,7 +3164,7 @@ img{max-width:100%}
       <div class="q-card">
         <div class="q-n">Tipo 2</div>
         <div class="q-q">Kanban de producción</div>
-        <div class="q-h">Autoriza fabricar un lote para reponer lo que se consumió aguas abajo.</div>
+        <div class="q-h">Autoriza fabricar un lote para reponer lo que se consumió en el proceso siguiente.</div>
       </div>
     </div>
   </div>
@@ -3159,6 +3252,17 @@ img{max-width:100%}
   <div class="card lead">
     <p>Cada ubicación de picking tiene un <span class="k">mínimo</span>, que al tocarse dispara la reposición, y un <span class="k">máximo</span>, que es hasta dónde se repone. Lo de «dinámico» es la parte que casi nadie hace: esos dos números no son fijos para siempre, <span class="k">se recalculan con el consumo real</span>.</p>
     <p>El min/max clásico se pone una vez y nadie lo vuelve a tocar. Termina sobrando en lo que ya no se vende y faltando en lo que se disparó.</p>
+  </div>
+
+  <div class="block">
+    <h2>Las palabras de esta herramienta</h2>
+    <div class="gloss">
+      <div class="gl"><b>Mínimo · punto de pedido</b><span>La cantidad en la que suena la alarma. Cuando el estante baja a ese número, se dispara el pedido de reposición. No es «cuando se acaba»: es antes, porque la reposición se demora.</span></div>
+      <div class="gl"><b>Máximo</b><span>Hasta dónde se llena cuando llega la reposición. Marca el techo: nunca debería haber más de eso en esa ubicación.</span></div>
+      <div class="gl"><b>Dinámico</b><span>Que el mínimo y el máximo <em>se recalculan</em> cada cierto tiempo con el consumo real. Lo contrario es ponerlos una vez y no volverlos a mirar, que es lo que pasa casi siempre.</span></div>
+      <div class="gl"><b>Consumo medio diario</b><span>Cuánto se usa de ese producto en un día normal. Se saca midiendo varias semanas y sacando el promedio, no preguntándole a alguien cuánto cree.</span></div>
+      <div class="gl"><b>Tiempo de reposición</b><span>Desde que suena la alarma hasta que el material está otra vez disponible en el estante. Si la bodega repone en medio día, el mínimo tiene que alcanzar para ese medio día.</span></div>
+    </div>
   </div>
 
   <div class="block">
@@ -3255,6 +3359,16 @@ img{max-width:100%}
 
   <div class="card lead">
     <p>JIT no es una herramienta más: es <span class="k">la regla que engloba a las otras tres</span>. Producir y entregar ni antes ni después. Antes es inventario; después es incumplimiento.</p>
+  </div>
+
+  <div class="block">
+    <h2>Las palabras de esta herramienta</h2>
+    <div class="gloss">
+      <div class="gl"><b>Lote</b><span>La cantidad que se produce de corrido antes de cambiar a otra cosa. Si horneas 200 panes seguidos y después cambias a integral, el lote fue de 200. Lote grande significa menos cambios pero más producto esperando.</span></div>
+      <div class="gl"><b>Nivelar · heijunka</b><span>Repartir parejo a lo largo de la semana en vez de concentrarlo. En vez de hacer todo el pan blanco el lunes y todo el integral el jueves, hacer un poco de cada uno todos los días. Heijunka es la palabra japonesa para eso.</span></div>
+      <div class="gl"><b>Ventana horaria</b><span>El rango de horas acordado en el que se recibe o se entrega. «Entre 5 y 7 de la mañana» es una ventana. Sirve para que los dos lados puedan planear.</span></div>
+      <div class="gl"><b>Takt time</b><span>Cada cuánto tiene que salir una unidad para cumplirle al cliente. Sale de dividir el tiempo disponible entre la demanda. Es el dato del principio 2.</span></div>
+    </div>
   </div>
 
   <div class="block">
@@ -3363,8 +3477,20 @@ img{max-width:100%}
   </div>
 
   <div class="card lead">
-    <p>El <span class="k">WMS</span> gobierna lo que pasa dentro de la bodega: ubicaciones, inventario, picking. El <span class="k">TMS</span> gobierna lo que pasa fuera: rutas, vehículos, entregas.</p>
-    <p>Si no se hablan, la bodega prepara sin saber a qué hora sale el camión y el transporte arma rutas sin saber si el pedido está listo. <span class="k">El pull funciona con señales; si la señal llega tarde, no hay pull.</span></p>
+    <p>Son dos programas distintos. El <span class="k">WMS</span> maneja lo que pasa <span class="k">dentro</span> de la bodega: dónde está guardada cada cosa, cuánto hay y qué hay que ir a sacar. El <span class="k">TMS</span> maneja lo que pasa <span class="k">fuera</span>: qué camión sale, por qué ruta y a qué hora entrega.</p>
+    <p>Si no se hablan, la bodega prepara sin saber a qué hora sale el camión, y el transporte arma rutas sin saber si el pedido ya está listo. Alguien termina llamando por teléfono o pasando una lista en un correo, y eso se demora horas. <span class="k">El pull funciona con señales: si la señal llega tarde, no hay pull.</span></p>
+  </div>
+
+  <div class="block">
+    <h2>Las palabras de esta herramienta</h2>
+    <div class="gloss">
+      <div class="gl"><b>WMS</b><span>El programa que maneja la bodega por dentro. Sabe en qué estante está cada cosa, cuánto hay, y le dice al operario la ruta para ir a sacar un pedido. Son las iniciales en inglés de «sistema de gestión de almacén».</span></div>
+      <div class="gl"><b>TMS</b><span>El programa que maneja el transporte por fuera. Arma las rutas, asigna los camiones y registra las entregas. Son las iniciales en inglés de «sistema de gestión de transporte».</span></div>
+      <div class="gl"><b>Integrar</b><span>Que los dos programas se pasen datos solos, sin que una persona tenga que copiar de uno y pegar en el otro. Esa persona copiando y pegando es justo la demora que se quiere quitar.</span></div>
+      <div class="gl"><b>Evento</b><span>Algo que pasa y que vale la pena avisar al otro sistema en ese instante: el pedido quedó liberado, el picking terminó, el camión llegó al muelle, la entrega se confirmó.</span></div>
+      <div class="gl"><b>Latencia</b><span>Cuánto se demora un dato en estar visible en el otro sistema. Si son segundos, sirve para decidir. Si son horas, eso ya no es información para actuar: es historia.</span></div>
+      <div class="gl"><b>Identificador único</b><span>Un número que los dos sistemas usan para referirse a la misma cosa. Si uno le dice «pedido 4412» y el otro «orden B-7730», no hay forma de cruzarlos sin que alguien traduzca a mano.</span></div>
+    </div>
   </div>
 
   <div class="block">
