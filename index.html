@@ -247,6 +247,29 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .stepnav .sn-t{font-size:12.5px;font-weight:700;line-height:1.35;color:var(--fg)}
 .stepnav .nx{text-align:right;align-items:flex-end}
 .pnum.sub{width:auto;min-width:25px;padding:0 7px;border-radius:999px;font-size:11px}
+/* ---------- criterios TPM ---------- */
+.tasks{display:flex;flex-direction:column}
+.tsk{display:flex;gap:12px;align-items:flex-start;padding:13px 2px;border-top:1px solid var(--line)}
+.tsk:first-child{border-top:0;padding-top:3px}
+.tsk-n{flex:none;min-width:38px;padding:3px 0;border-radius:8px;background:var(--blue-bg);color:var(--blue-soft);font-size:11px;font-weight:800;text-align:center}
+.tsk-t{font-size:13.5px;line-height:1.62;color:var(--fg-dim)}
+.lin{display:inline-block;margin-left:7px;padding:1px 7px 2px;border-radius:999px;border:1px solid var(--amber-line);color:var(--amber-t);font-size:9.5px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.bq{font-size:12.5px;color:var(--fg-faint);line-height:1.6;margin:-8px 0 14px}
+.pstat{display:flex;flex-wrap:wrap;gap:7px;margin:-2px 0 20px}
+.pstat span{padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:11px;font-weight:700;color:var(--fg-dim)}
+.pstat span.a{border-color:var(--amber-line);color:var(--amber-t)}
+.glos{display:flex;flex-direction:column}
+.gl{padding:13px 0;border-top:1px solid var(--line)}
+.gl:first-child{border-top:0;padding-top:2px}
+.gl-k{font-size:13px;font-weight:800;color:var(--blue-soft)}
+.gl-v{font-size:12.5px;color:var(--fg-dim);line-height:1.62;margin-top:3px}
+.ktab{display:flex;flex-direction:column}
+.kr{display:flex;gap:12px;align-items:flex-start;padding:13px 2px;border-top:1px solid var(--line)}
+.kr:first-child{border-top:0;padding-top:3px}
+.kr-l{flex:none;width:20px;height:20px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);color:var(--fg-faint);font-size:10.5px;font-weight:800;display:grid;place-items:center}
+.kr-t{min-width:0;flex:1}
+.kr-n{font-size:13.5px;font-weight:700;line-height:1.4}
+.kr-m{font-size:11.5px;color:var(--blue-soft);font-weight:700;margin-top:3px}
 .dtphases{display:flex;flex-direction:column;gap:10px}
 .dtp{display:flex;align-items:center;gap:14px;padding:15px;border-radius:16px;border:1px solid var(--blue-line);background:linear-gradient(140deg,var(--blue-bg-2) 0%,var(--surface) 58%);color:inherit;text-align:left;font:inherit;width:100%;cursor:pointer;transition:box-shadow .15s ease,transform .15s ease}
 .dtp:active{transform:scale(.99)}
@@ -783,6 +806,19 @@ img{max-width:100%}
     </button>
   </div>
 
+
+  <div class="block" style="margin-top:-6px">
+    <button class="mhero" data-go="tpm" style="--blue-line:rgba(239,68,68,.42)">
+      <span class="mhero-ic" style="background:var(--m-red);color:var(--m-red-ink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.3 6.3a4 4 0 0 1 5.4 5.4L9 22.5 4.5 18z"/><path d="M11.8 8.8l3.4 3.4"/><circle cx="18.2" cy="5.8" r="2.3"/></svg></span>
+      <span class="mhero-tx">
+        <span class="mhero-n">TPM Zero-100</span>
+        <span class="mhero-p">Que la máquina deje de parar, sostenido por ocho pilares</span>
+        <span class="mhero-m" style="color:var(--red-t)">Fase Preparación · 8 pilares · 23 bloques</span>
+      </span>
+      <span class="mhero-go" style="color:var(--red-t)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </button>
+  </div>
+
   <div class="block">
     <h2>En construcción</h2>
     <div class="mlist">
@@ -791,17 +827,12 @@ img{max-width:100%}
         <span class="mrow-tx"><span class="mrow-n">Lean Six Sigma</span><span class="mrow-p">Atacar la variación y los defectos · DMAIC</span></span>
         <span class="mrow-s">Pendiente</span>
       </div>
-      <div class="mrow" style="--mc:var(--red-t);--mbg:var(--red-bg)">
-        <span class="mrow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.3 6.3a4 4 0 0 1 5.4 5.4L9 22.5 4.5 18z"/><path d="M11.8 8.8l3.4 3.4"/><circle cx="18.2" cy="5.8" r="2.3"/></svg></span>
-        <span class="mrow-tx"><span class="mrow-n">TPM</span><span class="mrow-p">Que la máquina deje de parar</span></span>
-        <span class="mrow-s">Pendiente</span>
-      </div>
     </div>
   </div>
 
   <div class="prog">
-    <div class="prog-b"><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></div>
-    <div class="prog-t">3 de 5 métodos listos</div>
+    <div class="prog-b"><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+    <div class="prog-t">4 de 5 métodos listos</div>
   </div>
 </section>
 
@@ -7210,6 +7241,673 @@ img{max-width:100%}
   </div>
 </section>
 
+<!-- ==== TPM Preparación de pilares y fase ==== -->
+<section class="screen" id="s-tpmp0" hidden>
+  <div class="hero">
+    <span class="eyebrow">Antes de los pilares · TPM</span>
+    <h1>Preparación de pilares y <span class="hl">fase</span></h1>
+    <p class="sub">Dejar montada la estructura antes de empezar.</p>
+  </div>
+
+  <div class="stepbar"><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>1 bloque</span><span>5 criterios</span><span class="a">1 de línea</span></div>
+
+  <div class="card lead">
+    <p>Antes de que los pilares arranquen hay que definir quién responde por qué, formar a la dirección y dejar los comités funcionando. Si esto falta, cada pilar empieza sin dueño y el plan maestro se queda en papel.</p>
+  </div>
+
+  <div class="block">
+    <h2>1.0 · Preparación de pilares y de la fase</h2>
+    <p class="bq">La estructura mínima: dueños definidos, dirección formada y comités de pilar reuniéndose de verdad.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">1.1</span><span class="tsk-t">Dueño claro definido para todos los procesos de liderazgo</span></div>
+        <div class="tsk"><span class="tsk-n">1.2</span><span class="tsk-t">Director de planta y gerente de operaciones certificados en la Escuela TPM</span></div>
+        <div class="tsk"><span class="tsk-n">1.3</span><span class="tsk-t">Comités de pilar establecidos para E&amp;T, AM y PM, con todos los líderes de pilar identificados</span></div>
+        <div class="tsk"><span class="tsk-n">1.4</span><span class="tsk-t">Los comités de pilar se reúnen con regularidad para revisar el plan maestro, el scorecard y los planes de desarrollo de capacidades</span></div>
+        <div class="tsk"><span class="tsk-n">1.5</span><span class="tsk-t">Métricas de desempeño medidas y reportadas según el estándar global, con un dueño identificado a nivel de planta<span class="lin">LÍNEA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" disabled><span class="sn-k">Anterior</span><span class="sn-t">Primera pantalla</span></button>
+    <button class="nx" data-go="tpmp1"><span class="sn-k">Siguiente</span><span class="sn-t">Liderazgo</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Liderazgo ==== -->
+<section class="screen" id="s-tpmp1" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 1 de 8 · TPM</span>
+    <h1><span class="hl">Liderazgo</span></h1>
+    <p class="sub">Dar rumbo, revisarlo y sostener la conversación diaria.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>6 bloques</span><span>24 criterios</span><span class="a">12 de línea</span></div>
+
+  <div class="card lead">
+    <p>Es el pilar que fija hacia dónde va la planta y cómo se revisa el avance. Sin él, los demás pilares se vuelven tareas sueltas que nadie conecta con el negocio.</p>
+  </div>
+
+  <div class="block">
+    <h2>2.0 · Desarrollo y despliegue de la estrategia (SDD)</h2>
+    <p class="bq">Traducir la visión del negocio en un plan que toda la planta entienda y pueda ejecutar.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">2.1</span><span class="tsk-t">Equipo de liderazgo de planta formado en el proceso SDD</span></div>
+        <div class="tsk"><span class="tsk-n">2.2</span><span class="tsk-t">Proceso definido para construir el CBN y el OGSM de la planta a partir del negocio, los programas de iniciativa y la visión de la unidad</span></div>
+        <div class="tsk"><span class="tsk-n">2.3</span><span class="tsk-t">CBN alineado con las necesidades del cliente; incluye el «qué gana la gente con esto»; simple, medible y específico</span></div>
+        <div class="tsk"><span class="tsk-n">2.4</span><span class="tsk-t">OGSM y plan maestro de planta construidos desde las estrategias para lograr el CBN, y revisados con PDCA</span></div>
+        <div class="tsk"><span class="tsk-n">2.5</span><span class="tsk-t">CBN y plan maestro comunicados en toda la organización; cada quien entiende cómo contribuye</span></div>
+        <div class="tsk"><span class="tsk-n">2.6</span><span class="tsk-t">El plan maestro incluye el desarrollo de capacidades y la implementación de TPM en la planta</span></div>
+        <div class="tsk"><span class="tsk-n">2.7</span><span class="tsk-t">Planes maestros de unidades, departamentos y pilares derivados del plan maestro de planta; la organización entiende su aporte al CBN</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>3.0 · Análisis de pérdidas</h2>
+    <p class="bq">Saber dónde se pierde el dinero antes de salir a atacarlo.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">3.1</span><span class="tsk-t">Dueño del programa de análisis de pérdidas identificado y formado para preparar las actividades del Paso 1 de Fundamentos</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>4.0 · Propiedad del equipo (EO)</h2>
+    <p class="bq">Que cada máquina tenga dueño, y que ese dueño esté preparado para resolver problemas y crear estándares.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">4.1</span><span class="tsk-t">Organización definida en todas las máquinas, con relación líder de línea / operario y equipo RST para soportar la implementación<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">4.2</span><span class="tsk-t">Estrategia definida para que los dueños de equipo y de proceso trabajen en resolución de problemas y estándares, lista para el Paso 1 de Fundamentos<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">4.3</span><span class="tsk-t">Gerente de excelencia de manufactura (antes OIM) y líder de capacidades de manufactura formados en implementación de TPM</span></div>
+        <div class="tsk"><span class="tsk-n">4.4</span><span class="tsk-t">Líderes de línea y líderes de RST certificados en la Escuela TPM y en Liderazgo y Compromiso para propiedad del equipo (EO)<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">4.5</span><span class="tsk-t">Director de planta, gerentes de operaciones y líderes de línea formados y certificados en resolución de problemas (PSC Básico)<span class="lin">LÍNEA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>5.0 · Proceso PDCA</h2>
+    <p class="bq">El ciclo que obliga a revisar si lo planeado está pasando de verdad, en los tres niveles. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">5.1</span><span class="tsk-t">El pensamiento PDCA se usa a nivel de planta, de unidad (operación) y de línea</span></div>
+        <div class="tsk"><span class="tsk-n">5.2</span><span class="tsk-t">Reuniones mensuales establecidas donde se ejecuta el PDCA</span></div>
+        <div class="tsk"><span class="tsk-n">5.3</span><span class="tsk-t">El PDCA termina en acciones que atacan brechas de ejecución, brechas en los procesos de trabajo y pérdidas crónicas de desempeño</span></div>
+        <div class="tsk"><span class="tsk-n">5.4</span><span class="tsk-t">Plan a 90 días disponible para planta, unidad y línea</span></div>
+        <div class="tsk"><span class="tsk-n">5.5</span><span class="tsk-t">Tendencias de los KPI de proceso y de desempeño revisadas en el PDCA a nivel de planta, unidad y línea</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>6.0 · DOM 24/7</h2>
+    <p class="bq">La reunión diaria donde se mira el turno que pasó y se decide qué se hace hoy. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">6.1</span><span class="tsk-t">P2P, reunión de equipo, DOM y reunión de departamento funcionando, con procedimiento estándar de DOM y cumplimiento (HC) mayor al 80%</span></div>
+        <div class="tsk"><span class="tsk-n">6.2</span><span class="tsk-t">KPI de proceso y de desempeño revisados en el DOM, alineados con los requisitos mínimos de la agenda</span></div>
+        <div class="tsk"><span class="tsk-n">6.3</span><span class="tsk-t">Los cuatro comportamientos de liderazgo DDS se ven en el DOM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>7.0 · Sistema de reconocimiento</h2>
+    <p class="bq">Reforzar los comportamientos que se quieren ver, de forma visible y periódica.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">7.1</span><span class="tsk-t">Sistema local de reconocimiento documentado y funcionando para los roles operativos, orientado a impulsar los comportamientos deseados</span></div>
+        <div class="tsk"><span class="tsk-n">7.2</span><span class="tsk-t">El sistema es comunicado, conocido, visible y ocurre al menos cada trimestre</span></div>
+        <div class="tsk"><span class="tsk-n">7.3</span><span class="tsk-t">El liderazgo operativo reconoce a los ganadores del sistema</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp0"><span class="sn-k">Anterior</span><span class="sn-t">Preparación de pilares y fase</span></button>
+    <button class="nx" data-go="tpmp2"><span class="sn-k">Siguiente</span><span class="sn-t">Riesgo, ambiente, seguridad y salud</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Riesgo, ambiente, seguridad y salud ==== -->
+<section class="screen" id="s-tpmp2" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 2 de 8 · TPM</span>
+    <h1>Riesgo, ambiente, seguridad y <span class="hl">salud</span></h1>
+    <p class="sub">La base que no se negocia.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>1 bloque</span><span>1 criterio</span></div>
+
+  <div class="card lead">
+    <p>En la fase de preparación este pilar se reduce a una certificación, pero es la condición de entrada: ninguna mejora de TPM vale si la planta no es segura.</p>
+  </div>
+
+  <div class="block">
+    <h2>8.0 · I Care</h2>
+    <p class="bq">El programa de seguridad y cuidado de la planta, en su nivel de arranque.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">8.1</span><span class="tsk-t">Planta certificada en I Care Paso 0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp1"><span class="sn-k">Anterior</span><span class="sn-t">Liderazgo</span></button>
+    <button class="nx" data-go="tpmp3"><span class="sn-k">Siguiente</span><span class="sn-t">Mantenimiento autónomo</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Mantenimiento autónomo ==== -->
+<section class="screen" id="s-tpmp3" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 3 de 8 · TPM</span>
+    <h1>Mantenimiento <span class="hl">autónomo</span></h1>
+    <p class="sub">Que el operario cuide su propia máquina.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>3 bloques</span><span>14 criterios</span><span class="a">14 de línea</span></div>
+
+  <div class="card lead">
+    <p>El operario deja de ser solo quien opera y pasa a ser quien detecta, limpia, ajusta y reporta. Es el pilar que más cambia el día a día de la línea, y sobre el que se apoyan casi todos los demás.</p>
+  </div>
+
+  <div class="block">
+    <h2>9.0 · Manejo de defectos (DH)</h2>
+    <p class="bq">Ver los defectos pequeños y corregirlos antes de que se vuelvan paradas. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">9.1</span><span class="tsk-t">Todos los operarios y el RST formados en manejo de defectos</span></div>
+        <div class="tsk"><span class="tsk-n">9.2</span><span class="tsk-t">Sistema para registrar y seguir defectos, con los datos de defectos encontrados y resueltos visibles para el operario</span></div>
+        <div class="tsk"><span class="tsk-n">9.3</span><span class="tsk-t">Defectos encontrados y corregidos en las últimas 24 horas, seguidos y discutidos en el cambio de turno y en el DOM</span></div>
+        <div class="tsk"><span class="tsk-n">9.4</span><span class="tsk-t">Relación «defectos corregidos / defectos encontrados» de los últimos 3 meses, seguida y comparada contra una meta definida internamente</span></div>
+        <div class="tsk"><span class="tsk-n">9.5</span><span class="tsk-t">Puesto de trabajo limpio y ordenado, con ubicación definida para lo que va en el piso y estándares visuales para el contenido de los gabinetes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>10.0 · Limpieza, inspección y lubricación (CIL)</h2>
+    <p class="bq">La rutina del operario que convierte la limpieza en inspección. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">10.1</span><span class="tsk-t">Todos los operarios y el RST formados en CIL</span></div>
+        <div class="tsk"><span class="tsk-n">10.2</span><span class="tsk-t">Lista de tareas de limpieza disponible para las áreas de mayor pérdida, con lineamientos de seguridad, herramientas necesarias, tiempo y frecuencia de ejecución, instrucciones y ayudas visuales</span></div>
+        <div class="tsk"><span class="tsk-n">10.3</span><span class="tsk-t">Sistema para seguir el plan de CIL y su estado de ejecución</span></div>
+        <div class="tsk"><span class="tsk-n">10.4</span><span class="tsk-t">Ejecución de CIL de las últimas 24 horas, seguida y discutida en el cambio de turno y en el DOM contra una meta definida internamente</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>11.0 · Centerlining (CL)</h2>
+    <p class="bq">Fijar los parámetros correctos de la máquina y no dejar que se muevan solos. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">11.1</span><span class="tsk-t">Todos los operarios y el RST formados en centerlining</span></div>
+        <div class="tsk"><span class="tsk-n">11.2</span><span class="tsk-t">Lista de setpoints disponible en Plain/Proficy con los parámetros de proceso (incluidos los ingresos manuales) y sus límites definidos</span></div>
+        <div class="tsk"><span class="tsk-n">11.3</span><span class="tsk-t">Cumplimiento de CL en setpoints manuales de las últimas 24 horas, seguido y discutido en el cambio de turno y en el DOM contra una meta interna</span></div>
+        <div class="tsk"><span class="tsk-n">11.4</span><span class="tsk-t">Centerlines fuera de límite revisados en el DOM, incluidas las desviaciones de velocidad, con acciones correctivas definidas</span></div>
+        <div class="tsk"><span class="tsk-n">11.5</span><span class="tsk-t">Tarjetas de fuera de centerline emitidas por los operarios</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp2"><span class="sn-k">Anterior</span><span class="sn-t">Riesgo, ambiente, seguridad y salud</span></button>
+    <button class="nx" data-go="tpmp4"><span class="sn-k">Siguiente</span><span class="sn-t">Mantenimiento preventivo</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Mantenimiento preventivo ==== -->
+<section class="screen" id="s-tpmp4" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 4 de 8 · TPM</span>
+    <h1>Mantenimiento <span class="hl">preventivo</span></h1>
+    <p class="sub">Que la máquina se intervenga antes de fallar.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>4 bloques</span><span>23 criterios</span><span class="a">4 de línea</span></div>
+
+  <div class="card lead">
+    <p>Pasar de apagar incendios a planear. Es el pilar más extenso de la fase de preparación, porque va desde el plan de mantenimiento de cada máquina hasta el orden del almacén de repuestos.</p>
+  </div>
+
+  <div class="block">
+    <h2>12.0 · Planeación y programación (P&amp;S)</h2>
+    <p class="bq">Planear el trabajo de mantenimiento con anticipación y medir si se cumple.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">12.1</span><span class="tsk-t">Todos los recursos de planeación de mantenimiento formados en P&amp;S<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">12.2</span><span class="tsk-t">Ranking a nivel de ensamble ejecutado en la máquina piloto</span></div>
+        <div class="tsk"><span class="tsk-n">12.3</span><span class="tsk-t">Plan de mantenimiento existente para cada máquina</span></div>
+        <div class="tsk"><span class="tsk-n">12.4</span><span class="tsk-t">Órdenes de trabajo clasificadas según el tipo de trabajo correcto</span></div>
+        <div class="tsk"><span class="tsk-n">12.5</span><span class="tsk-t">Adherencia al plan de mantenimiento mayor al 70% (promedio móvil de 12 meses)</span></div>
+        <div class="tsk"><span class="tsk-n">12.6</span><span class="tsk-t">Porcentaje de costo de tareas planeadas frente a no planeadas, medido</span></div>
+        <div class="tsk"><span class="tsk-n">12.7</span><span class="tsk-t">Costo de mantenimiento por cada 100 piezas y por tonelada, medido</span></div>
+        <div class="tsk"><span class="tsk-n">12.8</span><span class="tsk-t">Parada de mantenimiento planeada con al menos una semana de anticipación, incluyendo tiempos, recursos, repuestos y necesidades de seguridad</span></div>
+        <div class="tsk"><span class="tsk-n">12.9</span><span class="tsk-t">Resolución de defectos priorizada e incluida en la parada de mantenimiento</span></div>
+        <div class="tsk"><span class="tsk-n">12.10</span><span class="tsk-t">Cumplimiento de tareas y adherencia en tiempo, medidos</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>13.0 · Eliminación de paradas</h2>
+    <p class="bq">Que cada parada deje una causa raíz cerrada, no un arreglo rápido.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">13.1</span><span class="tsk-t">Todo el RST formado en BD Card 2; operarios formados en la definición de breakdown<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">13.2</span><span class="tsk-t">Todas las paradas discutidas en el DOM y registradas en Plain/Proficy y SAP<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">13.3</span><span class="tsk-t">BD Card 1 y BD Card 2 usadas en la máquina piloto</span></div>
+        <div class="tsk"><span class="tsk-n">13.4</span><span class="tsk-t">Número de paradas por mes y por MQT, medido<span class="lin">LÍNEA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>14.0 · Lubricación</h2>
+    <p class="bq">Saber qué se lubrica, con qué y cada cuánto.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">14.1</span><span class="tsk-t">Dueño del proceso de lubricación asignado; rutinas documentadas y ejecutadas</span></div>
+        <div class="tsk"><span class="tsk-n">14.2</span><span class="tsk-t">El dueño del proceso conoce la cantidad y los tipos de lubricantes usados y almacenados</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>15.0 · Gestión de almacén y taller</h2>
+    <p class="bq">Que el repuesto exista, se encuentre y esté en buen estado.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">15.1</span><span class="tsk-t">Taller y almacenes de repuestos e insumos limpios y organizados</span></div>
+        <div class="tsk"><span class="tsk-n">15.2</span><span class="tsk-t">Procedimiento de almacén definido para recibir, almacenar y entregar partes</span></div>
+        <div class="tsk"><span class="tsk-n">15.3</span><span class="tsk-t">Exactitud de inventario seguida por el personal de almacén en el DOM, y valor de los repuestos conocido</span></div>
+        <div class="tsk"><span class="tsk-n">15.4</span><span class="tsk-t">Acceso al almacén y a las herramientas del taller controlado</span></div>
+        <div class="tsk"><span class="tsk-n">15.5</span><span class="tsk-t">Procedimiento definido para partes reparables</span></div>
+        <div class="tsk"><span class="tsk-n">15.6</span><span class="tsk-t">Partes nuevas introducidas mediante un proceso de aprobación definido, incluidas las de máquinas nuevas</span></div>
+        <div class="tsk"><span class="tsk-n">15.7</span><span class="tsk-t">Procedimientos definidos para el uso de herramientas aprobadas del taller, con acceso limitado a personal calificado</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp3"><span class="sn-k">Anterior</span><span class="sn-t">Mantenimiento autónomo</span></button>
+    <button class="nx" data-go="tpmp5"><span class="sn-k">Siguiente</span><span class="sn-t">Mejora enfocada</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Mejora enfocada ==== -->
+<section class="screen" id="s-tpmp5" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 5 de 8 · TPM</span>
+    <h1>Mejora <span class="hl">enfocada</span></h1>
+    <p class="sub">Atacar las pérdidas grandes con método.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>2 bloques</span><span>5 criterios</span><span class="a">3 de línea</span></div>
+
+  <div class="card lead">
+    <p>Es el pilar donde vive la resolución estructurada de problemas y el cambio rápido de formato. Se apoya en los ciclos PSC y en los 12 pasos Kaizen.</p>
+  </div>
+
+  <div class="block">
+    <h2>16.0 · Ciclos de resolución de problemas (PSC)</h2>
+    <p class="bq">Que todo problema termine en un estándar, no en una anécdota.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">16.1</span><span class="tsk-t">Todo el RST certificado en PSC<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">16.2</span><span class="tsk-t">La resolución de problemas siempre termina en la creación o mejora de un estándar, o en entrenamiento</span></div>
+        <div class="tsk"><span class="tsk-n">16.3</span><span class="tsk-t">Los operarios recogen evidencia y desarrollan la capacidad de detectar anormalidades</span></div>
+        <div class="tsk"><span class="tsk-n">16.4</span><span class="tsk-t">Todo el RST de Paper Making certificado en PSC2<span class="lin">LÍNEA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>17.0 · Cambio rápido de formato (C/O)</h2>
+    <p class="bq">Que el cambio de producto deje de ser una parada larga. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">17.1</span><span class="tsk-t">Existe un checklist de cambio de formato, se usa y se revisa en el DOM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp4"><span class="sn-k">Anterior</span><span class="sn-t">Mantenimiento preventivo</span></button>
+    <button class="nx" data-go="tpmp6"><span class="sn-k">Siguiente</span><span class="sn-t">Educación y entrenamiento</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Educación y entrenamiento ==== -->
+<section class="screen" id="s-tpmp6" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 6 de 8 · TPM</span>
+    <h1>Educación y <span class="hl">entrenamiento</span></h1>
+    <p class="sub">Que la gente sepa hacer lo que el método le pide.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i><i class=""></i></div>
+
+  <div class="pstat"><span>1 bloque</span><span>8 criterios</span><span class="a">1 de línea</span></div>
+
+  <div class="card lead">
+    <p>TPM exige habilidades que no se tienen por defecto. Este pilar define qué debe saber cada rol, lo mide y cierra la brecha con entrenamiento.</p>
+  </div>
+
+  <div class="block">
+    <h2>18.0 · Gestión de capacidades</h2>
+    <p class="bq">Saber qué sabe cada persona, qué le falta y cómo se cierra esa diferencia.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">18.1</span><span class="tsk-t">Matriz de habilidades de operarios en uso, que incluye operación de máquina, seguridad, calidad, DH, CIL y CL<span class="lin">LÍNEA</span></span></div>
+        <div class="tsk"><span class="tsk-n">18.2</span><span class="tsk-t">Matriz de habilidades para los roles administrativos de operaciones: TPM, técnicas, seguridad y liderazgo</span></div>
+        <div class="tsk"><span class="tsk-n">18.3</span><span class="tsk-t">Sistema para medir la adherencia a la matriz de habilidades</span></div>
+        <div class="tsk"><span class="tsk-n">18.4</span><span class="tsk-t">Organización establecida para sostener el programa de entrenamiento</span></div>
+        <div class="tsk"><span class="tsk-n">18.5</span><span class="tsk-t">Gestión de capacidades revisada por el equipo de liderazgo de planta (SLT) al menos cada trimestre</span></div>
+        <div class="tsk"><span class="tsk-n">18.6</span><span class="tsk-t">Plan de inducción definido y aplicado a todo empleado nuevo (Essity, seguridad, calidad, RR. HH.…)</span></div>
+        <div class="tsk"><span class="tsk-n">18.7</span><span class="tsk-t">Los operarios nuevos completan la calificación estándar antes de trabajar de forma independiente</span></div>
+        <div class="tsk"><span class="tsk-n">18.8</span><span class="tsk-t">Proceso de inducción definido para ingenieros de proceso, orientado a resolución de problemas, habilidades técnicas y conocimiento de TPM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp5"><span class="sn-k">Anterior</span><span class="sn-t">Mejora enfocada</span></button>
+    <button class="nx" data-go="tpmp7"><span class="sn-k">Siguiente</span><span class="sn-t">Gestión temprana de equipos</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Gestión temprana de equipos ==== -->
+<section class="screen" id="s-tpmp7" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 7 de 8 · TPM</span>
+    <h1>Gestión temprana de <span class="hl">equipos</span></h1>
+    <p class="sub">Que una máquina nueva arranque bien desde el primer día.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i class=""></i></div>
+
+  <div class="pstat"><span>2 bloques</span><span>4 criterios</span></div>
+
+  <div class="card lead">
+    <p>Lo que no se corrige en el diseño y en el arranque se termina pagando en mantenimiento durante toda la vida del equipo.</p>
+  </div>
+
+  <div class="block">
+    <h2>19.0 · Gestión de arranques (SUM)</h2>
+    <p class="bq">Arrancar un equipo o una línea nueva con gente preparada y revisiones formales.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">19.1</span><span class="tsk-t">Recurso formado y certificado para la gestión de arranques (SUM)</span></div>
+        <div class="tsk"><span class="tsk-n">19.2</span><span class="tsk-t">Revisiones MRC lideradas por el OIL o el líder de arranque, con participación regular de operaciones</span></div>
+        <div class="tsk"><span class="tsk-n">19.3</span><span class="tsk-t">Recursos de arranque formados y certificados en CQV, incluido el contacto de calidad</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>20.0 · Gestión de plataformas</h2>
+    <p class="bq">Que cada familia de equipos tenga alguien que responda por ella.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">20.1</span><span class="tsk-t">Dueño asignado para cada plataforma de la planta y formado en el procedimiento de gestión de plataformas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp6"><span class="sn-k">Anterior</span><span class="sn-t">Educación y entrenamiento</span></button>
+    <button class="nx" data-go="tpmp8"><span class="sn-k">Siguiente</span><span class="sn-t">Optimización de la cadena de suministro</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM Optimización de la cadena de suministro ==== -->
+<section class="screen" id="s-tpmp8" hidden>
+  <div class="hero">
+    <span class="eyebrow">Pilar 8 de 8 · TPM</span>
+    <h1>Optimización de la cadena de <span class="hl">suministro</span></h1>
+    <p class="sub">Que lo que se produce coincida con lo que se planeó.</p>
+  </div>
+
+  <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i></div>
+
+  <div class="pstat"><span>3 bloques</span><span>3 criterios</span><span class="a">1 de línea</span></div>
+
+  <div class="card lead">
+    <p>Conecta la planta con la planeación: acuerdos claros, cumplimiento del programa y una producción que se reconcilia con lo que de verdad salió.</p>
+  </div>
+
+  <div class="block">
+    <h2>21.0 · Acuerdo de operación de planta</h2>
+    <p class="bq">Dejar por escrito qué se compromete a entregar la planta y bajo qué condiciones.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">21.1</span><span class="tsk-t">Acuerdo de operación de planta documentado, con los acuerdos internos incluidos y alineado con el Planning Hub</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>22.0 · Adherencia al programa (SA)</h2>
+    <p class="bq">Producir lo que estaba programado, en el orden y la cantidad acordados.</p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">22.1</span><span class="tsk-t">Dueño del programa de adherencia (SA) identificado y formado para las actividades del Paso 1 de Fundamentos</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>23.0 · Procesos de ejecución de producción</h2>
+    <p class="bq">Que lo que se declara producido coincida con el material que se consumió. <span class="lin">TODO DE LÍNEA</span></p>
+    <div class="card">
+      <div class="tasks">
+        <div class="tsk"><span class="tsk-n">23.1</span><span class="tsk-t">Dueño identificado y proceso definido para reconciliar materiales en staging y confirmar la producción</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp7"><span class="sn-k">Anterior</span><span class="sn-t">Gestión temprana de equipos</span></button>
+    <button class="nx" data-go="tpmkpi"><span class="sn-k">Siguiente</span><span class="sn-t">Los KPI de la fase</span></button>
+  </div>
+</section>
+
+<!-- ==== TPM KPIs ==== -->
+<section class="screen" id="s-tpmkpi" hidden>
+  <div class="hero">
+    <span class="eyebrow">TPM · fase Preparación</span>
+    <h1>Los <span class="hl">KPI</span></h1>
+    <p class="sub">Los criterios dicen qué hay que montar; los KPI dicen si sirvió.</p>
+  </div>
+
+  <div class="card lead">
+    <p>No basta con tener los 23 bloques implementados: la fase también exige que los indicadores se muevan. La regla del formato es clara: <b>la meta se tiene que sostener al menos tres meses seguidos</b> antes de pedir la evaluación.</p>
+  </div>
+
+  <div class="block">
+    <h2>KPI de la fase</h2>
+    <p class="bq">Línea base 2023. Son los que se evalúan directamente.</p>
+    <div class="card">
+      <div class="ktab">
+        <div class="kr"><span class="kr-l">a</span><span class="kr-t"><span class="kr-n">Paradas no planeadas por 24 h</span><span class="kr-m">Tendencia a la baja</span></span></div>
+        <div class="kr"><span class="kr-l">b</span><span class="kr-t"><span class="kr-n">Roturas de papel no planeadas por 24 h</span><span class="kr-m">Tendencia a la baja</span></span></div>
+        <div class="kr"><span class="kr-l">c</span><span class="kr-t"><span class="kr-n">UPDT de Paper Making (%)</span><span class="kr-m">Tendencia a la baja</span></span></div>
+        <div class="kr"><span class="kr-l">d</span><span class="kr-t"><span class="kr-n">Pérdida por tasa objetivo en Tissue</span><span class="kr-m">Tendencia a la baja</span></span></div>
+        <div class="kr"><span class="kr-l">e</span><span class="kr-t"><span class="kr-n">Adherencia al programa (SA)</span><span class="kr-m">Medir y establecer línea base</span></span></div>
+        <div class="kr"><span class="kr-l">f</span><span class="kr-t"><span class="kr-n">DBNR</span><span class="kr-m">Sin meta definida en el formato</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>KPI del scorecard de planta</h2>
+    <p class="bq">Línea base 2025. No se evalúan uno por uno, pero tienen que estar en meta o bajo control antes de planear cualquier evaluación.</p>
+    <div class="card">
+      <div class="ktab">
+        <div class="kr"><span class="kr-l">g</span><span class="kr-t"><span class="kr-n">TRI-R (línea base 2017)</span><span class="kr-m">Con seguimiento</span></span></div>
+        <div class="kr"><span class="kr-l">h</span><span class="kr-t"><span class="kr-n">eSAT</span><span class="kr-m">Monitorear la tendencia: que no baje</span></span></div>
+        <div class="kr"><span class="kr-l">i</span><span class="kr-t"><span class="kr-n">Quejas de clientes (Cpm total)</span><span class="kr-m">Alineado con el CBN de planta y desarrollado según los planes de la unidad</span></span></div>
+        <div class="kr"><span class="kr-l">j</span><span class="kr-t"><span class="kr-n">COGS (% de reducción)</span><span class="kr-m">Alineado con el CBN de planta y desarrollado según los planes de la unidad</span></span></div>
+        <div class="kr"><span class="kr-l">k</span><span class="kr-t"><span class="kr-n">Productividad</span><span class="kr-m">Alineado con el CBN de planta y desarrollado según los planes de la unidad</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Las tres notas al pie del formato</b>
+    La meta de los KPI de fase debe lograrse <span class="k">al menos 3 meses consecutivos</span> antes de la evaluación · la medición de adherencia al programa (SA) queda <span class="k">pendiente de revisión del estándar en 2026</span> · los KPI del scorecard deben estar en meta o con la desviación reconciliada y alineada con la unidad de negocio.
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmp8"><span class="sn-k">Anterior</span><span class="sn-t">Optimización de la cadena de suministro</span></button>
+    <button class="nx" data-go="tpmglo"><span class="sn-k">Siguiente</span><span class="sn-t">Glosario de siglas</span></button>
+  </div>
+</section>
+
+<!-- ============ TPM ============ -->
+<section class="screen" id="s-tpm" hidden>
+  <div class="hero">
+    <span class="eyebrow">Método</span>
+    <h1>TPM <span class="hl">Zero-100</span></h1>
+    <p class="sub">Que la máquina deje de parar, sostenido por ocho pilares.</p>
+  </div>
+
+  <div class="card lead">
+    <p>TPM es un sistema completo de gestión de la planta: no es una herramienta, son <b>ocho pilares</b> que se montan en orden y se auditan. Zero-100 es el camino por fases, y lo que estás viendo acá es la primera: <b>Preparación</b>. Cada pilar trae sus bloques, y cada bloque su lista de criterios que hay que poder responder con un sí.</p>
+  </div>
+
+  <div class="block">
+    <h2>Los ocho pilares</h2>
+    <div class="exfig"><svg viewBox="0 0 340 204" font-family="Inter, system-ui, sans-serif"><path d="M10 56 L66 26 L274 26 L330 56 Z" fill="rgba(59,130,246,.14)" stroke="#3B82F6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><text x="170" y="47" font-size="9" fill="#7CB2FF" font-weight="800" text-anchor="middle" letter-spacing=".1em">CERO PÉRDIDAS</text><rect x="12" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(33 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">LIDERAZGO</text><text x="30" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">1</text><rect x="52" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(73 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">REHS</text><text x="70" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">2</text><rect x="92" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(113 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">AM</text><text x="110" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">3</text><rect x="132" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(153 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">PM</text><text x="150" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">4</text><rect x="172" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(193 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">FI</text><text x="190" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">5</text><rect x="212" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(233 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">E&amp;T</text><text x="230" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">6</text><rect x="252" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(273 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">EEM</text><text x="270" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">7</text><rect x="292" y="62" width="36" height="92" rx="6" fill="#1B2638" stroke="#3C4B60" stroke-width="1.1"/><text transform="translate(313 108) rotate(-90)" font-size="8" fill="#E9EFF8" font-weight="800" text-anchor="middle" letter-spacing=".06em">SCO</text><text x="310" y="74" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle">8</text><rect x="10" y="160" width="320" height="34" rx="8" fill="rgba(59,130,246,.16)" stroke="#3B82F6" stroke-width="1.3"/><text x="170" y="176" font-size="8.6" fill="#7CB2FF" font-weight="800" text-anchor="middle" letter-spacing=".1em">PREPARACIÓN</text><text x="170" y="188" font-size="7" fill="#93A3B8" font-weight="600" text-anchor="middle">la fase que estás viendo · 23 bloques de criterios</text></svg></div>
+    <p class="cap">Los pilares sostienen el objetivo; la fase de Preparación es la base sobre la que se paran. Sin base, no hay pilar que aguante.</p>
+  </div>
+
+  <div class="block">
+    <h2>Qué exige la fase Preparación</h2>
+    <div class="exlist">
+      <div class="ex"><span class="f">Liderazgo preparado</span>La dirección aprende y se prepara antes de pedirle el cambio a la línea.</div>
+      <div class="ex"><span class="f">Procesos básicos con dueño</span>Los procesos y sistemas de trabajo funcionando, cada uno con alguien que responde por él.</div>
+      <div class="ex"><span class="f">Gente formada y comprometida</span>Las personas entrenadas en esos procesos de trabajo, no solo informadas.</div>
+      <div class="ex"><span class="f">La organización correcta</span>La estructura montada para poder implementar TPM: comités, líderes de pilar y dueños de equipo.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Cómo se evalúa</h2>
+    <div class="card">
+      <p style="margin:0 0 12px">Cada criterio se responde con <b>implementado sí o no</b>, y los que están en no necesitan un <b>plan para cerrar la brecha</b>. El resultado de la fase es el porcentaje de criterios cumplidos.</p>
+      <div class="ex"><span class="f">Criterio de línea</span>Los criterios marcados con <span class="lin">LÍNEA</span> se verifican en la línea misma, no en la oficina. En la hoja que pasaste son <b>46 de 86</b>.</div>
+      <div class="ex"><span class="f">Los KPI también cuentan</span>No basta con tener los criterios implementados: los indicadores tienen que estar en meta durante al menos tres meses seguidos.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Pilares y bloques</h2>
+    <div class="dtphases">
+      <button class="dtp" data-go="tpmp0"><span class="dtp-n x">0</span><span class="dtp-tx"><span class="dtp-t">Preparación de pilares y fase</span><span class="dtp-d">Dejar montada la estructura antes de empezar · 1 bloque, 5 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp1"><span class="dtp-n">1</span><span class="dtp-tx"><span class="dtp-t">Liderazgo</span><span class="dtp-d">Dar rumbo, revisarlo y sostener la conversación diaria · 6 bloques, 24 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp2"><span class="dtp-n">2</span><span class="dtp-tx"><span class="dtp-t">Riesgo, ambiente, seguridad y salud</span><span class="dtp-d">La base que no se negocia · 1 bloque, 1 criterio</span></span></button>
+      <button class="dtp" data-go="tpmp3"><span class="dtp-n">3</span><span class="dtp-tx"><span class="dtp-t">Mantenimiento autónomo</span><span class="dtp-d">Que el operario cuide su propia máquina · 3 bloques, 14 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp4"><span class="dtp-n">4</span><span class="dtp-tx"><span class="dtp-t">Mantenimiento preventivo</span><span class="dtp-d">Que la máquina se intervenga antes de fallar · 4 bloques, 23 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp5"><span class="dtp-n">5</span><span class="dtp-tx"><span class="dtp-t">Mejora enfocada</span><span class="dtp-d">Atacar las pérdidas grandes con método · 2 bloques, 5 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp6"><span class="dtp-n">6</span><span class="dtp-tx"><span class="dtp-t">Educación y entrenamiento</span><span class="dtp-d">Que la gente sepa hacer lo que el método le pide · 1 bloque, 8 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp7"><span class="dtp-n">7</span><span class="dtp-tx"><span class="dtp-t">Gestión temprana de equipos</span><span class="dtp-d">Que una máquina nueva arranque bien desde el primer día · 2 bloques, 4 criterios</span></span></button>
+      <button class="dtp" data-go="tpmp8"><span class="dtp-n">8</span><span class="dtp-tx"><span class="dtp-t">Optimización de la cadena de suministro</span><span class="dtp-d">Que lo que se produce coincida con lo que se planeó · 3 bloques, 3 criterios</span></span></button>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Referencia</h2>
+    <div class="dtphases">
+      <button class="dtp" data-go="tpmkpi"><span class="dtp-n x">K</span><span class="dtp-tx"><span class="dtp-t">Los KPI de la fase</span><span class="dtp-d">Los seis que se evalúan y los cinco del scorecard de planta</span></span></button>
+      <button class="dtp" data-go="tpmglo"><span class="dtp-n x">?</span><span class="dtp-tx"><span class="dtp-t">Glosario de siglas</span><span class="dtp-d">DOM, CIL, CBN, OGSM, RST y todas las demás</span></span></button>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Ojo con el alcance</b>
+    Lo que está acá es la fase <span class="k">Preparación</span> de TPM Zero-100, transcrita del formato de evaluación. Las fases siguientes (Fundamentos y las que vienen después) tienen sus propios criterios y todavía no están en la app.
+  </div>
+</section>
+<!-- ==== TPM glosario ==== -->
+<section class="screen" id="s-tpmglo" hidden>
+  <div class="hero">
+    <span class="eyebrow">TPM · referencia</span>
+    <h1>Glosario de <span class="hl">siglas</span></h1>
+    <p class="sub">El formato está lleno de siglas. Acá están todas, en una línea cada una.</p>
+  </div>
+
+  <div class="block">
+    <h2>Siglas del formato</h2>
+    <div class="card">
+      <div class="glos">
+        <div class="gl"><div class="gl-k">AM · Autonomous Maintenance</div><div class="gl-v">Mantenimiento autónomo. El operario limpia, inspecciona y ajusta su propia máquina en vez de solo operarla.</div></div>
+        <div class="gl"><div class="gl-k">BD Card</div><div class="gl-v">Tarjeta de <i>breakdown</i>. El formato con el que se analiza una parada: la 1 es el registro rápido en el momento, la 2 es el análisis a fondo.</div></div>
+        <div class="gl"><div class="gl-k">CBN · Compelling Business Need</div><div class="gl-v">La necesidad del negocio que justifica todo el plan, escrita de forma simple, medible y específica.</div></div>
+        <div class="gl"><div class="gl-k">CIL · Cleaning, Inspection, Lubrication</div><div class="gl-v">Limpieza, inspección y lubricación. La rutina del operario sobre su equipo: limpiar es la excusa para inspeccionar.</div></div>
+        <div class="gl"><div class="gl-k">CL · Centerlining</div><div class="gl-v">Fijar los valores correctos de los parámetros de la máquina y vigilar que no se desvíen.</div></div>
+        <div class="gl"><div class="gl-k">C/O · Change Over</div><div class="gl-v">Cambio de formato o de producto en la línea.</div></div>
+        <div class="gl"><div class="gl-k">COGS · Cost of Goods Sold</div><div class="gl-v">El costo de producir lo que se vende.</div></div>
+        <div class="gl"><div class="gl-k">CQV · Commissioning, Qualification, Validation</div><div class="gl-v">Puesta en marcha, calificación y validación de un equipo nuevo antes de producir con él.</div></div>
+        <div class="gl"><div class="gl-k">DDS · Daily Direction Setting</div><div class="gl-v">Los comportamientos de liderazgo que se esperan en la reunión diaria. El formato pide que se vean cuatro.</div></div>
+        <div class="gl"><div class="gl-k">DH · Defect Handling</div><div class="gl-v">Manejo de defectos: detectarlos, registrarlos y cerrarlos antes de que se vuelvan paradas.</div></div>
+        <div class="gl"><div class="gl-k">DOM · Daily Operations Meeting</div><div class="gl-v">La reunión diaria donde se revisan los indicadores y se decide el día. Aparece en casi todos los criterios.</div></div>
+        <div class="gl"><div class="gl-k">EO · Equipment Ownership</div><div class="gl-v">Propiedad del equipo: cada máquina con un dueño definido y preparado.</div></div>
+        <div class="gl"><div class="gl-k">eSAT</div><div class="gl-v">La encuesta de satisfacción de los empleados.</div></div>
+        <div class="gl"><div class="gl-k">HC · Health Check</div><div class="gl-v">Revisión periódica de que un proceso se está cumpliendo como se definió. El formato pide DOM HC mayor al 80%.</div></div>
+        <div class="gl"><div class="gl-k">I Care</div><div class="gl-v">El programa corporativo de seguridad y cuidado. El Paso 0 es su nivel de entrada.</div></div>
+        <div class="gl"><div class="gl-k">OGSM · Objectives, Goals, Strategies, Measures</div><div class="gl-v">El formato de una página donde la estrategia se baja a objetivos, metas, estrategias y medidas.</div></div>
+        <div class="gl"><div class="gl-k">OIM</div><div class="gl-v">Nombre anterior del cargo que hoy es gerente de excelencia de manufactura.</div></div>
+        <div class="gl"><div class="gl-k">P&amp;S · Planning &amp; Scheduling</div><div class="gl-v">Planeación y programación del trabajo de mantenimiento.</div></div>
+        <div class="gl"><div class="gl-k">PDCA</div><div class="gl-v">Planear, hacer, verificar, actuar. El ciclo con el que se revisa si lo planeado está pasando.</div></div>
+        <div class="gl"><div class="gl-k">Plain / Proficy</div><div class="gl-v">Los sistemas donde la planta registra parámetros, eventos y paradas de la línea.</div></div>
+        <div class="gl"><div class="gl-k">Planning Hub</div><div class="gl-v">El equipo central de planeación con el que la planta acuerda su programa.</div></div>
+        <div class="gl"><div class="gl-k">PSC · Problem Solving Cycle</div><div class="gl-v">Ciclo de resolución de problemas. «PSC Básico» y «PSC2» son niveles de certificación distintos.</div></div>
+        <div class="gl"><div class="gl-k">RST</div><div class="gl-v">El equipo técnico de soporte que acompaña a la línea. Aparece junto a los operarios en casi todos los criterios de formación.</div></div>
+        <div class="gl"><div class="gl-k">SA · Schedule Adherence</div><div class="gl-v">Adherencia al programa: producir lo que estaba programado, en el orden y la cantidad acordados.</div></div>
+        <div class="gl"><div class="gl-k">SAP</div><div class="gl-v">El sistema donde se registran órdenes de trabajo, repuestos y movimientos de material.</div></div>
+        <div class="gl"><div class="gl-k">SDD · Strategy Development and Deployment</div><div class="gl-v">El proceso con el que se construye y se despliega la estrategia de la planta.</div></div>
+        <div class="gl"><div class="gl-k">SLT · Site Leadership Team</div><div class="gl-v">El equipo de liderazgo de la planta.</div></div>
+        <div class="gl"><div class="gl-k">Staging</div><div class="gl-v">El material ya separado y alistado para una corrida de producción.</div></div>
+        <div class="gl"><div class="gl-k">SUM · Start-Up Management</div><div class="gl-v">La gestión del arranque de un equipo o una línea nueva.</div></div>
+        <div class="gl"><div class="gl-k">TRI-R · Total Recordable Incident Rate</div><div class="gl-v">La tasa de incidentes de seguridad registrables.</div></div>
+        <div class="gl"><div class="gl-k">UPDT · Unplanned Downtime</div><div class="gl-v">Tiempo de parada no planeado.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Las que el formato no define</b>
+    <span class="k">DBNR</span> y <span class="k">MQT</span> aparecen como medidas internas (las paradas se cuentan «por MQT», y DBNR figura como KPI sin meta). <span class="k">MRC</span> es una revisión del proceso de arranque, liderada por el <span class="k">OIL</span> o el líder de arranque. <span class="k">P2P</span> aparece junto a la reunión de equipo y el DOM, como parte de la rutina diaria. <span class="k">Cpm</span> acompaña a las quejas de clientes, como «por millón». Vale la pena confirmarlas con el líder del pilar antes de usarlas por fuera del formato.
+  </div>
+
+  <div class="stepnav">
+    <button class="pv" data-go="tpmkpi"><span class="sn-k">Anterior</span><span class="sn-t">Los KPI de la fase</span></button>
+    <button class="nx" data-go="tpm"><span class="sn-k">Volver</span><span class="sn-t">Al método</span></button>
+  </div>
+</section>
+
 </main>
 </div>
 
@@ -7292,6 +7990,18 @@ img{max-width:100%}
     kz10:      {el:"s-kz10",     title:"10 · Verificar resultados", eyebrow:"Mantener", parent:"kzf3"},
     kz11:      {el:"s-kz11",     title:"11 · Estandarización", eyebrow:"Mantener", parent:"kzf3"},
     kz12:      {el:"s-kz12",     title:"12 · Planes futuros", eyebrow:"Mantener", parent:"kzf3"},
+    tpm:       {el:"s-tpm",       title:"TPM Zero-100", eyebrow:"Método", parent:"inicio"},
+    tpmp0:     {el:"s-tpmp0",    title:"Preparación de pilares y fase", eyebrow:"TPM", parent:"tpm"},
+    tpmp1:     {el:"s-tpmp1",    title:"Liderazgo", eyebrow:"TPM", parent:"tpm"},
+    tpmp2:     {el:"s-tpmp2",    title:"Riesgo, ambiente, seguridad y salud", eyebrow:"TPM", parent:"tpm"},
+    tpmp3:     {el:"s-tpmp3",    title:"Mantenimiento autónomo", eyebrow:"TPM", parent:"tpm"},
+    tpmp4:     {el:"s-tpmp4",    title:"Mantenimiento preventivo", eyebrow:"TPM", parent:"tpm"},
+    tpmp5:     {el:"s-tpmp5",    title:"Mejora enfocada", eyebrow:"TPM", parent:"tpm"},
+    tpmp6:     {el:"s-tpmp6",    title:"Educación y entrenamiento", eyebrow:"TPM", parent:"tpm"},
+    tpmp7:     {el:"s-tpmp7",    title:"Gestión temprana de equipos", eyebrow:"TPM", parent:"tpm"},
+    tpmp8:     {el:"s-tpmp8",    title:"Optimización de la cadena de suministro", eyebrow:"TPM", parent:"tpm"},
+    tpmkpi:    {el:"s-tpmkpi",    title:"KPI de la fase", eyebrow:"TPM", parent:"tpm"},
+    tpmglo:    {el:"s-tpmglo",    title:"Glosario", eyebrow:"TPM", parent:"tpm"},
     p5:        {el:"s-p5",        title:"5 · Buscar la perfección", eyebrow:"Lean Manufacturing", parent:"lean"},
     pdca:      {el:"s-pdca",      title:"Ciclos PDCA", eyebrow:"Principio 5", parent:"p5"},
     gemba:     {el:"s-gemba",     title:"Gemba Walk", eyebrow:"Principio 5", parent:"p5"},
