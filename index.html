@@ -834,6 +834,19 @@ img{max-width:100%}
     <div class="prog-b"><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
     <div class="prog-t">4 de 5 métodos listos</div>
   </div>
+
+  <div class="block" id="instblock" hidden>
+    <h2>Tener la app a mano</h2>
+    <button class="mhero" id="instcardgo" type="button">
+      <span class="mhero-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M4 18.5v1A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-1"/></svg></span>
+      <span class="mhero-tx">
+        <span class="mhero-n">Instalar Metodologías</span>
+        <span class="mhero-p">Queda entre tus apps y abre sin pasar por el navegador</span>
+        <span class="mhero-m">Una vez instalada funciona sin internet</span>
+      </span>
+      <span class="mhero-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </button>
+  </div>
 </section>
 
 <!-- ============ LEAN ============ -->
@@ -8134,13 +8147,7 @@ img{max-width:100%}
 
 <div class="insthelp" id="insthelp" hidden>
   <div class="box">
-    <h3>Añadir a la pantalla de inicio</h3>
-    <p>Tu navegador no ofrece el botón automático. Se instala así:</p>
-    <ol>
-      <li>Abre el menú del navegador (<b>⋮</b> en Chrome, <b>Compartir</b> en Safari).</li>
-      <li>Elige <b>Instalar aplicación</b> o <b>Añadir a pantalla de inicio</b>.</li>
-      <li>Confirma. El icono queda entre tus apps.</li>
-    </ol>
+    <div id="insthelpbody"></div>
     <button class="instbtn" id="insthelpclose" type="button">Entendido</button>
   </div>
 </div>
@@ -8151,55 +8158,108 @@ img{max-width:100%}
   var go = document.getElementById('instgo');
   var x = document.getElementById('instx');
   var help = document.getElementById('insthelp');
+  var helpBody = document.getElementById('insthelpbody');
   var helpClose = document.getElementById('insthelpclose');
+  var block = document.getElementById('instblock');
+  var card = document.getElementById('instcardgo');
   var deferred = null;
 
+  /* La versión anterior guardaba un "no" permanente al cerrar la barra o al
+     instalar. Si después se borraba la app, la opción no volvía a aparecer
+     nunca mas. Se limpia esa marca para que nadie quede bloqueado. */
+  try { localStorage.removeItem('met-inst'); } catch (e) {}
+
   function standalone(){
-    try{
+    try {
       if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) return true;
-    }catch(e){}
+    } catch (e) {}
     return !!window.navigator.standalone;
   }
-  function dismissed(){
-    try{ return localStorage.getItem('met-inst') === 'no'; }catch(e){ return false; }
+  function barMuted(){
+    try { return sessionStorage.getItem('met-bar') === 'no'; } catch (e) { return false; }
   }
-  function show(){
-    if (standalone() || dismissed()) return;
+  function paintBlock(){
+    if (block) block.hidden = standalone();
+  }
+  function showBar(){
+    if (standalone() || barMuted()) return;
     bar.hidden = false;
     document.body.style.paddingBottom = '92px';
   }
-  function hide(){
+  function hideBar(){
     bar.hidden = true;
     document.body.style.paddingBottom = '';
+  }
+
+  function pasos(){
+    var ua = navigator.userAgent || '';
+    var iOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var android = /Android/.test(ua);
+    var otroEnIOS = iOS && /CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+
+    if (iOS) {
+      return '<h3>Instalar en iPhone o iPad</h3>' +
+        (otroEnIOS
+          ? '<p>En iPhone esto solo funciona desde <b>Safari</b>. Abre esta misma página en Safari y sigue los pasos.</p>'
+          : '<p>Safari no tiene botón automático, pero se instala en tres toques:</p>') +
+        '<ol>' +
+        '<li>Toca <b>Compartir</b>, el cuadrito con la flecha hacia arriba.</li>' +
+        '<li>Baja y elige <b>Añadir a pantalla de inicio</b>.</li>' +
+        '<li>Confirma con <b>Añadir</b>, arriba a la derecha.</li>' +
+        '</ol>';
+    }
+    if (android) {
+      return '<h3>Instalar en Android</h3>' +
+        '<p>Si ya la tenías instalada y la borraste, Chrome deja de ofrecer el botón automático por un tiempo. Desde el menú siempre funciona:</p>' +
+        '<ol>' +
+        '<li>Abre el menú <b>&#8942;</b> arriba a la derecha del navegador.</li>' +
+        '<li>Elige <b>Instalar aplicación</b> o <b>Añadir a pantalla de inicio</b>.</li>' +
+        '<li>Confirma con <b>Instalar</b>.</li>' +
+        '</ol>';
+    }
+    return '<h3>Instalar en el computador</h3>' +
+      '<ol>' +
+      '<li>En la barra de direcciones, busca a la derecha el ícono de instalar: una pantalla con una flecha hacia abajo.</li>' +
+      '<li>Si no aparece, abre el menú <b>&#8942;</b> y elige <b>Instalar Metodologías</b>.</li>' +
+      '<li>Confirma con <b>Instalar</b>.</li>' +
+      '</ol>';
+  }
+
+  function install(){
+    if (deferred) {
+      deferred.prompt();
+      deferred.userChoice.then(function(){ deferred = null; hideBar(); paintBlock(); });
+      return;
+    }
+    helpBody.innerHTML = pasos();
+    help.hidden = false;
   }
 
   window.addEventListener('beforeinstallprompt', function(e){
     e.preventDefault();
     deferred = e;
-    show();
+    showBar();
   });
 
-  go.addEventListener('click', function(){
-    if (deferred) {
-      deferred.prompt();
-      deferred.userChoice.then(function(){ deferred = null; hide(); });
-    } else {
-      help.hidden = false;
-    }
-  });
+  go.addEventListener('click', install);
+  if (card) card.addEventListener('click', install);
+
   x.addEventListener('click', function(){
-    hide();
-    try{ localStorage.setItem('met-inst','no'); }catch(e){}
+    hideBar();
+    try { sessionStorage.setItem('met-bar','no'); } catch (e) {}
   });
   helpClose.addEventListener('click', function(){ help.hidden = true; });
   help.addEventListener('click', function(e){ if (e.target === help) help.hidden = true; });
+
   window.addEventListener('appinstalled', function(){
-    hide();
-    try{ localStorage.setItem('met-inst','no'); }catch(e){}
+    deferred = null;
+    hideBar();
+    try { sessionStorage.setItem('met-bar','no'); } catch (e) {}
+    paintBlock();
   });
 
-  // Si el navegador no dispara beforeinstallprompt (iOS, Firefox), igual ofrecemos la opción.
-  setTimeout(function(){ if (bar.hidden) show(); }, 1800);
+  paintBlock();
+  setTimeout(function(){ if (bar.hidden) showBar(); }, 1800);
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function(){
@@ -8208,6 +8268,5 @@ img{max-width:100%}
   }
 })();
 </script>
-
 </body>
 </html>
